@@ -1,0 +1,61 @@
+image: public.ecr.aws/perx/node16-builder:latest
+definitions:
+  caches:
+    pnpm: ~/.pnpm-store/**
+
+  steps:
+  - step: &InstallDependencies
+      name: Install dependencies
+      caches:
+        - pnpm
+      script:
+        - pnpm install
+      artifacts:
+        - node_modules/**
+
+  - step: &Test
+      name: Test suite
+      caches:
+        - pnpm
+      script:
+        - export CI=true
+        - pnpm test
+
+  - step: &EnforceFormatting
+      name: Enforce formatting
+      caches:
+        - pnpm
+      script:
+        - pnpm run lint
+
+  - step: &Publish
+      name: Build and publish
+      caches:
+        - pnpm
+      script:
+        - export AWS_DEFAULT_REGION=ap-southeast-2
+        - export AWS_ACCESS_KEY_ID=$MGMT_AWS_ACCESS_KEY_ID
+        - export AWS_SECRET_ACCESS_KEY=$MGMT_AWS_SECRET_ACCESS_KEY
+        - pnpm run ca:login
+        - pnpm publish --publish-branch canon
+
+services:
+  docker:
+    memory: 2048
+pipelines:
+  pull-requests:
+    '**':
+      - step: *InstallDependencies
+      - step: *EnforceFormatting
+      - step: *Test
+  branches:
+    development:
+      - step: *InstallDependencies
+      - step: *EnforceFormatting
+      - step: *Test
+    canon:
+      - step: *InstallDependencies
+      - step: *EnforceFormatting
+      - step: *Test
+      - step: *Publish
+

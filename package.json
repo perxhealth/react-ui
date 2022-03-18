@@ -23,7 +23,11 @@
     "ca:login": "aws codeartifact login --tool npm --repository web --domain perxhealth --domain-owner 651180711168"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "@chakra-ui/react": "^1.8.6",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^6",
+    "react": ">=17"
   },
   "husky": {
     "hooks": {
@@ -59,6 +63,10 @@
     "@storybook/react": "^6.4.19",
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.13",
+    "@chakra-ui/react": "^1.8.6",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^6",
     "babel-loader": "^8.2.3",
     "husky": "^7.0.4",
     "react": "^17.0.2",
@@ -68,11 +76,5 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
     "typescript": "^4.6.2"
-  },
-  "dependencies": {
-    "@chakra-ui/react": "^1.8.6",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
-    "framer-motion": "^6"
   }
 }

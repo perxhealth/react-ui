@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react"
 
-export const theme = extendTheme({
+export const extendedTheme = extendTheme({
   fonts: {
     body: "'AvertaCY Regular', sans-serif",
     heading: "'AvertaCY Bold', sans-serif",

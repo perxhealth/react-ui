@@ -58,4 +58,3 @@ pipelines:
       - step: *EnforceFormatting
       - step: *Test
       - step: *Publish
-

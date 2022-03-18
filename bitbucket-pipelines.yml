@@ -36,7 +36,7 @@ definitions:
         - export AWS_DEFAULT_REGION=ap-southeast-2
         - export AWS_ACCESS_KEY_ID=$MGMT_AWS_ACCESS_KEY_ID
         - export AWS_SECRET_ACCESS_KEY=$MGMT_AWS_SECRET_ACCESS_KEY
-        - pnpm run co:login
+        - pnpm run co:login-ci
         - pnpm publish --publish-branch canon
 
 services:

@@ -20,8 +20,7 @@
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "co:login": "aws codeartifact login --tool npm --repository web --domain perxhealth --domain-owner 651180711168 --profile perx-nonprod-dev --region ap-southeast-2",
-    "co:login-ci": "aws codeartifact login --tool npm --repository web --domain perxhealth --domain-owner 651180711168"
+    "ca:login": "aws codeartifact login --tool npm --repository web --domain perxhealth --domain-owner 651180711168"
   },
   "peerDependencies": {
     "react": ">=16"

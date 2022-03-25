@@ -43,6 +43,6 @@ export const extendedTheme = extendTheme({
       baseStyle: {
         fontWeight: "normal",
       },
-    }
+    },
   },
 })

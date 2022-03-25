@@ -39,5 +39,10 @@ export const extendedTheme = extendTheme({
         fontSize: "xl",
       },
     },
+    Th: {
+      baseStyle: {
+        fontWeight: "normal",
+      },
+    }
   },
 })

@@ -1,8 +1,11 @@
 {
+  "name": "@perx/react-ui",
   "version": "0.2.0",
   "license": "MIT",
+  "author": "Luke Rollans",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "module": "dist/react-ui.esm.js",
   "files": [
     "dist",
     "src"
@@ -40,9 +43,6 @@
     "singleQuote": false,
     "trailingComma": "es5"
   },
-  "name": "react-ui",
-  "author": "Luke Rollans",
-  "module": "dist/react-ui.esm.js",
   "size-limit": [
     {
       "path": "dist/react-ui.cjs.production.min.js",

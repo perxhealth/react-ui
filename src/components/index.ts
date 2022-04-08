@@ -1,1 +1,1 @@
-export * from "./brand"
+export const foo = "bar"

@@ -26,13 +26,6 @@
     "enforce-formatting": "prettier --list-different '{*/**/*, */*}.{ts,tsx}'",
     "ca:login": "aws codeartifact login --tool npm --repository web --domain perxhealth --domain-owner 651180711168"
   },
-  "peerDependencies": {
-    "@chakra-ui/react": ">=1.6.7",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
-    "framer-motion": "^6",
-    "react": ">=17"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -54,10 +47,14 @@
       "limit": "10 KB"
     }
   ],
+  "peerDependencies": {
+    "@chakra-ui/react": ">=1.6.0",
+    "framer-motion": "^6",
+    "react": ">=17"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.7",
     "@chakra-ui/react": "^1.6.10",
-    "@chakra-ui/system": "^1.11.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@size-limit/preset-small-lib": "^7.0.8",

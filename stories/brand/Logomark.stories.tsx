@@ -5,7 +5,7 @@ import { ImageProps } from "@chakra-ui/react"
 import { Logomark } from "../../src/components/brand/Logomark"
 
 const meta: Meta = {
-  title: "Logomark",
+  title: "Components/Brand/Logomark",
   component: Logomark,
   argTypes: {},
   parameters: {

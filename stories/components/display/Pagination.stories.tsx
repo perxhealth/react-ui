@@ -17,10 +17,23 @@ const meta: Meta = {
 
 export default meta
 
-const Template: Story<Props> = (args) => <Pagination {...args} />
+const Template: Story<PaginationProps> = (args) => <Pagination {...args} />
 
-// By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
-// https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({})
+export const OnFirstPage = Template.bind({})
+export const OnLastPage = Template.bind({})
 
-Default.args = {}
+Default.args = {
+  totalPages: 8,
+  currentPage: 4,
+}
+
+OnFirstPage.args = {
+  totalPages: 8,
+  currentPage: 1,
+}
+
+OnLastPage.args = {
+  totalPages: 8,
+  currentPage: 8,
+}

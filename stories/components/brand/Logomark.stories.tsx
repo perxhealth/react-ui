@@ -2,7 +2,7 @@ import * as React from "react"
 import { Meta, Story } from "@storybook/react"
 import { ImageProps } from "@chakra-ui/react"
 
-import { Logomark } from "../../../src/components/brand/Logomark"
+import { Logomark } from "../../src/components/brand/Logomark"
 
 const meta: Meta = {
   title: "Components/Brand/Logomark",

@@ -34,7 +34,7 @@ export const Pagination = (props: PaginationProps) => {
         isDisabled={isPreviousPageDisabled}
       />
 
-      {[...Array(totalPages)].map((element, index) => {
+      {[...Array(totalPages)].map((_, index) => {
         const pageNumber: number = index + 1
         const isSelectedPage = currentPage === pageNumber
         return (

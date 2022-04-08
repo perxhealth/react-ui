@@ -17,6 +17,7 @@ specifiers:
   babel-loader: ^8.2.3
   framer-motion: ^6
   husky: ^7.0.4
+  prettier: ^2.6.2
   react: ^17.0.2
   react-dom: ^17.0.2
   react-is: ^17.0.2
@@ -42,6 +43,7 @@ devDependencies:
   babel-loader: 8.2.3_@babel+core@7.17.7
   framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
   husky: 7.0.4
+  prettier: 2.6.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-is: 17.0.2
@@ -2412,7 +2414,7 @@ packages:
     dev: true
 
   /@emotion/is-prop-valid/0.8.8:
-    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
+    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz}
     dependencies:
       '@emotion/memoize': 0.7.4
     dev: true
@@ -6448,7 +6450,7 @@ packages:
     dev: true
 
   /clipboard/2.0.10:
-    resolution: {integrity: sha512-cz3m2YVwFz95qSEbCDi2fzLN/epEN9zXBvfgAoGkvGOJZATMl9gtTDVOtBYkx2ODUJl2kvmud7n32sV2BpYR4g==}
+    resolution: {integrity: sha512-cz3m2YVwFz95qSEbCDi2fzLN/epEN9zXBvfgAoGkvGOJZATMl9gtTDVOtBYkx2ODUJl2kvmud7n32sV2BpYR4g==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/clipboard/-/clipboard-2.0.10.tgz}
     requiresBuild: true
     dependencies:
       good-listener: 1.2.2
@@ -6540,7 +6542,7 @@ packages:
     dev: true
 
   /colors/1.4.0:
-    resolution: {integrity: sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==}
+    resolution: {integrity: sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/colors/-/colors-1.4.0.tgz}
     engines: {node: '>=0.1.90'}
     requiresBuild: true
     dev: true
@@ -7418,7 +7420,7 @@ packages:
     dev: true
 
   /esbuild-android-64/0.14.27:
-    resolution: {integrity: sha512-LuEd4uPuj/16Y8j6kqy3Z2E9vNY9logfq8Tq+oTE2PZVuNs3M1kj5Qd4O95ee66yDGb3isaOCV7sOLDwtMfGaQ==}
+    resolution: {integrity: sha512-LuEd4uPuj/16Y8j6kqy3Z2E9vNY9logfq8Tq+oTE2PZVuNs3M1kj5Qd4O95ee66yDGb3isaOCV7sOLDwtMfGaQ==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-android-64/-/esbuild-android-64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [android]
@@ -7427,7 +7429,7 @@ packages:
     optional: true
 
   /esbuild-android-arm64/0.14.27:
-    resolution: {integrity: sha512-E8Ktwwa6vX8q7QeJmg8yepBYXaee50OdQS3BFtEHKrzbV45H4foMOeEE7uqdjGQZFBap5VAqo7pvjlyA92wznQ==}
+    resolution: {integrity: sha512-E8Ktwwa6vX8q7QeJmg8yepBYXaee50OdQS3BFtEHKrzbV45H4foMOeEE7uqdjGQZFBap5VAqo7pvjlyA92wznQ==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-android-arm64/-/esbuild-android-arm64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [android]
@@ -7436,7 +7438,7 @@ packages:
     optional: true
 
   /esbuild-darwin-64/0.14.27:
-    resolution: {integrity: sha512-czw/kXl/1ZdenPWfw9jDc5iuIYxqUxgQ/Q+hRd4/3udyGGVI31r29LCViN2bAJgGvQkqyLGVcG03PJPEXQ5i2g==}
+    resolution: {integrity: sha512-czw/kXl/1ZdenPWfw9jDc5iuIYxqUxgQ/Q+hRd4/3udyGGVI31r29LCViN2bAJgGvQkqyLGVcG03PJPEXQ5i2g==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-darwin-64/-/esbuild-darwin-64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [darwin]
@@ -7445,7 +7447,7 @@ packages:
     optional: true
 
   /esbuild-darwin-arm64/0.14.27:
-    resolution: {integrity: sha512-BEsv2U2U4o672oV8+xpXNxN9bgqRCtddQC6WBh4YhXKDcSZcdNh7+6nS+DM2vu7qWIWNA4JbRG24LUUYXysimQ==}
+    resolution: {integrity: sha512-BEsv2U2U4o672oV8+xpXNxN9bgqRCtddQC6WBh4YhXKDcSZcdNh7+6nS+DM2vu7qWIWNA4JbRG24LUUYXysimQ==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [darwin]
@@ -7454,7 +7456,7 @@ packages:
     optional: true
 
   /esbuild-freebsd-64/0.14.27:
-    resolution: {integrity: sha512-7FeiFPGBo+ga+kOkDxtPmdPZdayrSzsV9pmfHxcyLKxu+3oTcajeZlOO1y9HW+t5aFZPiv7czOHM4KNd0tNwCA==}
+    resolution: {integrity: sha512-7FeiFPGBo+ga+kOkDxtPmdPZdayrSzsV9pmfHxcyLKxu+3oTcajeZlOO1y9HW+t5aFZPiv7czOHM4KNd0tNwCA==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-freebsd-64/-/esbuild-freebsd-64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [freebsd]
@@ -7463,7 +7465,7 @@ packages:
     optional: true
 
   /esbuild-freebsd-arm64/0.14.27:
-    resolution: {integrity: sha512-8CK3++foRZJluOWXpllG5zwAVlxtv36NpHfsbWS7TYlD8S+QruXltKlXToc/5ZNzBK++l6rvRKELu/puCLc7jA==}
+    resolution: {integrity: sha512-8CK3++foRZJluOWXpllG5zwAVlxtv36NpHfsbWS7TYlD8S+QruXltKlXToc/5ZNzBK++l6rvRKELu/puCLc7jA==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-freebsd-arm64/-/esbuild-freebsd-arm64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [freebsd]
@@ -7472,7 +7474,7 @@ packages:
     optional: true
 
   /esbuild-linux-32/0.14.27:
-    resolution: {integrity: sha512-qhNYIcT+EsYSBClZ5QhLzFzV5iVsP1YsITqblSaztr3+ZJUI+GoK8aXHyzKd7/CKKuK93cxEMJPpfi1dfsOfdw==}
+    resolution: {integrity: sha512-qhNYIcT+EsYSBClZ5QhLzFzV5iVsP1YsITqblSaztr3+ZJUI+GoK8aXHyzKd7/CKKuK93cxEMJPpfi1dfsOfdw==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-linux-32/-/esbuild-linux-32-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [ia32]
     os: [linux]
@@ -7481,7 +7483,7 @@ packages:
     optional: true
 
   /esbuild-linux-64/0.14.27:
-    resolution: {integrity: sha512-ESjck9+EsHoTaKWlFKJpPZRN26uiav5gkI16RuI8WBxUdLrrAlYuYSndxxKgEn1csd968BX/8yQZATYf/9+/qg==}
+    resolution: {integrity: sha512-ESjck9+EsHoTaKWlFKJpPZRN26uiav5gkI16RuI8WBxUdLrrAlYuYSndxxKgEn1csd968BX/8yQZATYf/9+/qg==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-linux-64/-/esbuild-linux-64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [linux]
@@ -7490,7 +7492,7 @@ packages:
     optional: true
 
   /esbuild-linux-arm/0.14.27:
-    resolution: {integrity: sha512-JnnmgUBdqLQO9hoNZQqNHFWlNpSX82vzB3rYuCJMhtkuaWQEmQz6Lec1UIxJdC38ifEghNTBsF9bbe8dFilnCw==}
+    resolution: {integrity: sha512-JnnmgUBdqLQO9hoNZQqNHFWlNpSX82vzB3rYuCJMhtkuaWQEmQz6Lec1UIxJdC38ifEghNTBsF9bbe8dFilnCw==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-linux-arm/-/esbuild-linux-arm-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [arm]
     os: [linux]
@@ -7499,7 +7501,7 @@ packages:
     optional: true
 
   /esbuild-linux-arm64/0.14.27:
-    resolution: {integrity: sha512-no6Mi17eV2tHlJnqBHRLekpZ2/VYx+NfGxKcBE/2xOMYwctsanCaXxw4zapvNrGE9X38vefVXLz6YCF8b1EHiQ==}
+    resolution: {integrity: sha512-no6Mi17eV2tHlJnqBHRLekpZ2/VYx+NfGxKcBE/2xOMYwctsanCaXxw4zapvNrGE9X38vefVXLz6YCF8b1EHiQ==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-linux-arm64/-/esbuild-linux-arm64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [linux]
@@ -7508,7 +7510,7 @@ packages:
     optional: true
 
   /esbuild-linux-mips64le/0.14.27:
-    resolution: {integrity: sha512-NolWP2uOvIJpbwpsDbwfeExZOY1bZNlWE/kVfkzLMsSgqeVcl5YMen/cedRe9mKnpfLli+i0uSp7N+fkKNU27A==}
+    resolution: {integrity: sha512-NolWP2uOvIJpbwpsDbwfeExZOY1bZNlWE/kVfkzLMsSgqeVcl5YMen/cedRe9mKnpfLli+i0uSp7N+fkKNU27A==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-linux-mips64le/-/esbuild-linux-mips64le-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [mips64el]
     os: [linux]
@@ -7517,7 +7519,7 @@ packages:
     optional: true
 
   /esbuild-linux-ppc64le/0.14.27:
-    resolution: {integrity: sha512-/7dTjDvXMdRKmsSxKXeWyonuGgblnYDn0MI1xDC7J1VQXny8k1qgNp6VmrlsawwnsymSUUiThhkJsI+rx0taNA==}
+    resolution: {integrity: sha512-/7dTjDvXMdRKmsSxKXeWyonuGgblnYDn0MI1xDC7J1VQXny8k1qgNp6VmrlsawwnsymSUUiThhkJsI+rx0taNA==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-linux-ppc64le/-/esbuild-linux-ppc64le-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [ppc64]
     os: [linux]
@@ -7526,7 +7528,7 @@ packages:
     optional: true
 
   /esbuild-linux-riscv64/0.14.27:
-    resolution: {integrity: sha512-D+aFiUzOJG13RhrSmZgrcFaF4UUHpqj7XSKrIiCXIj1dkIkFqdrmqMSOtSs78dOtObWiOrFCDDzB24UyeEiNGg==}
+    resolution: {integrity: sha512-D+aFiUzOJG13RhrSmZgrcFaF4UUHpqj7XSKrIiCXIj1dkIkFqdrmqMSOtSs78dOtObWiOrFCDDzB24UyeEiNGg==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-linux-riscv64/-/esbuild-linux-riscv64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [riscv64]
     os: [linux]
@@ -7535,7 +7537,7 @@ packages:
     optional: true
 
   /esbuild-linux-s390x/0.14.27:
-    resolution: {integrity: sha512-CD/D4tj0U4UQjELkdNlZhQ8nDHU5rBn6NGp47Hiz0Y7/akAY5i0oGadhEIg0WCY/HYVXFb3CsSPPwaKcTOW3bg==}
+    resolution: {integrity: sha512-CD/D4tj0U4UQjELkdNlZhQ8nDHU5rBn6NGp47Hiz0Y7/akAY5i0oGadhEIg0WCY/HYVXFb3CsSPPwaKcTOW3bg==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-linux-s390x/-/esbuild-linux-s390x-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [s390x]
     os: [linux]
@@ -7544,7 +7546,7 @@ packages:
     optional: true
 
   /esbuild-netbsd-64/0.14.27:
-    resolution: {integrity: sha512-h3mAld69SrO1VoaMpYl3a5FNdGRE/Nqc+E8VtHOag4tyBwhCQXxtvDDOAKOUQexBGca0IuR6UayQ4ntSX5ij1Q==}
+    resolution: {integrity: sha512-h3mAld69SrO1VoaMpYl3a5FNdGRE/Nqc+E8VtHOag4tyBwhCQXxtvDDOAKOUQexBGca0IuR6UayQ4ntSX5ij1Q==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-netbsd-64/-/esbuild-netbsd-64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [netbsd]
@@ -7553,7 +7555,7 @@ packages:
     optional: true
 
   /esbuild-openbsd-64/0.14.27:
-    resolution: {integrity: sha512-xwSje6qIZaDHXWoPpIgvL+7fC6WeubHHv18tusLYMwL+Z6bEa4Pbfs5IWDtQdHkArtfxEkIZz77944z8MgDxGw==}
+    resolution: {integrity: sha512-xwSje6qIZaDHXWoPpIgvL+7fC6WeubHHv18tusLYMwL+Z6bEa4Pbfs5IWDtQdHkArtfxEkIZz77944z8MgDxGw==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-openbsd-64/-/esbuild-openbsd-64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [openbsd]
@@ -7562,7 +7564,7 @@ packages:
     optional: true
 
   /esbuild-sunos-64/0.14.27:
-    resolution: {integrity: sha512-/nBVpWIDjYiyMhuqIqbXXsxBc58cBVH9uztAOIfWShStxq9BNBik92oPQPJ57nzWXRNKQUEFWr4Q98utDWz7jg==}
+    resolution: {integrity: sha512-/nBVpWIDjYiyMhuqIqbXXsxBc58cBVH9uztAOIfWShStxq9BNBik92oPQPJ57nzWXRNKQUEFWr4Q98utDWz7jg==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-sunos-64/-/esbuild-sunos-64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [sunos]
@@ -7571,7 +7573,7 @@ packages:
     optional: true
 
   /esbuild-windows-32/0.14.27:
-    resolution: {integrity: sha512-Q9/zEjhZJ4trtWhFWIZvS/7RUzzi8rvkoaS9oiizkHTTKd8UxFwn/Mm2OywsAfYymgUYm8+y2b+BKTNEFxUekw==}
+    resolution: {integrity: sha512-Q9/zEjhZJ4trtWhFWIZvS/7RUzzi8rvkoaS9oiizkHTTKd8UxFwn/Mm2OywsAfYymgUYm8+y2b+BKTNEFxUekw==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-windows-32/-/esbuild-windows-32-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [ia32]
     os: [win32]
@@ -7580,7 +7582,7 @@ packages:
     optional: true
 
   /esbuild-windows-64/0.14.27:
-    resolution: {integrity: sha512-b3y3vTSl5aEhWHK66ngtiS/c6byLf6y/ZBvODH1YkBM+MGtVL6jN38FdHUsZasCz9gFwYs/lJMVY9u7GL6wfYg==}
+    resolution: {integrity: sha512-b3y3vTSl5aEhWHK66ngtiS/c6byLf6y/ZBvODH1YkBM+MGtVL6jN38FdHUsZasCz9gFwYs/lJMVY9u7GL6wfYg==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-windows-64/-/esbuild-windows-64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
@@ -7589,7 +7591,7 @@ packages:
     optional: true
 
   /esbuild-windows-arm64/0.14.27:
-    resolution: {integrity: sha512-I/reTxr6TFMcR5qbIkwRGvldMIaiBu2+MP0LlD7sOlNXrfqIl9uNjsuxFPGEG4IRomjfQ5q8WT+xlF/ySVkqKg==}
+    resolution: {integrity: sha512-I/reTxr6TFMcR5qbIkwRGvldMIaiBu2+MP0LlD7sOlNXrfqIl9uNjsuxFPGEG4IRomjfQ5q8WT+xlF/ySVkqKg==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/esbuild-windows-arm64/-/esbuild-windows-arm64-0.14.27.tgz}
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [win32]
@@ -8587,7 +8589,7 @@ packages:
     dev: true
 
   /fsevents/1.2.13:
-    resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
+    resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/fsevents/-/fsevents-1.2.13.tgz}
     engines: {node: '>= 4.0'}
     os: [darwin]
     deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
@@ -8599,7 +8601,7 @@ packages:
     optional: true
 
   /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/fsevents/-/fsevents-2.3.2.tgz}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
@@ -11191,7 +11193,7 @@ packages:
     dev: true
 
   /node-notifier/6.0.0:
-    resolution: {integrity: sha512-SVfQ/wMw+DesunOm5cKqr6yDcvUTDl/yc97ybGHMrteNEY6oekXpNpS3lZwgLlwz0FLgHoiW28ZpmBHUDg37cw==}
+    resolution: {integrity: sha512-SVfQ/wMw+DesunOm5cKqr6yDcvUTDl/yc97ybGHMrteNEY6oekXpNpS3lZwgLlwz0FLgHoiW28ZpmBHUDg37cw==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/node-notifier/-/node-notifier-6.0.0.tgz}
     requiresBuild: true
     dependencies:
       growly: 1.3.0
@@ -11918,13 +11920,19 @@ packages:
     dev: true
 
   /prettier/1.19.1:
-    resolution: {integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==}
+    resolution: {integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/prettier/-/prettier-1.19.1.tgz}
     engines: {node: '>=4'}
     hasBin: true
     dev: true
 
   /prettier/2.3.0:
-    resolution: {integrity: sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==}
+    resolution: {integrity: sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/prettier/-/prettier-2.3.0.tgz}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /prettier/2.6.2:
+    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/prettier/-/prettier-2.6.2.tgz}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -14394,7 +14402,7 @@ packages:
     dev: true
 
   /uglify-js/3.15.3:
-    resolution: {integrity: sha512-6iCVm2omGJbsu3JWac+p6kUiOpg3wFO2f8lIXjfEb8RrmLjzog1wTPMmwKB7swfzzqxj9YM+sGUM++u1qN4qJg==}
+    resolution: {integrity: sha512-6iCVm2omGJbsu3JWac+p6kUiOpg3wFO2f8lIXjfEb8RrmLjzog1wTPMmwKB7swfzzqxj9YM+sGUM++u1qN4qJg==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/uglify-js/-/uglify-js-3.15.3.tgz}
     engines: {node: '>=0.8.0'}
     hasBin: true
     requiresBuild: true
@@ -14820,7 +14828,7 @@ packages:
     dev: true
 
   /watchpack-chokidar2/2.0.1:
-    resolution: {integrity: sha512-nCFfBIPKr5Sh61s4LPpy1Wtfi0HE8isJ3d2Yb5/Ppw2P2B/3eVSEBjKfN0fmHJSK14+31KwMKmcrzs2GM4P0Ww==}
+    resolution: {integrity: sha512-nCFfBIPKr5Sh61s4LPpy1Wtfi0HE8isJ3d2Yb5/Ppw2P2B/3eVSEBjKfN0fmHJSK14+31KwMKmcrzs2GM4P0Ww==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/watchpack-chokidar2/-/watchpack-chokidar2-2.0.1.tgz}
     requiresBuild: true
     dependencies:
       chokidar: 2.1.8

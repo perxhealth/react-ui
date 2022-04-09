@@ -5,4 +5,9 @@ module.exports = {
     "<rootDir>/dist/",
     "<rootDir>/stories/",
   ],
+  globals: {
+    "ts-jest": {
+      packageJson: "package.json",
+    },
+  },
 }

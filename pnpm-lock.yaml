@@ -7,6 +7,8 @@ specifiers:
   '@chakra-ui/storybook-addon': ^1.0.3
   '@emotion/react': ^11
   '@emotion/styled': ^11
+  '@semantic-release/changelog': ^6.0.1
+  '@semantic-release/git': ^10.0.1
   '@size-limit/preset-small-lib': ^7.0.8
   '@storybook/addon-essentials': ^6.4.20
   '@storybook/addon-info': ^5.3.21
@@ -42,6 +44,8 @@ devDependencies:
   '@chakra-ui/storybook-addon': 1.0.3_6dbb03b3dbb70f5d9e2f9d1fb9fabde3
   '@emotion/react': 11.9.0_e6bd7585f4e0972b809c85f7a8594d19
   '@emotion/styled': 11.8.1_690fbe9e307bc3519937bb562dc3a813
+  '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
+  '@semantic-release/git': 10.0.1_semantic-release@19.0.2
   '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
   '@storybook/addon-essentials': 6.4.20_86ec313923b46199add50f4ec522906d
   '@storybook/addon-info': 5.3.21_bc7991bc5e21611ed4790de96486a5a6
@@ -3280,6 +3284,19 @@ packages:
       rollup: 1.32.1
     dev: true
 
+  /@semantic-release/changelog/6.0.1_semantic-release@19.0.2:
+    resolution: {integrity: sha512-FT+tAGdWHr0RCM3EpWegWnvXJ05LQtBkQUaQRIExONoXjVjLuOILNm4DEKNaV+GAQyJjbLRVs57ti//GypH6PA==}
+    engines: {node: '>=14.17'}
+    peerDependencies:
+      semantic-release: '>=18.0.0'
+    dependencies:
+      '@semantic-release/error': 3.0.0
+      aggregate-error: 3.1.0
+      fs-extra: 9.1.0
+      lodash: 4.17.21
+      semantic-release: 19.0.2
+    dev: true
+
   /@semantic-release/commit-analyzer/9.0.2_semantic-release@19.0.2:
     resolution: {integrity: sha512-E+dr6L+xIHZkX4zNMe6Rnwg4YQrWNXK+rNsvwOPpdFppvZO1olE2fIgWhv89TkQErygevbjsZFSIxp+u6w2e5g==}
     engines: {node: '>=14.17'}
@@ -3305,6 +3322,25 @@ packages:
   /@semantic-release/error/3.0.0:
     resolution: {integrity: sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==}
     engines: {node: '>=14.17'}
+    dev: true
+
+  /@semantic-release/git/10.0.1_semantic-release@19.0.2:
+    resolution: {integrity: sha512-eWrx5KguUcU2wUPaO6sfvZI0wPafUKAMNC18aXY4EnNcrZL86dEmpNVnC9uMpGZkmZJ9EfCVJBQx4pV4EMGT1w==}
+    engines: {node: '>=14.17'}
+    peerDependencies:
+      semantic-release: '>=18.0.0'
+    dependencies:
+      '@semantic-release/error': 3.0.0
+      aggregate-error: 3.1.0
+      debug: 4.3.4
+      dir-glob: 3.0.1
+      execa: 5.1.1
+      lodash: 4.17.21
+      micromatch: 4.0.5
+      p-reduce: 2.1.0
+      semantic-release: 19.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@semantic-release/github/8.0.4_semantic-release@19.0.2:

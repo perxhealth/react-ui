@@ -6,12 +6,15 @@ on:
       - development
 jobs:
   build:
-    name: Build, lint, and test on Node ${{ matrix.node }}
+    name: Validate and publish
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node: ['16.x']
         os: [ubuntu-latest]
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     steps:
       - name: Checkout

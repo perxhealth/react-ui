@@ -23,8 +23,7 @@
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "enforce-formatting": "prettier --list-different '{*/**/*, */*}.{ts,tsx}'",
-    "ca:login": "aws codeartifact login --tool npm --repository web --domain perxhealth --domain-owner 651180711168"
+    "enforce-formatting": "prettier --list-different '{*/**/*, */*}.{ts,tsx}'"
   },
   "husky": {
     "hooks": {

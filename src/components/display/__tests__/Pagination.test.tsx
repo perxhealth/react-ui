@@ -7,7 +7,7 @@ import { Pagination } from "../Pagination"
 describe("Pagination", () => {
   const onPreviousClick = jest.fn()
   const onNextClick = jest.fn()
-  const onPageClick = jest.fn()
+  const onPageNumberClick = jest.fn()
 
   describe("when on the first page", () => {
     beforeEach(() => {
@@ -17,17 +17,17 @@ describe("Pagination", () => {
           totalPages={3}
           onPreviousClick={onPreviousClick}
           onNextClick={onNextClick}
-          onPageClick={onPageClick}
+          onPageNumberClick={onPageNumberClick}
         />
       )
     })
 
     it("renders the correct amount of numbered buttons", () => {
       user.click(screen.getByText("2"))
-      expect(onPageClick).toHaveBeenCalledWith(2)
+      expect(onPageNumberClick).toHaveBeenCalledWith(2)
       user.click(screen.getByText("3"))
-      expect(onPageClick).toHaveBeenCalledWith(3)
-      expect(onPageClick).toHaveBeenCalledTimes(2)
+      expect(onPageNumberClick).toHaveBeenCalledWith(3)
+      expect(onPageNumberClick).toHaveBeenCalledTimes(2)
     })
 
     it("clicking the next button triggers onNextClick", () => {
@@ -35,9 +35,9 @@ describe("Pagination", () => {
       expect(onNextClick).toHaveBeenCalledTimes(1)
     })
 
-    it("clicking a numbered button triggers onPageClick with correct number", () => {
+    it("clicking a numbered button triggers onPageNumberClick with correct number", () => {
       user.click(screen.getByText("3"))
-      expect(onPageClick).toHaveBeenCalledWith(3)
+      expect(onPageNumberClick).toHaveBeenCalledWith(3)
     })
 
     it("previous button is disabled on first page", () => {
@@ -53,7 +53,7 @@ describe("Pagination", () => {
           totalPages={3}
           onPreviousClick={onPreviousClick}
           onNextClick={onNextClick}
-          onPageClick={onPageClick}
+          onPageNumberClick={onPageNumberClick}
         />
       )
     })

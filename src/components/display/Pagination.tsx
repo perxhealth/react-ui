@@ -9,12 +9,17 @@ export interface PaginationProps {
   totalPages: number
   onPreviousClick: (event: ButtonMouseEvent) => void
   onNextClick: (event: ButtonMouseEvent) => void
-  onPageClick: (event: number) => void
+  onPageNumberClick: (event: number) => void
 }
 
 export const Pagination = (props: PaginationProps) => {
-  const { currentPage, totalPages, onPreviousClick, onNextClick, onPageClick } =
-    props
+  const {
+    currentPage,
+    totalPages,
+    onPreviousClick,
+    onNextClick,
+    onPageNumberClick,
+  } = props
 
   const isPreviousPageDisabled = React.useMemo(() => {
     return currentPage <= 1
@@ -42,7 +47,7 @@ export const Pagination = (props: PaginationProps) => {
             key={pageNumber}
             isDisabled={isSelectedPage}
             variant={isSelectedPage ? "solid" : "outline"}
-            onClick={() => onPageClick(pageNumber)}
+            onClick={() => onPageNumberClick(pageNumber)}
           >
             {pageNumber}
           </Button>

@@ -6,6 +6,9 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "module": "dist/react-ui.esm.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist",
     "src"

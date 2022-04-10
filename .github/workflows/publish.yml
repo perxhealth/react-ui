@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - canon
-      - development
 jobs:
   build:
     name: Validate and publish

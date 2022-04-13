@@ -1,4 +1,4 @@
-![Perx Health](https://user-images.githubusercontent.com/4101096/163094313-9703e5af-eb8e-4e5c-ba15-ca8b2c9cd322.png)
+![Perx Health](https://user-images.githubusercontent.com/4101096/163123610-9dfa9263-1518-4f5d-8839-9ddc142a513e.png)
 
 [![Build Status](https://github.com/perxhealth/react-ui/actions/workflows/publish.yml/badge.svg)](https://github.com/perxhealth/react-ui/actions/workflows/publish.yml)
 

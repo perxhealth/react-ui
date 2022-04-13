@@ -28,12 +28,18 @@ available components along with examples and instructions for use.
 
 ## Installation
 
-Use your package manger of choice to install the library. We recommend
-[PNPM](https://pnpm.io/), but if you're using something different like NPM or
-Yarn simply switch out the command.
+Install the package from the npm registry, using `npm`, `yarn` or `pnpm`.
 
 ```bash
-$ pnpm install @perxhealth/react-ui
+$ npm install @perxhealth/react-ui
+```
+
+```
+$ yarn install @perxhealth/react-ui # If you're using Yarn
+```
+
+```
+$ pnpm install @perxhealth/react-ui # If you're using PNPM (like us!)
 ```
 
 ### Chakra UI

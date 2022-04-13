@@ -25,8 +25,8 @@ as such all accessibility and speed advantages also apply here.
 
 ## Usage & Examples
 
-Visit our [Storybook](https://perxhealth.github.io/react-ui) to see a list of
-available components along with examples and instructions for use.
+Visit our :book: [Storybook](https://perxhealth.github.io/react-ui) to see a
+list of available components along with examples and instructions for use.
 
 ## Installation
 

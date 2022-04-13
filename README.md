@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/perxhealth/react-ui/actions/workflows/publish.yml/badge.svg)](https://github.com/perxhealth/react-ui/actions/workflows/publish.yml)
 
-Perx Health's standard React user interface component library, powered by [Chakra UI](https://chakra-ui.com/)
+Perx Health's standard React user interface component library, powered by :sparkles: [Chakra UI](https://chakra-ui.com/) :sparkles:
 
 ## About the project
 
@@ -11,8 +11,12 @@ everyone. We have heavily invested in [React](https://reactjs.org/) to build our
 user interfaces to help accomplish this.
 
 We ship multiple interfaces to multiple types of consumers every day, and we
-want to standardise on the common components of which those interfaces are
-comprised.
+want to standardise the components of which those interfaces are comprised.
+
+This is important for two primary reasons.
+
+1. Speeding up development by reducing duplication.
+2. Developing a familiar and comfortable visual experience across our platform.
 
 This library stands on the shoulders of [Chakra UI](https://chakra-ui.com) and
 as such all accessibility and speed advantages also apply here.
@@ -34,7 +38,7 @@ $ pnpm install @perxhealth/react-ui
 
 ### Chakra UI
 
-The only required peer dependency of [Perx React UI](https://github.com/perxhealth.com/react-ui) is Chakra UI and its immediate dependencies.
+The only required peer dependency of [Perx React UI](https://github.com/perxhealth.com/react-ui) is [Chakra UI](https://chakra-ui.com/) and its immediate dependencies.
 
 ```bash
 $ pnpm add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
@@ -46,13 +50,20 @@ Given we use this library ourselves, the tools and libraries we use to solve
 common problems have been baked in as peer dependencies. These are optional
 depending on which components you'll be consuming.
 
-[Formik](https://formik.org) is required to use any of our opinionated form
-input components, for example
+See below for a list of these optional peer dependencies and when you may need
+to install them.
+
+<details>
+<summary>Formik</summary>
+
+[Formik](https://formik.org) must be installed to use any of our opinionated
+form related components, such as `TextInput` or `RadioGroup`.
 
 ```bash
-# TODO: Grow this list as more of our components are brought over
-$ pnpm add formik
+$ pnpm install formik
 ```
+
+</details>
 
 ## Setup
 
@@ -110,7 +121,7 @@ $ asdf install
 
 ### Install app dependencies
 
-As you may have guessed, the next step is to install node dependencie with PNPM
+As you may have guessed, the next step is to install node dependencies with PNPM
 using the following command.
 
 ```bash

@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "module": "dist/react-ui.esm.js",
-  "homepage": "http://perxhealth.github.io/react-ui",
+  "homepage": "https://github.com/perxhealth/react-ui",
   "publishConfig": {
     "access": "public"
   },

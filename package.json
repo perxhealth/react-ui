@@ -1,6 +1,6 @@
 {
   "name": "@perxhealth/react-ui",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Luke Rollans",
   "main": "dist/index.js",

@@ -48,5 +48,11 @@ jobs:
       - name: Build distributable
         run: pnpm build
 
-      - name: Publish
+      - name: Publish to NPM
         run: pnpm semantic-release
+
+      - name: Build Storybook
+        run: pnpm run build-storybook
+
+      - name: Publish Storybook
+        run: pnpm run deploy-storybook

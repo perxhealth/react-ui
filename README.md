@@ -2,7 +2,9 @@
 
 [![Build Status](https://github.com/perxhealth/react-ui/actions/workflows/publish.yml/badge.svg)](https://github.com/perxhealth/react-ui/actions/workflows/publish.yml)
 
-Perx Health's standard React user interface component library, powered by :sparkles: [Chakra UI](https://chakra-ui.com/) :sparkles:
+Perx Health's standard React user interface component library, helping us bring
+behavioral science for better health to users across our platform, powered by
+:sparkles: [Chakra UI](https://chakra-ui.com/) :sparkles:
 
 ## About the project
 

@@ -1,0 +1,26 @@
+name: Publish Storybook
+on:
+  push:
+    branches:
+      - canon
+jobs:
+  build:
+    name: Build and publish Storybook
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - run: pnpm run build-storybook
+      - env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_REPO_NAME: ${{ github.repository }}
+        run: |
+          git remote set-url origin https://git:${GH_TOKEN}@github.com/${GH_REPO_NAME}.git
+          pnpm run deploy-storybook

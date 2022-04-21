@@ -55,4 +55,11 @@ jobs:
         run: pnpm run build-storybook
 
       - name: Publish Storybook
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_REPO_NAME: ${{ github.repository }}
+        run: |
+          git remote set-url origin https://git:${GH_TOKEN}@github.com/${GH_REPO_NAME}.git
+          pnpm run deploy-storybook
+
         run: pnpm run deploy-storybook

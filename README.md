@@ -102,8 +102,8 @@ up and running with a local development copy.
 ### Clone the repository
 
 ```bash
-$ git clone git@bitbucket.org:perxhealth/participant_portal.git
-$ cd participant_portal
+$ git clone git@github.com:perxhealth/react-ui.git
+$ cd react-ui
 ```
 
 ### Setup system dependencies

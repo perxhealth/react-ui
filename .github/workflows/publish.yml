@@ -61,5 +61,3 @@ jobs:
         run: |
           git remote set-url origin https://git:${GH_TOKEN}@github.com/${GH_REPO_NAME}.git
           pnpm run deploy-storybook
-
-        run: pnpm run deploy-storybook

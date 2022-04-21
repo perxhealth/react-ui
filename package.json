@@ -26,7 +26,6 @@
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static",
     "enforce-formatting": "prettier --list-different '{*/**/*, */*}.{ts,tsx}'",
     "semantic-release": "semantic-release"
   },

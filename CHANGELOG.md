@@ -1,3 +1,18 @@
+# [1.2.0](https://github.com/perxhealth/react-ui/compare/v1.1.0...v1.2.0) (2022-04-21)
+
+
+### Bug Fixes
+
+* **pencil:** Authenticate `gh-pages` so Storybook can be deployed ([fe6577f](https://github.com/perxhealth/react-ui/commit/fe6577fff9d13f10c8ddfff8c020422ac60b2768))
+* **pencil:** Set package's homepage to github instead of storybook ([de3bd64](https://github.com/perxhealth/react-ui/commit/de3bd64602f30087e81b7212db19ff7532c4cc1a))
+* **pencil:** Update legal entity in LICENSE ([1ce0579](https://github.com/perxhealth/react-ui/commit/1ce057966618f84784083030b434c451336335b3))
+* **pencil:** Update typo in README ([75ccb0f](https://github.com/perxhealth/react-ui/commit/75ccb0f0b77f705f0d43a52ef023804c818fe4c7))
+
+
+### Features
+
+* **pencil:** Add ConfirmationModal component ([e642710](https://github.com/perxhealth/react-ui/commit/e6427106bd622c2827a5aae1f100f7fbe852c614))
+
 # [1.1.0](https://github.com/perxhealth/react-ui/compare/v1.0.0...v1.1.0) (2022-04-13)
 
 

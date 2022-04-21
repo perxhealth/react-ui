@@ -11,9 +11,6 @@ jobs:
       matrix:
         node: ['16.x']
         os: [ubuntu-latest]
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     steps:
       - name: Checkout

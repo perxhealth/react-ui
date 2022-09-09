@@ -25,5 +25,5 @@ export const Default = Template.bind({})
 export const NoMessage = Template.bind({})
 
 Default.args = {
-    message: "Retrieving information"
+  message: "Retrieving information",
 }

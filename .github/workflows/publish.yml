@@ -52,7 +52,7 @@ jobs:
 
       - name: Publish Storybook
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO_NAME: ${{ github.repository }}
         run: |
           git remote set-url origin https://git:${GH_TOKEN}@github.com/${GH_REPO_NAME}.git
@@ -60,6 +60,6 @@ jobs:
 
       - name: Publish to NPM
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm semantic-release

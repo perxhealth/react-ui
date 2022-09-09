@@ -6,13 +6,13 @@ import { FullscreenLoading } from "../FullscreenLoading"
 describe("FullscreenLoading", () => {
   describe("when all information is provided", () => {
     beforeEach(() => {
-      render(
-        <FullscreenLoading message="Retrieving account information" />
-      )
+      render(<FullscreenLoading message="Retrieving account information" />)
     })
 
     it("displays correct header text", () => {
-      expect(screen.getByText("Retrieving account information")).toBeInTheDocument()
+      expect(
+        screen.getByText("Retrieving account information")
+      ).toBeInTheDocument()
     })
   })
 })

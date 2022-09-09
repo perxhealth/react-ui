@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/perxhealth/react-ui/compare/v1.2.0...v1.3.0) (2022-09-09)
+
+
+### Features
+
+* **pencil:** Add FullscreenLoading component ([2d91e35](https://github.com/perxhealth/react-ui/commit/2d91e35a864c9d4d812f6dc86a6401dc28437c78))
+
 # [1.2.0](https://github.com/perxhealth/react-ui/compare/v1.1.0...v1.2.0) (2022-04-21)
 
 

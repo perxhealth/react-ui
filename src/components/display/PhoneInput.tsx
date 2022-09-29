@@ -8,12 +8,12 @@ import {
   Select,
 } from "@chakra-ui/react"
 
-export interface Props {
+export interface PhoneInputProps {
   onChange: (phoneNumber: string) => void
   defaultCountry?: "AU" | "US"
 }
 
-export const PhoneInput = (props: Props) => {
+export const PhoneInput = (props: PhoneInputProps) => {
   const { onChange, defaultCountry = "AU" } = props
 
   const [country, setCountry] = React.useState(defaultCountry)

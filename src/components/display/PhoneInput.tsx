@@ -34,21 +34,21 @@ export const PhoneInput = (props: PhoneInputProps) => {
       if (/^[0-9\b]+$/.test(inputValue)) {
         if (isAustralia) {
           const phoneNumber = inputValue.startsWith("61")
-            ? inputValue.slice(2)
-            : inputValue
+            ? inputValue.slice(2, 11)
+            : inputValue.slice(0, 9)
           setNumber(phoneNumber)
-          onChange(phoneNumber)
+          onChange(`+61${phoneNumber}`)
         } else {
           const phoneNumber = inputValue.startsWith("1")
-            ? inputValue.slice(1)
-            : inputValue
+            ? inputValue.slice(1, 11)
+            : inputValue.slice(0, 10)
           setNumber(phoneNumber)
-          onChange(phoneNumber)
+          onChange(`+1${phoneNumber}`)
         }
       }
       inputValue === "" && setNumber(undefined)
     },
-    [isAustralia]
+    [isAustralia, onChange]
   )
 
   return (
@@ -67,8 +67,18 @@ export const PhoneInput = (props: PhoneInputProps) => {
           value={country}
           onChange={onCountrySelectChange}
         >
-          <option value="AU">AU 🇦🇺</option>
-          <option value="US">US 🇺🇸</option>
+          <option value="AU">
+            AU{" "}
+            <span role="img" aria-label="australia">
+              🇦🇺
+            </span>
+          </option>
+          <option value="US">
+            US{" "}
+            <span role="img" aria-label="united states">
+              🇺🇸
+            </span>
+          </option>
         </Select>
       </InputRightAddon>
     </InputGroup>

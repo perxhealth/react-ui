@@ -19,7 +19,7 @@ describe("PhoneInput", () => {
     })
 
     it("displays the correct country code", async () => {
-        expect(screen.getByText("+61")).toBeInTheDocument()
+      expect(screen.getByText("+61")).toBeInTheDocument()
     })
 
     it("returns a valid phone number", () => {
@@ -40,7 +40,7 @@ describe("PhoneInput", () => {
     })
 
     it("displays the correct country code", async () => {
-        expect(screen.getByText("+1")).toBeInTheDocument()
+      expect(screen.getByText("+1")).toBeInTheDocument()
     })
 
     it("returns a valid phone number", async () => {

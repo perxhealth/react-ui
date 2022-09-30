@@ -63,8 +63,9 @@ export const PhoneInput = (props: PhoneInputProps) => {
       <InputRightAddon p="0">
         <Select
           border="none"
-          _focus={{ border: "none" }}
           value={country}
+          aria-label="country select"
+          _focus={{ border: "none" }}
           onChange={onCountrySelectChange}
         >
           <option value="AU">

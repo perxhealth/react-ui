@@ -4,53 +4,67 @@ import user from "@testing-library/user-event"
 
 import { PhoneInput, CountryCode } from "../PhoneInput"
 
-afterEach(cleanup)
-
 describe("PhoneInput", () => {
   const onChange = jest.fn()
 
-  describe("when no default country is provided", () => {
+  describe("props", () => {
+    describe("initialCountryCode", () => {
+      describe("AU", () => {
+        // 1. render and expect australia's calling code
+        // 1. render and expect australia is selected in the dropdown
+      })
+
+      describe("US", () => {
+        // 1. render and expect usa's calling code
+        // 1. render and expect usa is selected in the dropdown
+      })
+    })
+  })
+
+  describe("sanitisation", () => {
     beforeEach(() => {
       render(<PhoneInput onChange={onChange} />)
     })
 
-    afterEach(() => {
-      jest.clearAllMocks()
+    describe("disallows spaces", () => {
+      // 1. type in a number with some spaces
+      // 2. ensure space is not visible in the textbox
+      // 3. ensure space was not included in onChange call
     })
 
-    it("displays the correct country code", async () => {
-      expect(screen.getByText("+61")).toBeInTheDocument()
-    })
-
-    it("returns a valid phone number", () => {
-      user.type(screen.getByRole("textbox"), "492916333")
-      expect(onChange).toHaveBeenCalledWith("+61492916333")
-    })
-
-    it("changes country code", () => {
-      user.selectOptions(
-        screen.getByLabelText("Select a country"),
-        "United States of America"
-      )
-      user.type(screen.getByRole("textbox"), "123456789103")
-      expect(onChange).toHaveBeenCalledWith("+11234567891")
+    describe("disallows a-z", () => {
+      // 1. type in a number with some letters
+      // 2. ensure letters are not visible in the textbox
+      // 3. ensure letters are not included in onChange call
     })
   })
 
-  describe("when default country is provided", () => {
+  describe("countries", () => {
     beforeEach(() => {
-      render(
-        <PhoneInput onChange={onChange} initialCountryCode={CountryCode.US} />
-      )
+      render(<PhoneInput onChange={onChange} />)
     })
 
-    it("displays the correct country code", async () => {
-      expect(screen.getByText("+1")).toBeInTheDocument()
+    describe("AU", () => {
+      beforeAll(() => {
+        user.selectOptions(screen.getByText("Select a country"), "AU")
+      })
+
+      it("shows the calling code", () => {
+        expect(screen.getByText("+61")).toBeInTheDocument()
+      })
+
+      describe("user enters number", () => {
+        it("reports back as it's typed", () => {
+          user.type(screen.getByRole("textbox"), "425078349")
+          expect(onChange).toHaveBeenCalledWith("+614")
+          expect(onChange).toHaveBeenCalledWith("+61425078349")
+        })
+      })
     })
 
-    it("returns a valid phone number", async () => {
-      user.type(screen.getByRole("textbox"), "123456789103")
-      expect(onChange).toHaveBeenCalledWith("+1123456")
+    describe("US", () => {
+      ...
     })
   })
 })
+

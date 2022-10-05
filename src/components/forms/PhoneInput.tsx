@@ -18,7 +18,9 @@ export enum CountryCode {
 
 export interface CountryData {
   emoji: string
-  callingCode: `+${string}`
+  // TODO use template literal type once we've migrated away from tsdx
+  // and outdated prettier
+  callingCode: string
   allowedNumberLength: number
   exampleNumber: string
 }

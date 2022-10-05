@@ -1,6 +1,8 @@
 import * as React from "react"
+import parsePhoneNumber from "libphonenumber-js"
 
 import {
+  InputProps,
   InputGroup,
   InputLeftAddon,
   Input,
@@ -8,78 +10,101 @@ import {
   Select,
 } from "@chakra-ui/react"
 
-export interface PhoneInputProps {
-  onChange: (phoneNumber: string) => void
-  defaultCountry?: "AU" | "US"
+export enum CountryName {
+  AU = "Australia",
+  US = "United States of America",
 }
 
-export const PhoneInput = (props: PhoneInputProps) => {
-  const { onChange, defaultCountry = "AU" } = props
+export type SelectableCountries = {
+  [key in CountryName]: {
+    callingCode: `+${string}`
+    emoji: string
+    examplePhoneNumber: string
+  }
+}
 
-  const [country, setCountry] = React.useState(defaultCountry)
-  const [number, setNumber] = React.useState()
+const countries: SelectableCountries = {
+  [CountryName.AU]: {
+    callingCode: "+61",
+    emoji: "🇦🇺",
+    examplePhoneNumber: "491 570 006",
+  },
+  [CountryName.US]: {
+    callingCode: "+1",
+    emoji: "🇺🇸",
+    examplePhoneNumber: "555 123 4567",
+  },
+}
 
-  const isAustralia = country === "AU"
+export interface Props extends InputProps {
+  initialCountryCode?: "AU" | "US"
+}
 
-  const onCountrySelectChange = React.useCallback(
+export const PhoneInput = (props: Props) => {
+  const { initialCountryCode = "AU", ...inputProps } = props
+
+  const [selectedCountry, setSelectedCountry] = React.useState<CountryName>(
+    CountryName[initialCountryCode]
+  )
+
+  const onCountryChange = React.useCallback(
     (event) => {
-      setCountry(event.target.value)
+      setSelectedCountry(event.target.value)
     },
-    [setCountry]
+    [setSelectedCountry]
   )
 
   const onInputChange = React.useCallback(
     (event) => {
       const inputValue = event.target.value
       if (/^[0-9\b]+$/.test(inputValue)) {
-        if (isAustralia) {
-          const phoneNumber = inputValue.startsWith("61")
-            ? inputValue.slice(2, 11)
-            : inputValue.slice(0, 9)
-          setNumber(phoneNumber)
-          onChange(`+61${phoneNumber}`)
-        } else {
-          const phoneNumber = inputValue.startsWith("1")
-            ? inputValue.slice(1, 11)
-            : inputValue.slice(0, 10)
-          setNumber(phoneNumber)
-          onChange(`+1${phoneNumber}`)
+        switch (selectedCountry) {
+          case CountryName.AU: {
+            const phoneNumber = parsePhoneNumber(inputValue, "AU")
+            const updatedEvent = { ...event, target: { ...event.target, value: phoneNumber }}
+            inputProps.onChange && inputProps.onChange(updatedEvent)
+            break;
+          }
+          case CountryName.US: {
+            const phoneNumber = parsePhoneNumber(inputValue, "US")
+            const updatedEvent = { ...event, target: { ...event.target, value: phoneNumber}}
+            inputProps.onChange && inputProps.onChange(updatedEvent)
+            break;
+          }
         }
       }
-      inputValue === "" && setNumber(undefined)
     },
-    [isAustralia, onChange]
+    [inputProps.onChange]
   )
 
   return (
     <InputGroup>
-      <InputLeftAddon children={isAustralia ? "+61" : "+1"} />
+      <InputLeftAddon children={countries[selectedCountry].callingCode} />
       <Input
-        placeholder={isAustralia ? "412 345 678" : "555 123 4567"}
+        placeholder={countries[selectedCountry].examplePhoneNumber}
         onChange={onInputChange}
-        value={number}
+        {...inputProps}
         bg="white"
       />
       <InputRightAddon p="0">
         <Select
+          onChange={onCountryChange}
           border="none"
-          value={country}
+          value={selectedCountry}
           aria-label="country select"
           _focus={{ border: "none" }}
-          onChange={onCountrySelectChange}
         >
-          <option value="AU">
-            AU{" "}
-            <span role="img" aria-label="australia">
-              🇦🇺
-            </span>
-          </option>
-          <option value="US">
-            US{" "}
-            <span role="img" aria-label="united states">
-              🇺🇸
-            </span>
-          </option>
+          {Object.entries(countries).map((country) => {
+            const [countryName, countryData] = country
+            return (
+              <option value={countryName} key={countryName}>
+                {countryName}{" "}
+                <span role="img" aria-label={countryName}>
+                  {countryData.emoji}
+                </span>
+              </option>
+            )
+          })}
         </Select>
       </InputRightAddon>
     </InputGroup>

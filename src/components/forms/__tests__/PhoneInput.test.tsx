@@ -36,7 +36,7 @@ describe("PhoneInput", () => {
 
   describe("when default country is provided", () => {
     beforeEach(() => {
-      render(<PhoneInput onChange={onChange} defaultCountry="US" />)
+      render(<PhoneInput onChange={onChange} initialCountryCode="US" />)
     })
 
     it("displays the correct country code", async () => {

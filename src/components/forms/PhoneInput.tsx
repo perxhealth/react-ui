@@ -17,6 +17,7 @@ export enum CountryName {
 export type SelectableCountries = {
   [key in CountryName]: {
     emoji: string
+    allowedLength: number
     callingCode: `+${string}`
     examplePhoneNumber: string
   }
@@ -25,11 +26,13 @@ export type SelectableCountries = {
 const countries: SelectableCountries = {
   [CountryName.AU]: {
     emoji: "🇦🇺",
+    allowedLength: 9,
     callingCode: "+61",
     examplePhoneNumber: "491 570 006",
   },
   [CountryName.US]: {
     emoji: "🇺🇸",
+    allowedLength: 10,
     callingCode: "+1",
     examplePhoneNumber: "555 123 4567",
   },
@@ -59,25 +62,9 @@ export const PhoneInput = (props: Props) => {
 
       if (!/^[0-9\b]+$/.test(inputValue)) event.preventDefault()
 
-      let phoneNumber
-      switch (selectedCountry) {
-        case CountryName.AU: {
-          phoneNumber = inputValue.startsWith("61")
-            ? `+${inputValue.slice(0, 11)}`
-            : `+61${inputValue.slice(0, 9)}`
-          break
-        }
-        case CountryName.US: {
-          phoneNumber = inputValue.startsWith("61")
-            ? `+${inputValue.slice(0, 11)}`
-            : `+61${inputValue.slice(0, 9)}`
-          break
-        }
-      }
-
       const updatedEvent = {
         ...event,
-        target: { ...event.target, value: phoneNumber || inputValue },
+        target: { ...event.target, value: `+${inputValue}` },
       }
 
       inputProps.onChange && inputProps.onChange(updatedEvent)
@@ -91,6 +78,7 @@ export const PhoneInput = (props: Props) => {
       <Input
         placeholder={countries[selectedCountry].examplePhoneNumber}
         onChange={onInputChange}
+        maxLength={countries[selectedCountry].allowedLength}
         {...inputProps}
         bg="white"
       />

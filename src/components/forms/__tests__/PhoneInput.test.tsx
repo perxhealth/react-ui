@@ -25,7 +25,7 @@ describe("PhoneInput", () => {
     it("returns a valid phone number", () => {
       user.type(screen.getByPlaceholderText("491 570 006"), "610g933s38994")
       expect(onChange).toHaveBeenCalledWith(
-        expect.objectContaining({value: "+61499833390"})
+        expect.objectContaining({ value: "+61499833390" })
       )
     })
 
@@ -36,7 +36,7 @@ describe("PhoneInput", () => {
       )
       user.type(screen.getByPlaceholderText("555 123 4567"), "123s456f789w103")
       expect(onChange).toHaveBeenCalledWith(
-        expect.objectContaining({value: "+13098765432"})
+        expect.objectContaining({ value: "+13098765432" })
       )
     })
   })
@@ -53,7 +53,7 @@ describe("PhoneInput", () => {
     it("returns a valid phone number", async () => {
       user.type(screen.getByPlaceholderText("555 123 4567"), "123s456f789w103")
       expect(onChange).toHaveBeenCalledWith(
-        expect.objectContaining({value: "+13098765432"})
+        expect.objectContaining({ value: "+13098765432" })
       )
     })
   })

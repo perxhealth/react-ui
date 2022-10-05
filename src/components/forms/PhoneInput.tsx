@@ -59,14 +59,11 @@ export const PhoneInput = (props: Props) => {
   const onInputChange = React.useCallback(
     (event) => {
       const inputValue = event.target.value
-
       if (!/^[0-9\b]+$/.test(inputValue)) event.preventDefault()
-
       const updatedEvent = {
         ...event,
         target: { ...event.target, value: `+${inputValue}` },
       }
-
       inputProps.onChange && inputProps.onChange(updatedEvent)
     },
     [inputProps.onChange]

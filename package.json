@@ -96,8 +96,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/perxhealth/react-ui.git"
-  },
-  "dependencies": {
-    "libphonenumber-js": "^1.10.13"
   }
 }

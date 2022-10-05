@@ -12,11 +12,12 @@ import {
 export type E164Number = string
 
 export enum CountryCode {
-  AU,
-  US,
+  AU = "AU",
+  US = "US",
 }
 
 export interface CountryData {
+  name: string
   emoji: string
   // TODO use template literal type once we've migrated away from tsdx
   // and outdated prettier
@@ -31,12 +32,14 @@ export type Countries = {
 
 const countries: Countries = {
   [CountryCode.AU]: {
+    name: "Australia",
     emoji: "🇦🇺",
     callingCode: "+61",
     allowedNumberLength: 9,
     exampleNumber: "491 570 006",
   },
   [CountryCode.US]: {
+    name: "United States of America",
     emoji: "🇺🇸",
     callingCode: "+1",
     allowedNumberLength: 10,
@@ -121,8 +124,8 @@ export const PhoneInput = (props: Props) => {
           {Object.entries(countries).map((country) => {
             const [code, data] = country
             return (
-              <option value={code} key={code}>
-                {data.emoji}
+              <option aria-label={data.name} value={code} key={code}>
+                {code} {data.emoji}
               </option>
             )
           })}

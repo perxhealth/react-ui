@@ -23,14 +23,21 @@ describe("PhoneInput", () => {
     })
 
     it("returns a valid phone number", () => {
-      user.type(screen.getByPlaceholderText("412 345 678"), "610g933s38994")
-      expect(onChange).toHaveBeenCalledWith("+61499833390")
+      user.type(screen.getByPlaceholderText("491 570 006"), "610g933s38994")
+      expect(onChange).toHaveBeenCalledWith(
+        expect.objectContaining({value: "+61499833390"})
+      )
     })
 
     it("changes country code", () => {
-      user.selectOptions(screen.getByLabelText("country select"), "US")
+      user.selectOptions(
+        screen.getByLabelText("country select"),
+        "United States of America"
+      )
       user.type(screen.getByPlaceholderText("555 123 4567"), "123s456f789w103")
-      expect(onChange).toHaveBeenCalledWith("+13098765432")
+      expect(onChange).toHaveBeenCalledWith(
+        expect.objectContaining({value: "+13098765432"})
+      )
     })
   })
 
@@ -45,7 +52,9 @@ describe("PhoneInput", () => {
 
     it("returns a valid phone number", async () => {
       user.type(screen.getByPlaceholderText("555 123 4567"), "123s456f789w103")
-      expect(onChange).toHaveBeenCalledWith("+13098765432")
+      expect(onChange).toHaveBeenCalledWith(
+        expect.objectContaining({value: "+13098765432"})
+      )
     })
   })
 })

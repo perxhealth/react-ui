@@ -3,8 +3,8 @@ import { Meta, Story } from "@storybook/react"
 
 import {
   PhoneInput,
-  PhoneInputProps,
-} from "../../../src/components/display/PhoneInput"
+  Props,
+} from "../../../src/components/forms/PhoneInput"
 
 const meta: Meta = {
   title: "Components/Display/PhoneInput",
@@ -17,7 +17,7 @@ const meta: Meta = {
 
 export default meta
 
-const Template: Story<PhoneInputProps> = (args) => <PhoneInput {...args} />
+const Template: Story<Props> = (args) => <PhoneInput {...args} />
 
 export const Default = Template.bind({})
 export const DefaultCountry = Template.bind({})

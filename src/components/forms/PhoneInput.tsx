@@ -1,5 +1,4 @@
 import * as React from "react"
-import parsePhoneNumber from "libphonenumber-js"
 
 import {
   InputProps,
@@ -17,21 +16,21 @@ export enum CountryName {
 
 export type SelectableCountries = {
   [key in CountryName]: {
-    callingCode: `+${string}`
     emoji: string
+    callingCode: `+${string}`
     examplePhoneNumber: string
   }
 }
 
 const countries: SelectableCountries = {
   [CountryName.AU]: {
-    callingCode: "+61",
     emoji: "🇦🇺",
+    callingCode: "+61",
     examplePhoneNumber: "491 570 006",
   },
   [CountryName.US]: {
-    callingCode: "+1",
     emoji: "🇺🇸",
+    callingCode: "+1",
     examplePhoneNumber: "555 123 4567",
   },
 }
@@ -57,22 +56,31 @@ export const PhoneInput = (props: Props) => {
   const onInputChange = React.useCallback(
     (event) => {
       const inputValue = event.target.value
-      if (/^[0-9\b]+$/.test(inputValue)) {
-        switch (selectedCountry) {
-          case CountryName.AU: {
-            const phoneNumber = parsePhoneNumber(inputValue, "AU")
-            const updatedEvent = { ...event, target: { ...event.target, value: phoneNumber }}
-            inputProps.onChange && inputProps.onChange(updatedEvent)
-            break;
-          }
-          case CountryName.US: {
-            const phoneNumber = parsePhoneNumber(inputValue, "US")
-            const updatedEvent = { ...event, target: { ...event.target, value: phoneNumber}}
-            inputProps.onChange && inputProps.onChange(updatedEvent)
-            break;
-          }
+
+      if (!/^[0-9\b]+$/.test(inputValue)) event.preventDefault()
+
+      let phoneNumber
+      switch (selectedCountry) {
+        case CountryName.AU: {
+          phoneNumber = inputValue.startsWith("61")
+            ? `+${inputValue.slice(0, 11)}`
+            : `+61${inputValue.slice(0, 9)}`
+          break
+        }
+        case CountryName.US: {
+          phoneNumber = inputValue.startsWith("61")
+            ? `+${inputValue.slice(0, 11)}`
+            : `+61${inputValue.slice(0, 9)}`
+          break
         }
       }
+
+      const updatedEvent = {
+        ...event,
+        target: { ...event.target, value: phoneNumber || inputValue },
+      }
+
+      inputProps.onChange && inputProps.onChange(updatedEvent)
     },
     [inputProps.onChange]
   )

@@ -38,12 +38,13 @@ const countries: SelectableCountries = {
   },
 }
 
-export interface Props extends InputProps {
+export interface Props extends Omit<InputProps, "maxLength"> {
   initialCountryCode?: "AU" | "US"
 }
 
 export const PhoneInput = (props: Props) => {
-  const { initialCountryCode = "AU", ...inputProps } = props
+  const { initialCountryCode = "AU", ...rest } = props
+  const { onChange = () => {}, ...inputProps } = rest
 
   const [selectedCountry, setSelectedCountry] = React.useState<CountryName>(
     CountryName[initialCountryCode]
@@ -58,15 +59,22 @@ export const PhoneInput = (props: Props) => {
 
   const onInputChange = React.useCallback(
     (event) => {
-      const inputValue = event.target.value
-      if (!/^[0-9\b]+$/.test(inputValue)) event.preventDefault()
-      const updatedEvent = {
+      // Format the entered number
+      const { callingCode } = countries[selectedCountry]
+      const formattedNumber = `${callingCode}${event.target.value.replace(
+        callingCode,
+        ""
+      )}`
+      // Create a new input event with a formatted version of the number
+      onChange({
         ...event,
-        target: { ...event.target, value: `+${inputValue}` },
-      }
-      inputProps.onChange && inputProps.onChange(updatedEvent)
+        target: {
+          ...event.target,
+          value: formattedNumber,
+        },
+      })
     },
-    [inputProps.onChange]
+    [onChange, selectedCountry]
   )
 
   return (
@@ -74,9 +82,9 @@ export const PhoneInput = (props: Props) => {
       <InputLeftAddon children={countries[selectedCountry].callingCode} />
       <Input
         placeholder={countries[selectedCountry].examplePhoneNumber}
-        onChange={onInputChange}
-        maxLength={countries[selectedCountry].allowedLength}
         {...inputProps}
+        maxLength={countries[selectedCountry].allowedLength}
+        onChange={onInputChange}
         bg="white"
       />
       <InputRightAddon p="0">
@@ -88,13 +96,10 @@ export const PhoneInput = (props: Props) => {
           _focus={{ border: "none" }}
         >
           {Object.entries(countries).map((country) => {
-            const [countryName, countryData] = country
+            const [countryName] = country
             return (
               <option value={countryName} key={countryName}>
-                {countryName}{" "}
-                <span role="img" aria-label={countryName}>
-                  {countryData.emoji}
-                </span>
+                {countryName}
               </option>
             )
           })}

@@ -1,105 +1,126 @@
 import * as React from "react"
 
 import {
-  InputProps,
+  Input,
   InputGroup,
   InputLeftAddon,
-  Input,
   InputRightAddon,
+  InputProps as ChakraInputProps,
   Select,
 } from "@chakra-ui/react"
 
-export enum CountryName {
-  AU = "Australia",
-  US = "United States of America",
+export type E164Number = string
+
+export enum CountryCode {
+  AU,
+  US,
 }
 
-export type SelectableCountries = {
-  [key in CountryName]: {
-    emoji: string
-    allowedLength: number
-    callingCode: `+${string}`
-    examplePhoneNumber: string
-  }
+export interface CountryData {
+  emoji: string
+  callingCode: `+${string}`
+  allowedNumberLength: number
+  exampleNumber: string
 }
 
-const countries: SelectableCountries = {
-  [CountryName.AU]: {
+export type Countries = {
+  [key in CountryCode]: CountryData
+}
+
+const countries: Countries = {
+  [CountryCode.AU]: {
     emoji: "🇦🇺",
-    allowedLength: 9,
     callingCode: "+61",
-    examplePhoneNumber: "491 570 006",
+    allowedNumberLength: 9,
+    exampleNumber: "491 570 006",
   },
-  [CountryName.US]: {
+  [CountryCode.US]: {
     emoji: "🇺🇸",
-    allowedLength: 10,
     callingCode: "+1",
-    examplePhoneNumber: "555 123 4567",
+    allowedNumberLength: 10,
+    exampleNumber: "555 123 4567",
   },
 }
 
-export interface Props extends Omit<InputProps, "maxLength"> {
-  initialCountryCode?: "AU" | "US"
+export type InputProps = Omit<
+  ChakraInputProps,
+  "onChange" | "maxLength" | "value"
+>
+
+export interface Props extends InputProps {
+  onChange?: (number: E164Number) => void
+  initialCountryCode?: CountryCode
 }
 
 export const PhoneInput = (props: Props) => {
-  const { initialCountryCode = "AU", ...rest } = props
-  const { onChange = () => {}, ...inputProps } = rest
+  // Destructure props to use directly
+  const {
+    onChange = () => {},
+    initialCountryCode = CountryCode.AU,
+    ...inputProps
+  } = props
 
-  const [selectedCountry, setSelectedCountry] = React.useState<CountryName>(
-    CountryName[initialCountryCode]
+  // Keep a piece of state to track the user's phone number input
+  const [number, setNumber] = React.useState<string>("")
+
+  // Keep a piece of state to track the user's country selection
+  const [currentCountry, setCurrentCountry] = React.useState<CountryData>(
+    countries[initialCountryCode]
   )
 
+  // Persist the user's country selection to state
   const onCountryChange = React.useCallback(
     (event) => {
-      setSelectedCountry(event.target.value)
+      setCurrentCountry(countries[event.target.value as CountryCode])
+      setNumber("")
     },
-    [setSelectedCountry]
+    [setCurrentCountry, setNumber]
   )
 
+  // Handle when the user enters a new character by sanitising their input
+  // and proxying the then E164 formatted number to `props.onChange`
   const onInputChange = React.useCallback(
-    (event) => {
-      // Format the entered number
-      const { callingCode } = countries[selectedCountry]
-      const formattedNumber = `${callingCode}${event.target.value.replace(
-        callingCode,
-        ""
-      )}`
-      // Create a new input event with a formatted version of the number
-      onChange({
-        ...event,
-        target: {
-          ...event.target,
-          value: formattedNumber,
-        },
-      })
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = event.target
+
+      // Allow only numeric input
+      if (value === "" || /[0-9]$/.test(value)) {
+        // Persist the internally controlled value
+        setNumber(value)
+        // Format the number as E164 and send it along
+        onChange(`${currentCountry.callingCode}${value}`)
+      } else {
+        event.preventDefault()
+      }
     },
-    [onChange, selectedCountry]
+    [setNumber, currentCountry, onChange]
   )
 
   return (
     <InputGroup>
-      <InputLeftAddon children={countries[selectedCountry].callingCode} />
+      <InputLeftAddon fontFamily="monospace">
+        {currentCountry.callingCode}
+      </InputLeftAddon>
+
       <Input
-        placeholder={countries[selectedCountry].examplePhoneNumber}
         {...inputProps}
-        maxLength={countries[selectedCountry].allowedLength}
+        maxLength={currentCountry.allowedNumberLength}
         onChange={onInputChange}
-        bg="white"
+        value={number}
       />
-      <InputRightAddon p="0">
+
+      <InputRightAddon padding="0">
         <Select
-          onChange={onCountryChange}
           border="none"
-          value={selectedCountry}
-          aria-label="country select"
-          _focus={{ border: "none" }}
+          bg="transparent"
+          aria-label="Select a country"
+          onChange={onCountryChange}
         >
           {Object.entries(countries).map((country) => {
-            const [countryName] = country
+            const [code, data] = country
             return (
-              <option value={countryName} key={countryName}>
-                {countryName}
+              <option value={code} key={code}>
+                {data.emoji}
               </option>
             )
           })}

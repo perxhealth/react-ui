@@ -1,13 +1,15 @@
 import * as React from "react"
 import { Meta, Story } from "@storybook/react"
+import { Container } from "@chakra-ui/react"
 
 import {
   PhoneInput,
   Props,
+  CountryCode,
 } from "../../../src/components/forms/PhoneInput"
 
 const meta: Meta = {
-  title: "Components/Display/PhoneInput",
+  title: "Components/Forms/PhoneInput",
   component: PhoneInput,
   argTypes: {},
   parameters: {
@@ -17,11 +19,14 @@ const meta: Meta = {
 
 export default meta
 
-const Template: Story<Props> = (args) => <PhoneInput {...args} />
+const Template: Story<Props> = (args) => (
+  <Container maxW="container.sm" py="6">
+    <PhoneInput {...args} />
+  </Container>
+)
 
 export const Default = Template.bind({})
-export const DefaultCountry = Template.bind({})
 
-DefaultCountry.args = {
-  defaultCountry: "US",
+Default.args = {
+  initialCountryCode: CountryCode.AU,
 }

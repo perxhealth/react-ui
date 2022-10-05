@@ -39,6 +39,11 @@ export const extendedTheme: any = extendTheme({
         fontSize: "xl",
       },
     },
+    Input: {
+      baseStyle: {
+        bg: "white",
+      },
+    },
     Th: {
       baseStyle: {
         fontWeight: "normal",

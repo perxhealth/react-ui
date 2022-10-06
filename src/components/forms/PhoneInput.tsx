@@ -19,6 +19,7 @@ export enum CountryCode {
 export interface CountryData {
   name: string
   emoji: string
+  countryCode: string
   // TODO use template literal type once we've migrated away from tsdx
   // and outdated prettier
   callingCode: string
@@ -34,6 +35,7 @@ const countries: Countries = {
   [CountryCode.AU]: {
     name: "Australia",
     emoji: "🇦🇺",
+    countryCode: "AU",
     callingCode: "+61",
     allowedNumberLength: 9,
     exampleNumber: "491 570 006",
@@ -41,6 +43,7 @@ const countries: Countries = {
   [CountryCode.US]: {
     name: "United States of America",
     emoji: "🇺🇸",
+    countryCode: "US",
     callingCode: "+1",
     allowedNumberLength: 10,
     exampleNumber: "555 123 4567",
@@ -119,13 +122,14 @@ export const PhoneInput = (props: Props) => {
           border="none"
           bg="transparent"
           aria-label="Select a country"
+          defaultValue={currentCountry.countryCode}
           onChange={onCountryChange}
         >
-          {Object.entries(countries).map((country) => {
-            const [code, data] = country
+          {Object.values(countries).map((country) => {
+            const { countryCode, name, emoji } = country
             return (
-              <option aria-label={data.name} value={code} key={code}>
-                {code} {data.emoji}
+              <option aria-label={name} value={countryCode} key={countryCode}>
+                {countryCode} {emoji}
               </option>
             )
           })}

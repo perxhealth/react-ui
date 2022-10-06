@@ -1,5 +1,5 @@
 import * as React from "react"
-import { screen, render, cleanup } from "@testing-library/react"
+import { screen, render } from "@testing-library/react"
 import user from "@testing-library/user-event"
 
 import { PhoneInput, CountryCode } from "../PhoneInput"
@@ -10,13 +10,47 @@ describe("PhoneInput", () => {
   describe("props", () => {
     describe("initialCountryCode", () => {
       describe("AU", () => {
-        // 1. render and expect australia's calling code
-        // 1. render and expect australia is selected in the dropdown
+        beforeEach(() => {
+          render(
+            <PhoneInput
+              onChange={onChange}
+              initialCountryCode={CountryCode.AU}
+            />
+          )
+        })
+
+        it("shows Australia's calling code", () => {
+          expect(screen.getByText("+61")).toBeInTheDocument()
+        })
+
+        it("has Australia selected in dropdown", () => {
+          const selectComponent = screen.getByRole("option", {
+            name: "Australia",
+          }) as HTMLOptionElement
+          expect(selectComponent.selected).toBe(true)
+        })
       })
 
       describe("US", () => {
-        // 1. render and expect usa's calling code
-        // 1. render and expect usa is selected in the dropdown
+        beforeEach(() => {
+          render(
+            <PhoneInput
+              onChange={onChange}
+              initialCountryCode={CountryCode.US}
+            />
+          )
+        })
+
+        it("shows United States calling code", () => {
+          expect(screen.getByText("+1")).toBeInTheDocument()
+        })
+
+        it("has United States selected in dropdown", () => {
+          const selectComponent = screen.getByRole("option", {
+            name: "United States of America",
+          }) as HTMLOptionElement
+          expect(selectComponent.selected).toBe(true)
+        })
       })
     })
   })
@@ -45,8 +79,8 @@ describe("PhoneInput", () => {
     })
 
     describe("AU", () => {
-      beforeAll(() => {
-        user.selectOptions(screen.getByText("Select a country"), "AU")
+      beforeEach(() => {
+        user.selectOptions(screen.getByLabelText("Select a country"), "AU 🇦🇺")
       })
 
       it("shows the calling code", () => {
@@ -63,8 +97,21 @@ describe("PhoneInput", () => {
     })
 
     describe("US", () => {
-      ...
+      beforeEach(() => {
+        user.selectOptions(screen.getByLabelText("Select a country"), "US 🇺🇸")
+      })
+
+      it("shows the calling code", () => {
+        expect(screen.getByText("+1")).toBeInTheDocument()
+      })
+
+      describe("user enters number", () => {
+        it("reports back as it's typed", () => {
+          user.type(screen.getByRole("textbox"), "5559876543")
+          expect(onChange).toHaveBeenCalledWith("+15")
+          expect(onChange).toHaveBeenCalledWith("+15559876543")
+        })
+      })
     })
   })
 })
-

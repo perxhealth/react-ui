@@ -7,6 +7,8 @@ import { PhoneInput, CountryCode } from "../PhoneInput"
 describe("PhoneInput", () => {
   const onChange = jest.fn()
 
+  afterEach(() => onChange.mockClear())
+
   describe("props", () => {
     describe("initialCountryCode", () => {
       describe("AU", () => {
@@ -61,15 +63,33 @@ describe("PhoneInput", () => {
     })
 
     describe("disallows spaces", () => {
-      // 1. type in a number with some spaces
-      // 2. ensure space is not visible in the textbox
-      // 3. ensure space was not included in onChange call
+      beforeEach(() => {
+        user.type(screen.getByRole("textbox"), "425 078 349")
+      })
+
+      it("doesn't show spaces in text box", () => {
+        const input = screen.getByRole("textbox") as HTMLInputElement
+        expect(input.value).toBe("425078349")
+      })
+
+      it("doesn't call onChange with spaces", () => {
+        expect(onChange).toHaveBeenCalledWith("+61425078349")
+      })
     })
 
     describe("disallows a-z", () => {
-      // 1. type in a number with some letters
-      // 2. ensure letters are not visible in the textbox
-      // 3. ensure letters are not included in onChange call
+      beforeEach(() => {
+        user.type(screen.getByRole("textbox"), "425s078d349")
+      })
+
+      it("doesn't show letters in text box", () => {
+        const input = screen.getByRole("textbox") as HTMLInputElement
+        expect(input.value).toBe("425078349")
+      })
+
+      it("doesn't call onChange with letters", () => {
+        expect(onChange).toHaveBeenCalledWith("+61425078349")
+      })
     })
   })
 

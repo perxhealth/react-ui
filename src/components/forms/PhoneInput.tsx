@@ -92,7 +92,7 @@ export const PhoneInput = (props: Props) => {
       const { value } = event.target
 
       // Allow only numeric input
-      if (value === "" || /[0-9]$/.test(value)) {
+      if (value === "" || /^[0-9\b]+$/.test(value)) {
         // Persist the internally controlled value
         setNumber(value)
         // Format the number as E164 and send it along

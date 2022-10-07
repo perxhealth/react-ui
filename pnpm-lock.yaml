@@ -28,6 +28,7 @@ specifiers:
   dts-cli: ^1.6.0
   framer-motion: ^6
   gh-pages: ^3.2.3
+  prettier: ^2.7.1
   react: ^17.0.2
   react-dom: ^17.0.2
   react-is: ^17.0.2
@@ -35,6 +36,9 @@ specifiers:
   size-limit: ^7.0.8
   tslib: ^2.3.1
   typescript: ^4.6.2
+
+dependencies:
+  prettier: 2.7.1
 
 devDependencies:
   '@babel/core': 7.17.9
@@ -9897,7 +9901,7 @@ packages:
       eslint-plugin-import: 2.26.0_eslint@8.24.0
       eslint-plugin-jest: 26.9.0_2ae9370f7997d376a3952d2b223da3f1
       eslint-plugin-jsx-a11y: 6.6.1_eslint@8.24.0
-      eslint-plugin-prettier: 4.2.1_eb9969726d8d24186786a45c01a61832
+      eslint-plugin-prettier: 4.2.1_115bdbfa8939cd9aef9ad8fcafc759cb
       eslint-plugin-react: 7.31.8_eslint@8.24.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.24.0
       eslint-plugin-testing-library: 5.7.2_eslint@8.24.0+typescript@4.6.3
@@ -9911,7 +9915,7 @@ packages:
       ora: 5.4.1
       pascal-case: 3.1.2
       postcss: 8.4.17
-      prettier: 2.6.2
+      prettier: 2.7.1
       progress-estimator: 0.3.0
       regenerator-runtime: 0.13.9
       rollup: 2.79.1
@@ -10569,7 +10573,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_eb9969726d8d24186786a45c01a61832:
+  /eslint-plugin-prettier/4.2.1_115bdbfa8939cd9aef9ad8fcafc759cb:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -10582,7 +10586,7 @@ packages:
     dependencies:
       eslint: 8.24.0
       eslint-config-prettier: 8.5.0_eslint@8.24.0
-      prettier: 2.6.2
+      prettier: 2.7.1
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -15406,16 +15410,15 @@ packages:
     dev: true
 
   /prettier/2.3.0:
-    resolution: {integrity: sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==}
+    resolution: {integrity: sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/prettier/-/prettier-2.3.0.tgz}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
 
-  /prettier/2.6.2:
-    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==, tarball: https://perxhealth-651180711168.d.codeartifact.ap-southeast-2.amazonaws.com:443/npm/web/prettier/-/prettier-2.7.1.tgz}
     engines: {node: '>=10.13.0'}
     hasBin: true
-    dev: true
 
   /pretty-error/2.1.2:
     resolution: {integrity: sha512-EY5oDzmsX5wvuynAByrmY0P0hcp+QpnAKbJng2A2MPjVKXCxrDSUkzghVJ4ZGPIv+JC4gX8fPUWscC0RtjsWGw==}

@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/perxhealth/react-ui/compare/v1.3.0...v1.3.1) (2022-10-10)
+
+
+### Bug Fixes
+
+* export overlay components ([b9289e1](https://github.com/perxhealth/react-ui/commit/b9289e1f0f0f1251df619dcd05f9ab8714754d65))
+
 # [1.3.0](https://github.com/perxhealth/react-ui/compare/v1.2.0...v1.3.0) (2022-09-09)
 
 

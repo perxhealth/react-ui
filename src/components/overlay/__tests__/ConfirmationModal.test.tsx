@@ -16,8 +16,7 @@ describe("ConfirmationModal", () => {
           onConfirm={onConfirm}
           onCancel={onCancel}
           isOpen={true}
-          headerText="Please Confirm"
-        >
+          headerText="Please Confirm">
           <Text>Are you sure you want to confirm?</Text>
         </ConfirmationModal>
       )
@@ -50,8 +49,7 @@ describe("ConfirmationModal", () => {
         <ConfirmationModal
           onConfirm={onConfirm}
           onCancel={onCancel}
-          isOpen={true}
-        >
+          isOpen={true}>
           <Text>Please make your selection.</Text>
         </ConfirmationModal>
       )

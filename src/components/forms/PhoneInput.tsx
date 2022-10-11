@@ -55,12 +55,12 @@ export type InputProps = Omit<
   "onChange" | "maxLength" | "value"
 >
 
-export interface Props extends InputProps {
+export interface PhoneInputProps extends InputProps {
   onChange?: (number: E164Number) => void
   initialCountryCode?: CountryCode
 }
 
-export const PhoneInput = (props: Props) => {
+export const PhoneInput = (props: PhoneInputProps) => {
   // Destructure props to use directly
   const {
     onChange = () => {},

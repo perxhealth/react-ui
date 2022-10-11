@@ -64,31 +64,31 @@ describe("PhoneInput", () => {
 
     describe("disallows spaces", () => {
       beforeEach(() => {
-        user.type(screen.getByRole("textbox"), "425 078 349")
+        user.type(screen.getByRole("textbox"), "491 570 156")
       })
 
       it("doesn't show spaces in text box", () => {
         const input = screen.getByRole("textbox") as HTMLInputElement
-        expect(input.value).toBe("425078349")
+        expect(input.value).toBe("491570156")
       })
 
       it("doesn't call onChange with spaces", () => {
-        expect(onChange).toHaveBeenCalledWith("+61425078349")
+        expect(onChange).toHaveBeenCalledWith("+61491570156")
       })
     })
 
     describe("disallows a-z", () => {
       beforeEach(() => {
-        user.type(screen.getByRole("textbox"), "425s078d349")
+        user.type(screen.getByRole("textbox"), "491d570s156")
       })
 
       it("doesn't show letters in text box", () => {
         const input = screen.getByRole("textbox") as HTMLInputElement
-        expect(input.value).toBe("425078349")
+        expect(input.value).toBe("491570156")
       })
 
       it("doesn't call onChange with letters", () => {
-        expect(onChange).toHaveBeenCalledWith("+61425078349")
+        expect(onChange).toHaveBeenCalledWith("+61491570156")
       })
     })
   })
@@ -109,9 +109,9 @@ describe("PhoneInput", () => {
 
       describe("user enters number", () => {
         it("reports back as it's typed", () => {
-          user.type(screen.getByRole("textbox"), "425078349")
+          user.type(screen.getByRole("textbox"), "491570156")
           expect(onChange).toHaveBeenCalledWith("+614")
-          expect(onChange).toHaveBeenCalledWith("+61425078349")
+          expect(onChange).toHaveBeenCalledWith("+61491570156")
         })
       })
     })

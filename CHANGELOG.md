@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/perxhealth/react-ui/compare/v1.3.1...v1.4.0) (2022-10-11)
+
+
+### Bug Fixes
+
+* export overlay ([67ffb5a](https://github.com/perxhealth/react-ui/commit/67ffb5a9661f5d9719a1987e11d72b6bf0f04551))
+
+
+### Features
+
+* add table skeleton loading components ([2b016f7](https://github.com/perxhealth/react-ui/commit/2b016f7b07485f52871600bfa7b8d4a5af5b62c7))
+
 ## [1.3.1](https://github.com/perxhealth/react-ui/compare/v1.3.0...v1.3.1) (2022-10-10)
 
 

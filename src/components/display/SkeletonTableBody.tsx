@@ -20,7 +20,5 @@ export const SkeletonTableBody = (props: SkeletonTableBodyProps) => {
   }, [rowCount, columnCount])
 
   // Return the rows while also applying a fade-out gradient overlay
-  return (
-    <Tbody>{skeletonTableRows}</Tbody>
-  )
+  return <Tbody>{skeletonTableRows}</Tbody>
 }

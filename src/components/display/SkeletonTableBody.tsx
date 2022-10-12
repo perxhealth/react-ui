@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Tbody, Table } from "@chakra-ui/react"
+import { Tbody } from "@chakra-ui/react"
 
 import { SkeletonTableRow } from "./SkeletonTableRow"
 
@@ -21,8 +21,6 @@ export const SkeletonTableBody = (props: SkeletonTableBodyProps) => {
 
   // Return the rows while also applying a fade-out gradient overlay
   return (
-    <Table>
-      <Tbody>{skeletonTableRows}</Tbody>
-    </Table>
+    <Tbody>{skeletonTableRows}</Tbody>
   )
 }

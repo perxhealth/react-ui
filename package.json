@@ -26,7 +26,8 @@
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "enforce-formatting": "prettier --list-different '{*/**/*, */*}.{ts,tsx}'",
+    "format": "prettier --write '{*/**/*, */*}.{ts,tsx}'",
+    "format-check": "prettier -c '{*/**/*, */*}.{ts,tsx}'",
     "semantic-release": "semantic-release"
   },
   "prettier": {

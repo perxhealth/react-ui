@@ -7,8 +7,6 @@ import { PhoneInput, CountryCode } from "../PhoneInput"
 describe("PhoneInput", () => {
   const onChange = jest.fn()
 
-  afterEach(() => onChange.mockClear())
-
   describe("props", () => {
     describe("initialCountryCode", () => {
       describe("AU", () => {

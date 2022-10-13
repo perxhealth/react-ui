@@ -24,10 +24,10 @@ describe("PhoneInput", () => {
         })
 
         it("has Australia selected in dropdown", () => {
-          const selectComponent = screen.getByRole("option", {
+          const option = screen.getByRole("option", {
             name: "Australia",
           }) as HTMLOptionElement
-          expect(selectComponent.selected).toBe(true)
+          expect(option.selected).toBe(true)
         })
       })
 
@@ -46,10 +46,10 @@ describe("PhoneInput", () => {
         })
 
         it("has United States selected in dropdown", () => {
-          const selectComponent = screen.getByRole("option", {
+          const option = screen.getByRole("option", {
             name: "United States of America",
           }) as HTMLOptionElement
-          expect(selectComponent.selected).toBe(true)
+          expect(option.selected).toBe(true)
         })
       })
     })

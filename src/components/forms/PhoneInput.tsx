@@ -20,10 +20,8 @@ export interface CountryData {
   name: string
   emoji: string
   countryCode: string
-  // TODO use template literal type once we've migrated away from tsdx
-  // and outdated prettier
-  callingCode: string
-  allowedNumberLength: number
+  callingCode: `+${string}`
+  maxNumberLength: number
   exampleNumber: string
 }
 
@@ -37,7 +35,7 @@ const countries: Countries = {
     emoji: "🇦🇺",
     countryCode: "AU",
     callingCode: "+61",
-    allowedNumberLength: 9,
+    maxNumberLength: 9,
     exampleNumber: "491 570 006",
   },
   [CountryCode.US]: {
@@ -45,7 +43,7 @@ const countries: Countries = {
     emoji: "🇺🇸",
     countryCode: "US",
     callingCode: "+1",
-    allowedNumberLength: 10,
+    maxNumberLength: 10,
     exampleNumber: "555 123 4567",
   },
 }
@@ -112,7 +110,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
 
       <Input
         {...inputProps}
-        maxLength={currentCountry.allowedNumberLength}
+        maxLength={currentCountry.maxNumberLength}
         onChange={onInputChange}
         value={number}
       />

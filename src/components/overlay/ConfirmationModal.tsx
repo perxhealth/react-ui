@@ -33,7 +33,7 @@ export const ConfirmationModal = (props: ConfirmationModalProps) => {
     onConfirm,
     onCancel,
     initialFocusRef,
-    isOpen = true,
+    isOpen,
     headerText = "Are you sure?",
     isLoading = false,
     children,

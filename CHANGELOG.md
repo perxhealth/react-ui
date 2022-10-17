@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/perxhealth/react-ui/compare/v1.4.0...v1.4.1) (2022-10-17)
+
+
+### Bug Fixes
+
+* Don't embed Table in row either, update stories ([5294b09](https://github.com/perxhealth/react-ui/commit/5294b096ed6ff6b1a82388658283664dac23ba45))
+* Don't render skeleton rows in their own Table component ([330dd56](https://github.com/perxhealth/react-ui/commit/330dd5628cbfb680264817433134b24f8f931a00))
+* Linting ([d452985](https://github.com/perxhealth/react-ui/commit/d452985f0b37cc4957db11348a006f7a5858ce35))
+
 # [1.4.0](https://github.com/perxhealth/react-ui/compare/v1.3.1...v1.4.0) (2022-10-11)
 
 

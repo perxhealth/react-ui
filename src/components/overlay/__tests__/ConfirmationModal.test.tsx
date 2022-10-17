@@ -46,6 +46,18 @@ describe("ConfirmationModal", () => {
       })
     })
 
+    describe("initialFocusRef", () => {
+      it("sets focuses on the provided ref", async () => {
+        const ref = React.createRef<HTMLButtonElement>()
+
+        renderComponent({ initialFocusRef: ref, children: <form><button>First Button</button><button ref={ref}>Second Button</button></form>})
+
+        await waitFor(() => {
+          expect(screen.getByText("Second Button")).toHaveFocus()
+        })
+      })
+    })
+
     describe("isOpen", () => {
       describe("is true", () => {
         beforeEach(() => renderComponent({ isOpen: true }))

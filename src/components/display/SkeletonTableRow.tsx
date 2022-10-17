@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Stack, Skeleton, Tr, Td, Table } from "@chakra-ui/react"
+import { Stack, Skeleton, Tr, Td } from "@chakra-ui/react"
 
 export interface SkeletonTableRowProps {
   columnCount?: number
@@ -20,14 +20,12 @@ export const SkeletonTableRow = (props: SkeletonTableRowProps) => {
   }, [columnCount, columnWidth])
 
   return (
-    <Table>
-      <Tr>
-        <Td colSpan={100}>
-          <Stack direction="row" w="100%">
-            {columns}
-          </Stack>
-        </Td>
-      </Tr>
-    </Table>
+    <Tr>
+      <Td colSpan={100}>
+        <Stack direction="row" w="100%">
+          {columns}
+        </Stack>
+      </Td>
+    </Tr>
   )
 }

@@ -64,14 +64,16 @@ export const ConfirmationModal = (props: ConfirmationModalProps) => {
               variant="outline"
               bg="white"
               isDisabled={isLoading}
-              onClick={onCancel}>
+              onClick={onCancel}
+            >
               Cancel
             </Button>
             <Button
               size="lg"
               isLoading={isLoading}
               onClick={onConfirm}
-              rightIcon={<Icon as={HiOutlineCheckCircle} w={6} h={6} />}>
+              rightIcon={<Icon as={HiOutlineCheckCircle} w={6} h={6} />}
+            >
               Confirm
             </Button>
           </Stack>

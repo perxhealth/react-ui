@@ -34,9 +34,9 @@ export const ConfirmationModal = (props: ConfirmationModalProps) => {
     onCancel,
     initialFocusRef,
     isOpen,
+    children,
     headerText = "Are you sure?",
     isLoading = false,
-    children,
   } = props
 
   // Retrieve gray from the theme for border colours

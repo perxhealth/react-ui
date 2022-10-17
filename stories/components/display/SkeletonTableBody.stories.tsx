@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Table } from "@chakra-ui/react"
 import { Meta, Story } from "@storybook/react"
 
 import {
@@ -18,7 +19,9 @@ const meta: Meta = {
 export default meta
 
 const Template: Story<SkeletonTableBodyProps> = (args) => (
-  <SkeletonTableBody {...args} />
+  <Table>
+    <SkeletonTableBody {...args} />
+  </Table>
 )
 
 export const Default = Template.bind({})

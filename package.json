@@ -36,11 +36,6 @@
     "trailingComma": "es5",
     "arrowParens": "always"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
   "size-limit": [
     {
       "path": "dist/react-ui.cjs.production.min.js",

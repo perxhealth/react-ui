@@ -42,8 +42,7 @@ const Template: Story<ConfirmationModalProps> = (args) => {
   return (
     <Center py="12" h="100%">
       <Button onClick={disclosure.onOpen}>Click to open modal</Button>
-      <ConfirmationModal isOpen={disclosure.isOpen} {...args}
-      />
+      <ConfirmationModal isOpen={disclosure.isOpen} {...args} />
     </Center>
   )
 }

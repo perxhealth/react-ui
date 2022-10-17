@@ -20,13 +20,11 @@ describe("ConfirmationModal", () => {
       onConfirm,
       onCancel,
       isOpen: true,
-      children: <p>ConfirmationModal body content</p>
+      children: <p>ConfirmationModal body content</p>,
     }
 
     // Merge them with `props` and render the modal
-    return render(
-      <ConfirmationModal {...defaultProps} {...props} />
-    )
+    return render(<ConfirmationModal {...defaultProps} {...props} />)
   }
 
   describe("props", () => {
@@ -50,7 +48,15 @@ describe("ConfirmationModal", () => {
       it("sets focuses on the provided ref", async () => {
         const ref = React.createRef<HTMLButtonElement>()
 
-        renderComponent({ initialFocusRef: ref, children: <form><button>First Button</button><button ref={ref}>Second Button</button></form>})
+        renderComponent({
+          initialFocusRef: ref,
+          children: (
+            <form>
+              <button>First Button</button>
+              <button ref={ref}>Second Button</button>
+            </form>
+          ),
+        })
 
         await waitFor(() => {
           expect(screen.getByText("Second Button")).toHaveFocus()

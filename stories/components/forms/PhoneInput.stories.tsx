@@ -4,7 +4,7 @@ import { Container } from "@chakra-ui/react"
 
 import {
   PhoneInput,
-  Props,
+  PhoneInputProps,
   CountryCode,
 } from "../../../src/components/forms/PhoneInput"
 
@@ -19,14 +19,20 @@ const meta: Meta = {
 
 export default meta
 
-const Template: Story<Props> = (args) => (
+const Template: Story<PhoneInputProps> = (args) => (
   <Container maxW="container.sm" py="6">
     <PhoneInput {...args} />
   </Container>
 )
 
 export const Default = Template.bind({})
+export const Placeholder = Template.bind({})
 
 Default.args = {
   initialCountryCode: CountryCode.AU,
+}
+
+Placeholder.args = {
+  initialCountryCode: CountryCode.AU,
+  showPlaceholderExampleNumber: true
 }

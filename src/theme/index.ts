@@ -45,7 +45,7 @@ export const extendedTheme: any = extendTheme({
       },
     },
     Select: {
-      bg: "white"
+      bg: "white",
     },
     Th: {
       baseStyle: {

@@ -44,6 +44,9 @@ export const extendedTheme: any = extendTheme({
         bg: "white",
       },
     },
+    Select: {
+      bg: "white"
+    },
     Th: {
       baseStyle: {
         fontWeight: "normal",

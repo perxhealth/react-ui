@@ -33,7 +33,8 @@
     "printWidth": 80,
     "semi": false,
     "singleQuote": false,
-    "trailingComma": "es5"
+    "trailingComma": "es5",
+    "arrowParens": "always"
   },
   "size-limit": [
     {

@@ -8,11 +8,11 @@ import {
   CircularProgress,
 } from "@chakra-ui/react"
 
-export interface Props extends FlexProps {
+export interface FullscreenLoadingProps extends FlexProps {
   message?: string
 }
 
-export const FullscreenLoading = (props: Props) => {
+export const FullscreenLoading = (props: FullscreenLoadingProps) => {
   // Destructure props to use directly
   const { message } = props
 

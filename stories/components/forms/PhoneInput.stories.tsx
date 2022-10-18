@@ -34,5 +34,5 @@ Default.args = {
 
 Placeholder.args = {
   initialCountryCode: CountryCode.AU,
-  showPlaceholderExampleNumber: true
+  showPlaceholderExampleNumber: true,
 }

@@ -56,7 +56,15 @@ describe("PhoneInput", () => {
 
     describe("showPlaceholderExampleNumber", () => {
       describe("is true", () => {
-        beforeEach(() => render(<PhoneInput onChange={onChange} initialCountryCode={CountryCode.AU} showPlaceholderExampleNumber={true} />))
+        beforeEach(() =>
+          render(
+            <PhoneInput
+              onChange={onChange}
+              initialCountryCode={CountryCode.AU}
+              showPlaceholderExampleNumber={true}
+            />
+          )
+        )
 
         it("sets the input's placeholder text to the current country's example number", () => {
           expect(screen.getByPlaceholderText("491 570 006")).toBeInTheDocument()
@@ -64,10 +72,20 @@ describe("PhoneInput", () => {
       })
 
       describe("is false", () => {
-        beforeEach(() => render(<PhoneInput onChange={onChange} initialCountryCode={CountryCode.AU} showPlaceholderExampleNumber={false} />))
+        beforeEach(() =>
+          render(
+            <PhoneInput
+              onChange={onChange}
+              initialCountryCode={CountryCode.AU}
+              showPlaceholderExampleNumber={false}
+            />
+          )
+        )
 
         it("does not set any placeholder text on the input", () => {
-          expect(screen.queryByPlaceholderText("491 570 006")).not.toBeInTheDocument()
+          expect(
+            screen.queryByPlaceholderText("491 570 006")
+          ).not.toBeInTheDocument()
         })
       })
     })

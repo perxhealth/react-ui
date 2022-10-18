@@ -56,6 +56,7 @@ export type InputProps = Omit<
 export interface PhoneInputProps extends InputProps {
   onChange?: (number: E164Number) => void
   initialCountryCode?: CountryCode
+  showPlaceholderExampleNumber?: boolean
 }
 
 export const PhoneInput = (props: PhoneInputProps) => {
@@ -63,6 +64,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
   const {
     onChange = () => {},
     initialCountryCode = CountryCode.AU,
+    showPlaceholderExampleNumber = false,
     ...inputProps
   } = props
 
@@ -73,6 +75,11 @@ export const PhoneInput = (props: PhoneInputProps) => {
   const [currentCountry, setCurrentCountry] = React.useState<CountryData>(
     countries[initialCountryCode]
   )
+
+  // Determine the input's placeholder attribute value, if any
+  const inputPlaceholder = React.useMemo(() => {
+    return showPlaceholderExampleNumber ? currentCountry.exampleNumber : ""
+  }, [currentCountry, showPlaceholderExampleNumber])
 
   // Persist the user's country selection to state
   const onCountryChange = React.useCallback(
@@ -104,12 +111,13 @@ export const PhoneInput = (props: PhoneInputProps) => {
 
   return (
     <InputGroup>
-      <InputLeftAddon fontFamily="monospace">
+      <InputLeftAddon fontFamily="monospace" minW="60px" textAlign="center">
         {currentCountry.callingCode}
       </InputLeftAddon>
 
       <Input
         {...inputProps}
+        placeholder={inputPlaceholder}
         maxLength={currentCountry.maxNumberLength}
         onChange={onInputChange}
         value={number}

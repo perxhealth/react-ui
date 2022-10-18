@@ -9,11 +9,7 @@ describe("Alert", () => {
 
   beforeEach(() => {
     render(
-      <Alert
-        onClose={onClose}
-        title="Primary text"
-        description="subtext"
-      />
+      <Alert onClose={onClose} title="Primary text" description="subtext" />
     )
   })
 

@@ -27,9 +27,7 @@ export const Alert = (props: AlertProps) => {
       <AlertIcon />
 
       <Stack spacing="0">
-        <AlertTitle fontWeight="semibold">
-          {title}
-        </AlertTitle>
+        <AlertTitle fontWeight="semibold">{title}</AlertTitle>
         <AlertDescription>{description || ""}</AlertDescription>
       </Stack>
 

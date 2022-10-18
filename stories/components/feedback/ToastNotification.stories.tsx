@@ -2,7 +2,10 @@ import * as React from "react"
 import { Center } from "@chakra-ui/react"
 import { Meta, Story } from "@storybook/react"
 
-import { ToastNotification, ToastNotificationProps } from "../../../src/components/feedback/ToastNotification"
+import {
+  ToastNotification,
+  ToastNotificationProps,
+} from "../../../src/components/feedback/ToastNotification"
 
 const meta: Meta = {
   title: "Components/Feedback/ToastNotification",
@@ -48,7 +51,7 @@ Warning.args = {
 Error.args = {
   title: "Pikachu used Thunderbolt!",
   subtitle: "The attack missed!",
-  status: "error"
+  status: "error",
 }
 
 CustomButton.args = {

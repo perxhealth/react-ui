@@ -24,7 +24,8 @@ export interface FormDrawerProps extends DrawerProps {
 
 export const FormDrawer = (props: FormDrawerProps) => {
   // Destructure props to use directly
-  const { formId, children, title, isOpen, isSubmitting, onClose, ...rest } = props
+  const { formId, children, title, isOpen, isSubmitting, onClose, ...rest } =
+    props
 
   // Render an opinionated drawer specifically designed for displaying a form
   //  1. Form controls are anchored to the bottom of the drawer
@@ -44,7 +45,8 @@ export const FormDrawer = (props: FormDrawerProps) => {
           borderColor="gray.100"
           roundedBottomLeft="lg"
           roundedBottomRight="lg"
-          justifyContent="center">
+          justifyContent="center"
+        >
           <Stack direction="row" w="full">
             <Button
               variant="outline"
@@ -52,7 +54,8 @@ export const FormDrawer = (props: FormDrawerProps) => {
               bg="white"
               w="full"
               onClick={onClose}
-              isDisabled={isSubmitting}>
+              isDisabled={isSubmitting}
+            >
               Cancel
             </Button>
             <Button
@@ -61,7 +64,8 @@ export const FormDrawer = (props: FormDrawerProps) => {
               w="full"
               form={formId}
               isLoading={isSubmitting}
-              isDisabled={isSubmitting}>
+              isDisabled={isSubmitting}
+            >
               Submit
             </Button>
           </Stack>

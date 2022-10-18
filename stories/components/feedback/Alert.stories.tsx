@@ -30,29 +30,28 @@ export const Warning = Template.bind({})
 export const Error = Template.bind({})
 
 Default.args = {
-  title: "Remember to drink water"
+  title: "Remember to drink water",
 }
 
 Description.args = {
   title: "Remember to drink water",
-  description: "It's important to stay hydrated"
+  description: "It's important to stay hydrated",
 }
 
 Success.args = {
   title: "Remember to drink water",
   description: "You're on track for today!",
-  status: "success"
+  status: "success",
 }
 
 Warning.args = {
   title: "Remember to drink water",
   description: "Drink some now to stay on track",
-  status: "warning"
+  status: "warning",
 }
 
 Error.args = {
   title: "Remember to drink water",
   description: "You didn't drink enough!",
-  status: "error"
+  status: "error",
 }
-

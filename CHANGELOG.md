@@ -1,3 +1,15 @@
+## [1.4.3](https://github.com/perxhealth/react-ui/compare/v1.4.2...v1.4.3) (2022-10-18)
+
+
+### Bug Fixes
+
+* Minor and Patch version upgrades ([9bc152d](https://github.com/perxhealth/react-ui/commit/9bc152dc8d132877045a22ebf9924f935b459a88))
+
+
+### Performance Improvements
+
+* No more shameful hoisting! ([20d63f3](https://github.com/perxhealth/react-ui/commit/20d63f369e0cb3fafdd382f2b4fdafc16558d2c3))
+
 ## [1.4.2](https://github.com/perxhealth/react-ui/compare/v1.4.1...v1.4.2) (2022-10-18)
 
 

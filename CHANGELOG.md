@@ -1,3 +1,11 @@
+## [1.4.2](https://github.com/perxhealth/react-ui/compare/v1.4.1...v1.4.2) (2022-10-18)
+
+
+### Bug Fixes
+
+* Add `react-icons` as a dependency ([4f63540](https://github.com/perxhealth/react-ui/commit/4f63540fa8c2a37313c7438d6e3830cb5d5a8fa5))
+* Add ConfirmationModal updates ([27f30b1](https://github.com/perxhealth/react-ui/commit/27f30b1e9ac71658aad7793824d9dc24f9e47b18))
+
 ## [1.4.1](https://github.com/perxhealth/react-ui/compare/v1.4.0...v1.4.1) (2022-10-17)
 
 

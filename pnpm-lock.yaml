@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@babel/core': ^7.19.6
   '@chakra-ui/react': ^2.3.6
-  '@chakra-ui/storybook-addon': ^1.0.3
+  '@chakra-ui/storybook-addon': ^4.0.12
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
   '@semantic-release/changelog': ^6.0.1
@@ -42,7 +42,7 @@ dependencies:
 devDependencies:
   '@babel/core': 7.19.6
   '@chakra-ui/react': 2.3.6_0d7584544fd6f8c6ed2c65f979e30eab
-  '@chakra-ui/storybook-addon': 1.0.3_2ec9883842af19dab1ad5629009982f3
+  '@chakra-ui/storybook-addon': 4.0.12_2ec9883842af19dab1ad5629009982f3
   '@emotion/react': 11.10.4_5753e5052408f0dd53393bd19f181c29
   '@emotion/styled': 11.10.4_819b01a66bb8b5d73d2094d45c023fd7
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.5
@@ -1782,16 +1782,6 @@ packages:
       react: 18.2.0
     dev: true
 
-  /@chakra-ui/icon/2.0.5_react@18.2.0:
-    resolution: {integrity: sha512-ZrqRvCCIxGr4qFd/r1pmtd9tobRmv8KAxV7ygFoc/t4vOSKTcVIjhE12gsI3FzgvXM15ZFVwsxa1zodwgo5neQ==}
-    peerDependencies:
-      '@chakra-ui/system': '>=1.0.0'
-      react: '>=16.8.6'
-    dependencies:
-      '@chakra-ui/utils': 1.10.4
-      react: 18.2.0
-    dev: true
-
   /@chakra-ui/icon/3.0.11_2747aa4c4e32937b8dfd3ea2275e99d5:
     resolution: {integrity: sha512-RG4jf/XmBdaxOYI5J5QstEtTCPoVlmrQ/XiWhvN0LTgAnmZIqVwFl3Uw+satArdStHAs0GmJZg/E/soFTWuFmw==}
     peerDependencies:
@@ -1803,14 +1793,23 @@ packages:
       react: 18.2.0
     dev: true
 
-  /@chakra-ui/icons/1.1.7_react@18.2.0:
-    resolution: {integrity: sha512-YIHxey/B4M2PyFASlHXtAWFyW+tsAtGAChOJ8dsM2kpu1MbVUqm/6nMI1KIFd7Te5IWuNYA75rAHBdLI0Yu61A==}
+  /@chakra-ui/icon/3.0.11_react@18.2.0:
+    resolution: {integrity: sha512-RG4jf/XmBdaxOYI5J5QstEtTCPoVlmrQ/XiWhvN0LTgAnmZIqVwFl3Uw+satArdStHAs0GmJZg/E/soFTWuFmw==}
     peerDependencies:
-      '@chakra-ui/system': '>=1.0.0'
-      react: '>=16.8.6'
+      '@chakra-ui/system': '>=2.0.0'
+      react: '>=18'
     dependencies:
-      '@chakra-ui/icon': 2.0.5_react@18.2.0
-      '@types/react': 17.0.51
+      '@chakra-ui/shared-utils': 2.0.2
+      react: 18.2.0
+    dev: true
+
+  /@chakra-ui/icons/2.0.11_react@18.2.0:
+    resolution: {integrity: sha512-WjxrFMt9hHpuZlnBh4fhtGOkIVlwYwHNmwq4sJGxYWlg8UnEhVJMoOojheJDy/d3Gp9+ApetlK3vt8fV/rZamg==}
+    peerDependencies:
+      '@chakra-ui/system': '>=2.0.0'
+      react: '>=18'
+    dependencies:
+      '@chakra-ui/icon': 3.0.11_react@18.2.0
       react: 18.2.0
     dev: true
 
@@ -2394,12 +2393,14 @@ packages:
       react: 18.2.0
     dev: true
 
-  /@chakra-ui/storybook-addon/1.0.3_2ec9883842af19dab1ad5629009982f3:
-    resolution: {integrity: sha512-FzXj+QVHE9qYNGJOMqBq3tktea613O2bdlt62Cuyr3X+jyQeDeLAaHLnLKu+7yxtp5dyRU+Iqr8PYrJTV9ZGlw==}
+  /@chakra-ui/storybook-addon/4.0.12_2ec9883842af19dab1ad5629009982f3:
+    resolution: {integrity: sha512-7yLNNAUEnab0BS6glJh5OQMMWTu8Xjny7ihW+4dMbsRikb6VDIkzNbQUL00eVPGlll9EdA5lpTCTKl+oAKQgcg==}
     peerDependencies:
-      '@chakra-ui/react': 1.x
-      '@storybook/addons': 6.x
-      react: 16.x || 17.x
+      '@chakra-ui/react': '>=2.0.0'
+      '@storybook/addons': '>=6.4'
+      '@storybook/api': '>=6.4'
+      '@storybook/components': '>=6.4'
+      react: '>=16.8.x'
       react-dom: '*'
     peerDependenciesMeta:
       react:
@@ -2407,12 +2408,11 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@chakra-ui/icons': 1.1.7_react@18.2.0
+      '@chakra-ui/icons': 2.0.11_react@18.2.0
       '@chakra-ui/react': 2.3.6_0d7584544fd6f8c6ed2c65f979e30eab
       '@storybook/addons': 6.5.13_react-dom@18.2.0+react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      webpack-merge: 5.8.0
     transitivePeerDependencies:
       - '@chakra-ui/system'
     dev: true
@@ -2584,15 +2584,6 @@ packages:
     dependencies:
       framer-motion: 7.6.1_react-dom@18.2.0+react@18.2.0
       react: 18.2.0
-    dev: true
-
-  /@chakra-ui/utils/1.10.4:
-    resolution: {integrity: sha512-AM91VQQxw8F4F1WDA28mqKY6NFIOuzc2Ekkna88imy2OiqqmYH0xkq8J16L2qj4cLiLozpYqba3C79pWioy6FA==}
-    dependencies:
-      '@types/lodash.mergewith': 4.6.6
-      css-box-model: 1.2.1
-      framesync: 5.3.0
-      lodash.mergewith: 4.6.2
     dev: true
 
   /@chakra-ui/utils/2.0.11:
@@ -17222,14 +17213,6 @@ packages:
       uuid: 3.4.0
     dev: true
 
-  /webpack-merge/5.8.0:
-    resolution: {integrity: sha512-/SaI7xY0831XwP6kzuwhKWVKDP9t1QY1h65lAFLbZqMPIuYcD9QAW4u9STIbU9kaJbPBB/geU/gLr1wDjOhQ+Q==}
-    engines: {node: '>=10.0.0'}
-    dependencies:
-      clone-deep: 4.0.1
-      wildcard: 2.0.0
-    dev: true
-
   /webpack-sources/1.4.3:
     resolution: {integrity: sha512-lgTS3Xhv1lCOKo7SA5TjKXMjpSM4sBjNV5+q2bqesbSPs5FjGmU6jjtBSkX9b4qW87vDIsCIlUPOEhbZrMdjeQ==}
     dependencies:
@@ -17417,10 +17400,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       string-width: 4.2.3
-    dev: true
-
-  /wildcard/2.0.0:
-    resolution: {integrity: sha512-JcKqAHLPxcdb9KM49dufGXn2x3ssnfjbcaQdLlfZsL9rH9wgDQjUtDxbo8NE0F6SFvydeu1VhZe7hZuHsB2/pw==}
     dev: true
 
   /word-wrap/1.2.3:

@@ -27,6 +27,7 @@ specifiers:
   dts-cli: ^1.6.0
   framer-motion: ^7.6.1
   gh-pages: ^3.2.3
+  lucide-react: ^0.94.0
   react: ^18.2.0
   react-dom: ^18.2.0
   react-icons: ^4.6.0
@@ -37,6 +38,7 @@ specifiers:
   typescript: ^4.8.4
 
 dependencies:
+  lucide-react: 0.94.0_react@18.2.0
   react-icons: 4.6.0_react@18.2.0
 
 devDependencies:
@@ -12543,6 +12545,15 @@ packages:
     dependencies:
       yallist: 4.0.0
     dev: true
+
+  /lucide-react/0.94.0_react@18.2.0:
+    resolution: {integrity: sha512-wDVFhqyVDM2J0gMlKdA08EKzf9Ily3+diKHLcumOHYtp8l5GDDgKqqJuJ8HOOxHprNeTnqJxnHAz7jBFErKc7Q==}
+    peerDependencies:
+      prop-types: ^15.7.2
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /lz-string/1.4.4:
     resolution: {integrity: sha512-0ckx7ZHRPqb0oUm8zNr+90mtf9DQB60H1wMCjBtfi62Kl3a7JbHob6gA2bC+xRvZoOL+1hzUK8jeuEIQE8svEQ==}

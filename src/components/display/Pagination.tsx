@@ -1,6 +1,6 @@
 import * as React from "react"
 import { IconButton, Button, Center } from "@chakra-ui/react"
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export type ButtonMouseEvent = React.MouseEvent<HTMLButtonElement, MouseEvent>
 
@@ -33,7 +33,7 @@ export const Pagination = (props: PaginationProps) => {
     <Center mt="6" gap="3">
       <IconButton
         aria-label="Previous Page"
-        icon={<ChevronLeftIcon />}
+        icon={<ChevronLeft />}
         variant="ghost"
         onClick={onPreviousClick}
         isDisabled={isPreviousPageDisabled}
@@ -56,7 +56,7 @@ export const Pagination = (props: PaginationProps) => {
 
       <IconButton
         aria-label="Next Page"
-        icon={<ChevronRightIcon />}
+        icon={<ChevronRight />}
         variant="ghost"
         onClick={onNextClick}
         isDisabled={isNextPageDisabled}

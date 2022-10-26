@@ -83,6 +83,7 @@
     "url": "https://github.com/perxhealth/react-ui.git"
   },
   "dependencies": {
+    "lucide-react": "^0.94.0",
     "react-icons": "^4.6.0"
   }
 }

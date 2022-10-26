@@ -1,3 +1,25 @@
+# [1.6.0](https://github.com/perxhealth/react-ui/compare/v1.5.0...v1.6.0) (2022-10-26)
+
+
+### Bug Fixes
+
+* Add ReferralStatusTag stories ([f59c353](https://github.com/perxhealth/react-ui/commit/f59c353ebf59c23a9e64490f13db243885d2da77))
+
+
+### Features
+
+* Add Alert component ([bccf350](https://github.com/perxhealth/react-ui/commit/bccf35021493adc73421b39d582ff8622bf1aa8d))
+* Add Footer component ([8140bd3](https://github.com/perxhealth/react-ui/commit/8140bd39b0fb3b94d13ad0691ad460ae726ace65))
+* Add FormDrawer component ([80309e2](https://github.com/perxhealth/react-ui/commit/80309e23c3646a9c9bcb48cbbc4958244ae81423))
+* Add ReferralStatusTag component ([f7438c4](https://github.com/perxhealth/react-ui/commit/f7438c4665e87120abea5aa4777b374feaf568ed))
+* Add ToastNotification component ([0ff7b6c](https://github.com/perxhealth/react-ui/commit/0ff7b6c998f82d646f44501cbf65bea04c1b66b3))
+
+
+### Performance Improvements
+
+* Consolidate exports ([432ed84](https://github.com/perxhealth/react-ui/commit/432ed840196c9a02486a3634286e529548c92f66))
+* Formatting ([c030096](https://github.com/perxhealth/react-ui/commit/c0300965491c0c080d20819bac7054f0a4704712))
+
 # [1.5.0](https://github.com/perxhealth/react-ui/compare/v1.4.3...v1.5.0) (2022-10-18)
 
 

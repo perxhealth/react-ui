@@ -83,7 +83,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
 
   // Persist the user's country selection to state
   const onCountryChange = React.useCallback(
-    (event) => {
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
       setCurrentCountry(countries[event.target.value as CountryCode])
       setNumber("")
     },

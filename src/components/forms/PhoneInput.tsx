@@ -129,8 +129,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
           bg="transparent"
           aria-label="Select a country"
           defaultValue={currentCountry.countryCode}
-          onChange={onCountryChange}
-        >
+          onChange={onCountryChange}>
           {Object.values(countries).map((country) => {
             const { countryCode, name, emoji } = country
             return (

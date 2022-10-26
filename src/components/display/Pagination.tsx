@@ -47,8 +47,7 @@ export const Pagination = (props: PaginationProps) => {
             key={pageNumber}
             isDisabled={isSelectedPage}
             variant={isSelectedPage ? "solid" : "outline"}
-            onClick={() => onPageNumberClick(pageNumber)}
-          >
+            onClick={() => onPageNumberClick(pageNumber)}>
             {pageNumber}
           </Button>
         )

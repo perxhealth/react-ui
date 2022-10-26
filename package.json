@@ -47,14 +47,12 @@
     }
   ],
   "peerDependencies": {
-    "@chakra-ui/icons": ">=1.1",
     "@chakra-ui/react": ">=1.6.0",
     "framer-motion": "^6",
     "react": ">=17"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
-    "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.8.9",
     "@chakra-ui/storybook-addon": "^1.0.3",
     "@emotion/react": "^11.10.4",

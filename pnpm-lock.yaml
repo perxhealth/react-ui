@@ -2,7 +2,6 @@ lockfileVersion: 5.3
 
 specifiers:
   '@babel/core': ^7.19.6
-  '@chakra-ui/icons': ^1.1.7
   '@chakra-ui/react': ^1.8.9
   '@chakra-ui/storybook-addon': ^1.0.3
   '@emotion/react': ^11.10.4
@@ -42,7 +41,6 @@ dependencies:
 
 devDependencies:
   '@babel/core': 7.19.6
-  '@chakra-ui/icons': 1.1.7_react@18.2.0
   '@chakra-ui/react': 1.8.9_170d93f477941296509b8dac31096d49
   '@chakra-ui/storybook-addon': 1.0.3_52846b3b078ce9b2320f58621a04e292
   '@emotion/react': 11.10.4_5753e5052408f0dd53393bd19f181c29

@@ -1,3 +1,16 @@
+# [1.5.0](https://github.com/perxhealth/react-ui/compare/v1.4.3...v1.5.0) (2022-10-18)
+
+
+### Bug Fixes
+
+* regen lockfile without private registry tarball addresses ([04b80a7](https://github.com/perxhealth/react-ui/commit/04b80a74ab3e9560383c591fd762cca848439350))
+* test PhoneInput component ([0629124](https://github.com/perxhealth/react-ui/commit/06291247b7caf41db6d6b9c016a78fd02f978a07))
+
+
+### Features
+
+* Add optional showPlaceholderExampleNumber prop ([46afefd](https://github.com/perxhealth/react-ui/commit/46afefd28421553e32cac2ed19f0bfe05cb61e7c))
+
 ## [1.4.3](https://github.com/perxhealth/react-ui/compare/v1.4.2...v1.4.3) (2022-10-18)
 
 

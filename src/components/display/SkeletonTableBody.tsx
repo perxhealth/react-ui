@@ -1,5 +1,5 @@
 import * as React from "react"
-import {v4 as uuid} from "uuid"
+import { v4 as uuid } from "uuid"
 import { Tbody } from "@chakra-ui/react"
 
 import { SkeletonTableRow } from "./SkeletonTableRow"
@@ -16,7 +16,7 @@ export const SkeletonTableBody = (props: SkeletonTableBodyProps) => {
   // Build each of the rows we want
   const skeletonTableRows = React.useMemo(() => {
     return Array.from(new Array(rowCount), () => (
-      <SkeletonTableRow columnCount={columnCount} key={uuid()}/>
+      <SkeletonTableRow columnCount={columnCount} key={uuid()} />
     ))
   }, [rowCount, columnCount])
 

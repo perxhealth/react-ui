@@ -1,3 +1,44 @@
+# [2.0.0](https://github.com/perxhealth/react-ui/compare/v1.6.0...v2.0.0) (2022-11-09)
+
+
+### Bug Fixes
+
+* update framer-motion peer dep to match ([23256b9](https://github.com/perxhealth/react-ui/commit/23256b994eee22287692f46bb2c4ad4fb14588b1))
+* update react peer dep version ([b24d3c9](https://github.com/perxhealth/react-ui/commit/b24d3c994d8b23be9e060b7af8c4d552f731dff2))
+* upgrades as per semver ([575e000](https://github.com/perxhealth/react-ui/commit/575e000cad93ce445ad2b8ac88882320833618fb))
+
+
+* Don't export InputProps from PhoneInput ([df4dac3](https://github.com/perxhealth/react-ui/commit/df4dac369bd7de837b6fd102fa48a746164771c9))
+* Rename Alert component to Notice ([ed7448a](https://github.com/perxhealth/react-ui/commit/ed7448ac7fa1379a91bb75feb4b13f667758efab))
+* Export everything from Chakra UI ([67f1e41](https://github.com/perxhealth/react-ui/commit/67f1e4135103240a3fcd58cfc8597e5b053f25a9))
+
+
+### Features
+
+* Export a ThemeProvider ([3d0a485](https://github.com/perxhealth/react-ui/commit/3d0a4854fdad83d1f9e40ca521df4a5d04378344))
+* replace Chakra icons with Lucide ([5235e51](https://github.com/perxhealth/react-ui/commit/5235e51766aa6fd2548c97213b842a549c9c45e2))
+
+
+### Performance Improvements
+
+* bring back prettier as a dev dep for non `lint` scripts ([aade9f4](https://github.com/perxhealth/react-ui/commit/aade9f4b904f6661185ee71ffda112673a440dc1))
+* Remove @chakra-ui/icons ([9aca316](https://github.com/perxhealth/react-ui/commit/9aca31652164ba8fb634fe62659626a4f51b2280))
+* remove redundant Prettier config ([f516984](https://github.com/perxhealth/react-ui/commit/f5169843a5112dca3e500ae5e95cd34fe6c39565))
+* upgrade chakra + storybook integration ([2ed9c39](https://github.com/perxhealth/react-ui/commit/2ed9c39540e1ebfafde57e03f26678adc5a4d02f))
+* Upgrade Chakra to v2+ ([fa212ae](https://github.com/perxhealth/react-ui/commit/fa212ae5a921fba29e4ecfbf34071c85f7ffb4c8))
+* upgrade to React 18.2 ([6422738](https://github.com/perxhealth/react-ui/commit/6422738671968c42935796267d8b63d18b0afe35))
+
+
+### BREAKING CHANGES
+
+* Conflicts with Chakra direct inputs
+* Conflicted with direct Chakra exports
+* We're moving Chakra to a direct dependency
+* only compatible with React 18
+* preparing for adoption of lucide.dev
+* Force adoption of new major version as React 18
+may have unintended side-effects
+
 # [1.6.0](https://github.com/perxhealth/react-ui/compare/v1.5.0...v1.6.0) (2022-10-26)
 
 

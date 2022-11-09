@@ -38,10 +38,12 @@
       "limit": "10 KB"
     }
   ],
-  "peerDependencies": {
+  "dependencies": {
     "@chakra-ui/react": ">=2.3",
     "framer-motion": "^7",
-    "react": ">=18"
+    "react": ">=18",
+    "lucide-react": "^0.94.0",
+    "react-icons": "^4.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
@@ -82,9 +84,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/perxhealth/react-ui.git"
-  },
-  "dependencies": {
-    "lucide-react": "^0.94.0",
-    "react-icons": "^4.6.0"
   }
 }

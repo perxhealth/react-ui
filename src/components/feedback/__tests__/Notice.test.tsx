@@ -2,14 +2,14 @@ import * as React from "react"
 import { screen, render } from "@testing-library/react"
 import user from "@testing-library/user-event"
 
-import { Alert } from "../Alert"
+import { Notice } from "../Notice"
 
-describe("Alert", () => {
+describe("Notice", () => {
   const onClose = jest.fn()
 
   beforeEach(() => {
     render(
-      <Alert onClose={onClose} title="Primary text" description="subtext" />
+      <Notice onClose={onClose} title="Primary text" description="subtext" />
     )
   })
 

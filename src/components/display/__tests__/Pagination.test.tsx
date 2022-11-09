@@ -1,10 +1,8 @@
 import * as React from "react"
-import { screen, render, cleanup } from "@testing-library/react"
+import { screen, render } from "@testing-library/react"
 import user from "@testing-library/user-event"
 
 import { Pagination } from "../Pagination"
-
-afterEach(cleanup)
 
 describe("Pagination", () => {
   const onPreviousClick = jest.fn()

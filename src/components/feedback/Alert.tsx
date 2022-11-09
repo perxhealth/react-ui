@@ -1,8 +1,8 @@
 import * as React from "react"
 
 import {
-  Alert as ChakraAlert,
-  AlertProps as ChakraAlertProps,
+  Alert,
+  AlertProps,
   AlertIcon,
   AlertTitle,
   AlertDescription,
@@ -10,20 +10,20 @@ import {
   CloseButton,
 } from "@chakra-ui/react"
 
-export interface AlertProps extends ChakraAlertProps {
+export interface NoticeProps extends AlertProps {
   title: string
   description?: string
   onClose?: () => void
 }
 
-export const Alert = (props: AlertProps) => {
+export const Notice = (props: NoticeProps) => {
   // Destructure props to use directly
   const { title, description, onClose, ...alertProps } = props
 
   // Render the alert, which is a thin wrapper around Chakra's markup
   // with some opinionated, overridable defaults
   return (
-    <ChakraAlert variant="left-accent" rounded="xl" {...alertProps}>
+    <Alert variant="left-accent" rounded="xl" {...alertProps}>
       <AlertIcon />
 
       <Stack spacing="0">
@@ -39,6 +39,6 @@ export const Alert = (props: AlertProps) => {
           top="8px"
         />
       )}
-    </ChakraAlert>
+    </Alert>
   )
 }

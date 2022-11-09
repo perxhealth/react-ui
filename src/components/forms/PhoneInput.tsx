@@ -48,10 +48,7 @@ const countries: Countries = {
   },
 }
 
-export type InputProps = Omit<
-  ChakraInputProps,
-  "onChange" | "maxLength" | "value"
->
+type InputProps = Omit<ChakraInputProps, "onChange" | "maxLength" | "value">
 
 export interface PhoneInputProps extends InputProps {
   onChange?: (number: E164Number) => void

@@ -1,3 +1,5 @@
+export * from "@chakra-ui/react"
+
 export { extendedTheme } from "./theme"
 
 export * from "./components/display"

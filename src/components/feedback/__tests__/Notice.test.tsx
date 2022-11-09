@@ -1,15 +1,15 @@
 import * as React from "react"
 import { screen, render } from "@testing-library/react"
-import user from "@testing-library/user-event"
+import userEvent from "@testing-library/user-event"
 
-import { Alert } from "../Alert"
+import { Notice } from "../Notice"
 
-describe("Alert", () => {
+describe("Notice", () => {
   const onClose = jest.fn()
 
   beforeEach(() => {
     render(
-      <Alert onClose={onClose} title="Primary text" description="subtext" />
+      <Notice onClose={onClose} title="Primary text" description="subtext" />
     )
   })
 
@@ -25,8 +25,8 @@ describe("Alert", () => {
     expect(screen.getByText("subtext")).toBeInTheDocument()
   })
 
-  it("calls props.onCloseClick when the close button is clicked", () => {
-    user.click(screen.getByRole("button"))
+  it("calls props.onCloseClick when the close button is clicked", async () => {
+    await userEvent.click(screen.getByRole("button"))
     expect(onClose).toHaveBeenCalledTimes(1)
   })
 })

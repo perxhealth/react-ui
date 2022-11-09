@@ -2,11 +2,11 @@ import * as React from "react"
 import { Center, Box } from "@chakra-ui/react"
 import { Meta, Story } from "@storybook/react"
 
-import { Alert, AlertProps } from "../../../src/components/feedback/Alert"
+import { Notice, NoticeProps } from "../../../src/components/feedback/Notice"
 
 const meta: Meta = {
-  title: "Components/Feedback/Alert",
-  component: Alert,
+  title: "Components/Feedback/Notice",
+  component: Notice,
   argTypes: {},
   parameters: {
     controls: { expanded: true },
@@ -15,10 +15,10 @@ const meta: Meta = {
 
 export default meta
 
-const Template: Story<AlertProps> = (args) => (
+const Template: Story<NoticeProps> = (args) => (
   <Center>
     <Box width="md">
-      <Alert {...args} />
+      <Notice {...args} />
     </Box>
   </Center>
 )

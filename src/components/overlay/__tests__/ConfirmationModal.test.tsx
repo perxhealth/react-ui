@@ -1,6 +1,6 @@
 import * as React from "react"
 import { screen, render, waitFor } from "@testing-library/react"
-import user from "@testing-library/user-event"
+import userEvent from "@testing-library/user-event"
 
 import { ConfirmationModal, ConfirmationModalProps } from "../ConfirmationModal"
 
@@ -29,17 +29,17 @@ describe("ConfirmationModal", () => {
 
   describe("props", () => {
     describe("onConfirm", () => {
-      it("is called when the Confirm button is clicked", () => {
+      it("is called when the Confirm button is clicked", async () => {
         renderComponent()
-        user.click(screen.getByText("Confirm"))
+        await userEvent.click(screen.getByText("Confirm"))
         expect(onConfirm).toHaveBeenCalledTimes(1)
       })
     })
 
     describe("onCancel", () => {
-      it("is called when the Cancel button is clicked", () => {
+      it("is called when the Cancel button is clicked", async () => {
         renderComponent()
-        user.click(screen.getByText("Cancel"))
+        await userEvent.click(screen.getByText("Cancel"))
         expect(onCancel).toHaveBeenCalledTimes(1)
       })
     })

@@ -13,8 +13,7 @@ export const Footer = (props: FooterProps) => {
       justify="space-between"
       spacing={{ base: "4", lg: "8" }}
       direction={{ base: "column", lg: "row" }}
-      {...props}
-    >
+      {...props}>
       <Flex align="center" direction={{ base: "column", md: "row" }}>
         <Box mb={{ base: "1", md: "0" }} mr="6" pos="relative" top="-5px">
           <Image
@@ -46,8 +45,7 @@ export const Footer = (props: FooterProps) => {
         align="center"
         justify="center"
         direction={{ base: "column", xl: "row" }}
-        spacing={{ base: "2", xl: "4" }}
-      >
+        spacing={{ base: "2", xl: "4" }}>
         <a href="https://perxhealth.com/terms-of-use">Terms of Use</a>
         <a href="https://perxhealth.com/privacy-policy">Privacy Policy</a>
         <a href="https://intercom.help/perx">Help Centre</a>

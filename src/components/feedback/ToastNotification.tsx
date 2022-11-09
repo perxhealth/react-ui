@@ -68,8 +68,7 @@ export const ToastNotification = (props: ToastNotificationProps) => {
           minW="115px"
           borderLeft="solid 1px"
           borderColor="gray.100"
-          divider={<StackDivider />}
-        >
+          divider={<StackDivider />}>
           {customButtonText && (
             <Button
               onClick={onCustomButtonClick}
@@ -77,8 +76,7 @@ export const ToastNotification = (props: ToastNotificationProps) => {
               fontWeight="normal"
               size="md"
               variant="ghost"
-              rounded="none"
-            >
+              rounded="none">
               {customButtonText}
             </Button>
           )}
@@ -90,8 +88,7 @@ export const ToastNotification = (props: ToastNotificationProps) => {
               fontWeight="normal"
               size="md"
               variant="ghost"
-              rounded="none"
-            >
+              rounded="none">
               Close
             </Button>
           )}

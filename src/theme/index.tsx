@@ -1,7 +1,7 @@
 import * as React from "react"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 
-export const theme = extendTheme({
+export const extendedTheme = extendTheme({
   fonts: {
     body: "'AvertaCY Regular', sans-serif",
     heading: "'AvertaCY Bold', sans-serif",
@@ -56,9 +56,9 @@ export const theme = extendTheme({
   },
 })
 
-export const ThemeProvider = (props: { children: JSX.Element }) => {
+export const PerxThemeProvider = (props: { children: JSX.Element }) => {
   return (
-    <ChakraProvider resetCSS={true} theme={theme}>
+    <ChakraProvider resetCSS={true} theme={extendTheme}>
       {props.children}
     </ChakraProvider>
   )

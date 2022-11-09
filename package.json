@@ -41,8 +41,8 @@
   "dependencies": {
     "@chakra-ui/react": ">=2.3",
     "framer-motion": "^7",
-    "react": ">=18",
     "lucide-react": "^0.94.0",
+    "react": ">=18",
     "react-icons": "^4.6.0"
   },
   "devDependencies": {
@@ -63,9 +63,9 @@
     "@storybook/react": "^6.5.13",
     "@testing-library/dom": "^8.19.0",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^12.1.5",
-    "@testing-library/react-hooks": "^7.0.2",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.23",
     "@types/react-dom": "^18.0.7",
     "babel-loader": "^8.2.5",

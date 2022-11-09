@@ -18,9 +18,9 @@ specifiers:
   '@storybook/react': ^6.5.13
   '@testing-library/dom': ^8.19.0
   '@testing-library/jest-dom': ^5.16.5
-  '@testing-library/react': ^12.1.5
-  '@testing-library/react-hooks': ^7.0.2
-  '@testing-library/user-event': ^13.5.0
+  '@testing-library/react': ^13.4.0
+  '@testing-library/react-hooks': ^8.0.1
+  '@testing-library/user-event': ^14.4.3
   '@types/react': ^18.0.23
   '@types/react-dom': ^18.0.7
   babel-loader: ^8.2.5
@@ -62,9 +62,9 @@ devDependencies:
   '@storybook/react': 6.5.13_29417492bec501835ef7bc42cc5b134a
   '@testing-library/dom': 8.19.0
   '@testing-library/jest-dom': 5.16.5
-  '@testing-library/react': 12.1.5_react-dom@18.2.0+react@18.2.0
-  '@testing-library/react-hooks': 7.0.2_react-dom@18.2.0+react@18.2.0
-  '@testing-library/user-event': 13.5.0_@testing-library+dom@8.19.0
+  '@testing-library/react': 13.4.0_react-dom@18.2.0+react@18.2.0
+  '@testing-library/react-hooks': 8.0.1_c616e4ebb5aff2ca2b743ef3d4b9b984
+  '@testing-library/user-event': 14.4.3_@testing-library+dom@8.19.0
   '@types/react': 18.0.23
   '@types/react-dom': 18.0.7
   babel-loader: 8.2.5_@babel+core@7.19.6
@@ -5382,14 +5382,17 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react-hooks/7.0.2_react-dom@18.2.0+react@18.2.0:
-    resolution: {integrity: sha512-dYxpz8u9m4q1TuzfcUApqi8iFfR6R0FaMbr2hjZJy1uC8z+bO/K4v8Gs9eogGKYQop7QsrBTFkv/BCF7MzD2Cg==}
+  /@testing-library/react-hooks/8.0.1_c616e4ebb5aff2ca2b743ef3d4b9b984:
+    resolution: {integrity: sha512-Aqhl2IVmLt8IovEVarNDFuJDVWVvhnr9/GCU6UUnrYXwgDFF9h2L2o2P9KBni1AST5sT6riAyoukFLyjQUgD/g==}
     engines: {node: '>=12'}
     peerDependencies:
-      react: '>=16.9.0'
-      react-dom: '>=16.9.0'
-      react-test-renderer: '>=16.9.0'
+      '@types/react': ^16.9.0 || ^17.0.0
+      react: ^16.9.0 || ^17.0.0
+      react-dom: ^16.9.0 || ^17.0.0
+      react-test-renderer: ^16.9.0 || ^17.0.0
     peerDependenciesMeta:
+      '@types/react':
+        optional: true
       react-dom:
         optional: true
       react-test-renderer:
@@ -5397,34 +5400,31 @@ packages:
     dependencies:
       '@babel/runtime': 7.19.4
       '@types/react': 18.0.23
-      '@types/react-dom': 18.0.7
-      '@types/react-test-renderer': 18.0.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-error-boundary: 3.1.4_react@18.2.0
     dev: true
 
-  /@testing-library/react/12.1.5_react-dom@18.2.0+react@18.2.0:
-    resolution: {integrity: sha512-OfTXCJUFgjd/digLUuPxa0+/3ZxsQmE7ub9kcbW/wi96Bh3o/p5vrETcBGfP17NWPGqeYYl5LTRpwyGoMC4ysg==}
+  /@testing-library/react/13.4.0_react-dom@18.2.0+react@18.2.0:
+    resolution: {integrity: sha512-sXOGON+WNTh3MLE9rve97ftaZukN3oNf2KjDy7YTx6hcTO2uuLHuCGynMDhFwGw/jYf4OJ2Qk0i4i79qMNNkyw==}
     engines: {node: '>=12'}
     peerDependencies:
-      react: <18.0.0
-      react-dom: <18.0.0
+      react: ^18.0.0
+      react-dom: ^18.0.0
     dependencies:
       '@babel/runtime': 7.19.4
       '@testing-library/dom': 8.19.0
-      '@types/react-dom': 17.0.17
+      '@types/react-dom': 18.0.7
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: true
 
-  /@testing-library/user-event/13.5.0_@testing-library+dom@8.19.0:
-    resolution: {integrity: sha512-5Kwtbo3Y/NowpkbRuSepbyMFkZmHgD+vPzYB/RJ4oxt5Gj/avFFBYjhw27cqSVPVw/3a67NK1PbiIr9k4Gwmdg==}
-    engines: {node: '>=10', npm: '>=6'}
+  /@testing-library/user-event/14.4.3_@testing-library+dom@8.19.0:
+    resolution: {integrity: sha512-kCUc5MEwaEMakkO5x7aoD+DLi02ehmEM2QCGWvNqAS1dV/fAvORWEjnjsEIvml59M7Y5kCkWN6fCCyPOe8OL6Q==}
+    engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
     dependencies:
-      '@babel/runtime': 7.19.4
       '@testing-library/dom': 8.19.0
     dev: true
 
@@ -5665,12 +5665,6 @@ packages:
       '@types/react': 18.0.23
     dev: true
 
-  /@types/react-dom/17.0.17:
-    resolution: {integrity: sha512-VjnqEmqGnasQKV0CWLevqMTXBYG9GbwuE6x3VetERLh0cq2LTptFE73MrQi2S7GkKXCf2GgwItB/melLnxfnsg==}
-    dependencies:
-      '@types/react': 17.0.51
-    dev: true
-
   /@types/react-dom/18.0.7:
     resolution: {integrity: sha512-HaXc+BbqAZE1RdsK3tC8SbkFy6UL2xF76lT9rQs5JkPrJg3rWA3Ou/Lhw3YJQzEDkBpmJ79nBsfnd05WrBd2QQ==}
     dependencies:
@@ -5683,24 +5677,10 @@ packages:
       '@types/react': 18.0.23
     dev: true
 
-  /@types/react-test-renderer/18.0.0:
-    resolution: {integrity: sha512-C7/5FBJ3g3sqUahguGi03O79b8afNeSD6T8/GU50oQrJCU0bVCCGQHaGKUbg2Ce8VQEEqTw8/HiS6lXHHdgkdQ==}
-    dependencies:
-      '@types/react': 18.0.23
-    dev: true
-
   /@types/react-textarea-autosize/4.3.6:
     resolution: {integrity: sha512-cTf8tCem0c8A7CERYbTuF+bRFaqYu7N7HLCa6ZhUhDx8XnUsTpGx5udMWljt87JpciUKuUkImKPEsy6kcKhrcQ==}
     dependencies:
       '@types/react': 18.0.23
-    dev: true
-
-  /@types/react/17.0.51:
-    resolution: {integrity: sha512-YMddzAE+nSH04BiTJ5GydTxk0/3hckqyuOclg0s6zQYj/XzfRVNzHZAFwZb5SCSavkzTYUtcq/gwjLnvt2Y4cg==}
-    dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.2
-      csstype: 3.1.1
     dev: true
 
   /@types/react/18.0.23:

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { screen, render } from "@testing-library/react"
-import user from "@testing-library/user-event"
+import userEvent from "@testing-library/user-event"
 
 import { PhoneInput, CountryCode } from "../PhoneInput"
 
@@ -97,8 +97,8 @@ describe("PhoneInput", () => {
     })
 
     describe("disallows spaces", () => {
-      beforeEach(() => {
-        user.type(screen.getByRole("textbox"), "491 570 156")
+      beforeEach(async () => {
+        await userEvent.type(screen.getByRole("textbox"), "491 570 156")
       })
 
       it("doesn't show spaces in text box", () => {
@@ -112,8 +112,8 @@ describe("PhoneInput", () => {
     })
 
     describe("disallows a-z", () => {
-      beforeEach(() => {
-        user.type(screen.getByRole("textbox"), "491d570s156")
+      beforeEach(async () => {
+        await userEvent.type(screen.getByRole("textbox"), "491d570s156")
       })
 
       it("doesn't show letters in text box", () => {
@@ -133,8 +133,11 @@ describe("PhoneInput", () => {
     })
 
     describe("AU", () => {
-      beforeEach(() => {
-        user.selectOptions(screen.getByLabelText("Select a country"), "AU 🇦🇺")
+      beforeEach(async () => {
+        await userEvent.selectOptions(
+          screen.getByLabelText("Select a country"),
+          "AU 🇦🇺"
+        )
       })
 
       it("shows the calling code", () => {
@@ -142,8 +145,8 @@ describe("PhoneInput", () => {
       })
 
       describe("user enters number", () => {
-        it("reports back as it's typed", () => {
-          user.type(screen.getByRole("textbox"), "491570156")
+        it("reports back as it's typed", async () => {
+          await userEvent.type(screen.getByRole("textbox"), "491570156")
           expect(onChange).toHaveBeenCalledWith("+614")
           expect(onChange).toHaveBeenCalledWith("+61491570156")
         })
@@ -151,8 +154,11 @@ describe("PhoneInput", () => {
     })
 
     describe("US", () => {
-      beforeEach(() => {
-        user.selectOptions(screen.getByLabelText("Select a country"), "US 🇺🇸")
+      beforeEach(async () => {
+        await userEvent.selectOptions(
+          screen.getByLabelText("Select a country"),
+          "US 🇺🇸"
+        )
       })
 
       it("shows the calling code", () => {
@@ -160,8 +166,8 @@ describe("PhoneInput", () => {
       })
 
       describe("user enters number", () => {
-        it("reports back as it's typed", () => {
-          user.type(screen.getByRole("textbox"), "5559876543")
+        it("reports back as it's typed", async () => {
+          await userEvent.type(screen.getByRole("textbox"), "5559876543")
           expect(onChange).toHaveBeenCalledWith("+15")
           expect(onChange).toHaveBeenCalledWith("+15559876543")
         })

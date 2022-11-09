@@ -1,6 +1,6 @@
 import * as React from "react"
 import { render, screen } from "@testing-library/react"
-import user from "@testing-library/user-event"
+import userEvent from "@testing-library/user-event"
 
 import { ToastNotification } from "../ToastNotification"
 
@@ -39,8 +39,8 @@ describe("ToastNotification", () => {
       ).toBeInTheDocument()
     })
 
-    it("triggers onCustomButtonClick when the custom button is clicked", () => {
-      user.click(screen.getByText("Do a thing!"))
+    it("triggers onCustomButtonClick when the custom button is clicked", async () => {
+      await userEvent.click(screen.getByText("Do a thing!"))
       expect(onCustomButtonClick).toHaveBeenCalledTimes(1)
     })
   })
@@ -60,8 +60,8 @@ describe("ToastNotification", () => {
       expect(screen.getByRole("button", { name: "Close" })).toBeInTheDocument()
     })
 
-    it("triggers onClose when clicked", () => {
-      user.click(screen.getByText("Close"))
+    it("triggers onClose when clicked", async () => {
+      await userEvent.click(screen.getByText("Close"))
       expect(onClose).toHaveBeenCalledTimes(1)
     })
   })

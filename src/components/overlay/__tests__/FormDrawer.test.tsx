@@ -1,6 +1,6 @@
 import * as React from "react"
 import { screen, render, RenderResult } from "@testing-library/react"
-import user from "@testing-library/user-event"
+import userEvent from "@testing-library/user-event"
 
 import { FormDrawer } from "../FormDrawer"
 
@@ -40,8 +40,8 @@ describe("FormDrawer", () => {
     expect(submitButton).toHaveAttribute("form", "the-form-id")
   })
 
-  it("closes when the Cancel button is clicked", () => {
-    user.click(screen.getByText("Cancel"))
+  it("closes when the Cancel button is clicked", async () => {
+    await userEvent.click(screen.getByText("Cancel"))
     expect(onClose).toHaveBeenCalledTimes(1)
   })
 

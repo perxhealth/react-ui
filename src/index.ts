@@ -1,4 +1,6 @@
-export { extendedTheme } from "./theme"
+export * from "@chakra-ui/react"
+
+export * from "./theme"
 
 export * from "./components/display"
 export * from "./components/overlay"

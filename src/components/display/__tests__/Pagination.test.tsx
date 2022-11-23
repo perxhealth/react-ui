@@ -1,10 +1,8 @@
 import * as React from "react"
-import { screen, render, cleanup } from "@testing-library/react"
-import user from "@testing-library/user-event"
+import { screen, render } from "@testing-library/react"
+import userEvent from "@testing-library/user-event"
 
 import { Pagination } from "../Pagination"
-
-afterEach(cleanup)
 
 describe("Pagination", () => {
   const onPreviousClick = jest.fn()
@@ -28,18 +26,18 @@ describe("Pagination", () => {
       )
     })
 
-    it("renders the first button", () => {
-      user.click(screen.getByText("1"))
+    it("renders the first button", async () => {
+      await userEvent.click(screen.getByText("1"))
       expect(onPageNumberClick).toHaveBeenCalledWith(1)
     })
 
-    it("renders the last button", () => {
-      user.click(screen.getByText("42"))
+    it("renders the last button", async () => {
+      await userEvent.click(screen.getByText("42"))
       expect(onPageNumberClick).toHaveBeenCalledWith(42)
     })
 
-    it("renders the expected amount of buttons", () => {
-      // 42 page buttons plus previous and next buttons
+    it("renders the expected amount of buttons", async () => {
+      // 42 page, buttons plus previous and next buttons
       expect(screen.queryAllByRole("button").length).toBe(44)
     })
   })
@@ -57,26 +55,26 @@ describe("Pagination", () => {
       )
     })
 
-    it("renders the correct amount of numbered buttons", () => {
-      user.click(screen.getByText("2"))
+    it("renders the correct amount of numbered buttons", async () => {
+      await userEvent.click(screen.getByText("2"))
       expect(onPageNumberClick).toHaveBeenCalledWith(2)
-      user.click(screen.getByText("3"))
+      await userEvent.click(screen.getByText("3"))
       expect(onPageNumberClick).toHaveBeenCalledWith(3)
       expect(onPageNumberClick).toHaveBeenCalledTimes(2)
     })
 
-    it("clicking the next button triggers onNextClick", () => {
-      user.click(screen.getByLabelText("Next Page"))
+    it("clicking the next button triggers onNextClick", async () => {
+      await userEvent.click(screen.getByLabelText("Next Page"))
       expect(onNextClick).toHaveBeenCalledTimes(1)
     })
 
-    it("clicking a numbered button triggers onPageNumberClick with correct number", () => {
-      user.click(screen.getByText("3"))
+    it("clicking a numbered button triggers onPageNumberClick with correct number", async () => {
+      await userEvent.click(screen.getByText("3"))
       expect(onPageNumberClick).toHaveBeenCalledWith(3)
     })
 
-    it("previous button is disabled on first page", () => {
-      expect(screen.getByLabelText("Previous Page")).toBeDisabled()
+    it("previous button is disabled on first page", async () => {
+      await expect(screen.getByLabelText("Previous Page")).toBeDisabled()
     })
   })
 
@@ -101,8 +99,8 @@ describe("Pagination", () => {
       expect(screen.getByLabelText("Next Page")).toBeDisabled()
     })
 
-    it("clicking the previous button triggers onPreviousClick", () => {
-      user.click(screen.getByLabelText("Previous Page"))
+    it("clicking the previous button triggers onPreviousClick", async () => {
+      await userEvent.click(screen.getByLabelText("Previous Page"))
       expect(onPreviousClick).toHaveBeenCalledTimes(1)
     })
   })

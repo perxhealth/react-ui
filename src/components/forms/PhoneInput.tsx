@@ -48,10 +48,7 @@ const countries: Countries = {
   },
 }
 
-export type InputProps = Omit<
-  ChakraInputProps,
-  "onChange" | "maxLength" | "value"
->
+type InputProps = Omit<ChakraInputProps, "onChange" | "maxLength" | "value">
 
 export interface PhoneInputProps extends InputProps {
   onChange?: (number: E164Number) => void
@@ -83,7 +80,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
 
   // Persist the user's country selection to state
   const onCountryChange = React.useCallback(
-    (event) => {
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
       setCurrentCountry(countries[event.target.value as CountryCode])
       setNumber("")
     },
@@ -129,8 +126,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
           bg="transparent"
           aria-label="Select a country"
           defaultValue={currentCountry.countryCode}
-          onChange={onCountryChange}
-        >
+          onChange={onCountryChange}>
           {Object.values(countries).map((country) => {
             const { countryCode, name, emoji } = country
             return (

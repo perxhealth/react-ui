@@ -52,8 +52,7 @@ Default.args = {
       onSubmit={(e) => {
         alert("submitted!")
         e.preventDefault()
-      }}
-    >
+      }}>
       <Stack spacing="3">
         <FormControl>
           <FormLabel>Medication</FormLabel>

@@ -1,2 +1,2 @@
-export * from "./Alert"
+export * from "./Notice"
 export * from "./ToastNotification"

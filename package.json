@@ -1,6 +1,6 @@
 {
   "name": "@perxhealth/react-ui",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "license": "MIT",
   "author": "Luke Rollans",
   "main": "dist/index.js",
@@ -26,15 +26,7 @@
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "enforce-formatting": "prettier --list-different '{*/**/*, */*}.{ts,tsx}'",
     "semantic-release": "semantic-release"
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": false,
-    "singleQuote": false,
-    "trailingComma": "es5",
-    "arrowParens": "always"
   },
   "size-limit": [
     {
@@ -46,43 +38,43 @@
       "limit": "10 KB"
     }
   ],
-  "peerDependencies": {
-    "@chakra-ui/icons": ">=1.1",
-    "@chakra-ui/react": ">=1.6.0",
-    "framer-motion": "^6",
-    "react": ">=17"
+  "dependencies": {
+    "@chakra-ui/react": ">=2.3",
+    "framer-motion": "^7",
+    "lucide-react": "^0.94.0",
+    "react": ">=18",
+    "react-icons": "^4.6.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.3",
-    "@chakra-ui/icons": "^1.1.7",
-    "@chakra-ui/react": "^1.8.9",
-    "@chakra-ui/storybook-addon": "^1.0.3",
+    "@babel/core": "^7.19.6",
+    "@chakra-ui/react": "^2.3.6",
+    "@chakra-ui/storybook-addon": "^4.0.12",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@size-limit/preset-small-lib": "^7.0.8",
-    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-links": "^6.5.12",
-    "@storybook/addon-viewport": "^6.5.12",
-    "@storybook/addons": "^6.5.12",
-    "@storybook/builder-webpack5": "^6.5.12",
-    "@storybook/manager-webpack5": "^6.5.12",
-    "@storybook/react": "^6.5.12",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/addons": "^6.5.13",
+    "@storybook/builder-webpack5": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/react": "^6.5.13",
     "@testing-library/dom": "^8.19.0",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^12.1.5",
-    "@testing-library/react-hooks": "^7.0.2",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/react": "^17.0.50",
-    "@types/react-dom": "^17.0.17",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/react": "^18.0.23",
+    "@types/react-dom": "^18.0.7",
     "babel-loader": "^8.2.5",
     "dts-cli": "^1.6.0",
-    "framer-motion": "^6.5.1",
+    "framer-motion": "^7.6.1",
     "gh-pages": "^3.2.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-is": "^17.0.2",
     "semantic-release": "^19.0.5",
     "size-limit": "^7.0.8",
@@ -92,8 +84,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/perxhealth/react-ui.git"
-  },
-  "dependencies": {
-    "react-icons": "^4.6.0"
   }
 }

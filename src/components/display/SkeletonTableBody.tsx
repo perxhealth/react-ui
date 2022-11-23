@@ -14,8 +14,8 @@ export const SkeletonTableBody = (props: SkeletonTableBodyProps) => {
 
   // Build each of the rows we want
   const skeletonTableRows = React.useMemo(() => {
-    return Array.from(new Array(rowCount), () => (
-      <SkeletonTableRow columnCount={columnCount} />
+    return Array.from(new Array(rowCount), (index) => (
+      <SkeletonTableRow columnCount={columnCount} key={index} />
     ))
   }, [rowCount, columnCount])
 

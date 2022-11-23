@@ -37,11 +37,9 @@ specifiers:
   size-limit: ^7.0.8
   tslib: ^2.4.0
   typescript: ^4.8.4
-  uuid: ^9.0.0
 
 dependencies:
   react-icons: 4.6.0_react@17.0.2
-  uuid: 9.0.0
 
 devDependencies:
   '@babel/core': 7.19.3
@@ -16810,11 +16808,6 @@ packages:
     deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
     hasBin: true
     dev: true
-
-  /uuid/9.0.0:
-    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
-    hasBin: true
-    dev: false
 
   /v8-compile-cache-lib/3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}

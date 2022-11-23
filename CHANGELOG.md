@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/perxhealth/react-ui/compare/v2.0.0...v2.0.1) (2022-11-23)
+
+
+### Bug Fixes
+
+* reorder package.json attributes ([c1512b6](https://github.com/perxhealth/react-ui/commit/c1512b650123683e43d84fd8dc0797b02a626b58))
+
 # [2.0.0](https://github.com/perxhealth/react-ui/compare/v1.6.0...v2.0.0) (2022-11-09)
 
 

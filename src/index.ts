@@ -2,6 +2,7 @@ export * from "@chakra-ui/react"
 
 export * from "./theme"
 
+export * from "./components/brand"
 export * from "./components/display"
 export * from "./components/overlay"
 export * from "./components/feedback"

@@ -1,11 +1,11 @@
-name: Publish to NPM
+name: Publish
 on:
   push:
     branches:
       - canon
 jobs:
   build:
-    name: Validate and publish
+    name: Validate and Publish
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:

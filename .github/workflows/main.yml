@@ -1,43 +1,105 @@
-name: Build
-on: [push, pull_request]
+name: 👩‍🔧 Preflight
+on:
+  push:
+    branches:
+      - '!canon'
+  pull_request:
+    branches:
+      - '**'
+
 jobs:
-  build:
-    name: Build, lint, and test on Node ${{ matrix.node }}
-
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node: ['14.x', '16.x']
-        os: [ubuntu-latest]
-
+  test:
+    name: 🤡 Jest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Use Node ${{ matrix.node }}
-        uses: actions/setup-node@v1
+      - name: Node setup
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 16
 
-      - name: Cache pnpm modules
-        uses: actions/cache@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
+          version: 7.1.6
+          run_install: false
 
-      - name: Install modules
-        uses: pnpm/action-setup@v2.1.0
+      - name: Download deps
+        run: pnpm install
+
+      - name: 🤡 Jest
+        run: pnpm test
+
+  lint:
+    name: ⬣ ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Node setup
+        uses: actions/setup-node@v3
         with:
-          version: 6.14.1
-          run_install: true
+          node-version: 16
 
-      - name: Lint
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7.1.6
+          run_install: false
+
+      - name: Download deps
+        run: pnpm install
+
+      - name: ⬣ ESLint
         run: pnpm lint
 
-      - name: Test
-        run: pnpm test -- --ci
+  typecheck:
+    name: ʦ TypeScript
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Build distributable
+      - name: Node setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7.1.6
+          run_install: false
+
+      - name: Download deps
+        run: pnpm install
+
+      - name: ʦ Compile
+        run: pnpm tsc
+
+  build:
+    name: 📦 Dry Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Node setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7.1.6
+          run_install: false
+
+      - name: Download deps
+        run: pnpm install
+
+      - name: 📦 Generate Dry Release
         run: pnpm build

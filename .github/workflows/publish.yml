@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - canon
-permissions:
-  contents: write
 
 jobs:
   build:
@@ -52,6 +50,6 @@ jobs:
 
       - name: Publish to NPM
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm semantic-release

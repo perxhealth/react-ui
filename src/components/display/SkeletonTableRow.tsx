@@ -14,8 +14,14 @@ export const SkeletonTableRow = (props: SkeletonTableRowProps) => {
 
   // Build the amount of 'columns' we wish to display
   const columns = React.useMemo(() => {
+    let iterator: number = 0
     return Array.from(new Array(columnCount), () => (
-      <Skeleton endColor="gray.300" height="14px" w={columnWidth} />
+      <Skeleton
+        key={++iterator}
+        width={columnWidth}
+        endColor="gray.300"
+        height="14px"
+      />
     ))
   }, [columnCount, columnWidth])
 

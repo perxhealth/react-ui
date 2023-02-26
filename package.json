@@ -1,6 +1,6 @@
 {
   "name": "@perxhealth/react-ui",
-  "version": "2.0.1",
+  "version": "0.0.0-development",
   "license": "MIT",
   "author": "Luke Rollans",
   "main": "dist/index.js",
@@ -25,7 +25,6 @@
     "build": "dts build",
     "test": "dts test --passWithNoTests",
     "lint": "dts lint",
-    "prepare": "dts build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",

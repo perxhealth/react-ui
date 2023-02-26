@@ -1,4 +1,5 @@
 import * as React from "react"
+import { jest, beforeEach, describe, it, expect } from "@jest/globals"
 import { screen, render } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
@@ -20,7 +21,7 @@ describe("PhoneInput", () => {
         })
 
         it("shows Australia's calling code", () => {
-          expect(screen.getByText("+61")).toBeInTheDocument()
+          expect(screen.getByText("+61")).toBeDefined()
         })
 
         it("has Australia selected in dropdown", () => {
@@ -42,7 +43,7 @@ describe("PhoneInput", () => {
         })
 
         it("shows United States calling code", () => {
-          expect(screen.getByText("+1")).toBeInTheDocument()
+          expect(screen.getByText("+1")).toBeDefined()
         })
 
         it("has United States selected in dropdown", () => {
@@ -56,7 +57,7 @@ describe("PhoneInput", () => {
 
     describe("showPlaceholderExampleNumber", () => {
       describe("is true", () => {
-        beforeEach(() =>
+        beforeEach(() => {
           render(
             <PhoneInput
               onChange={onChange}
@@ -64,15 +65,15 @@ describe("PhoneInput", () => {
               showPlaceholderExampleNumber={true}
             />
           )
-        )
+        })
 
         it("sets the input's placeholder text to the current country's example number", () => {
-          expect(screen.getByPlaceholderText("491 570 006")).toBeInTheDocument()
+          expect(screen.getByPlaceholderText("491 570 006")).toBeDefined()
         })
       })
 
       describe("is false", () => {
-        beforeEach(() =>
+        beforeEach(() => {
           render(
             <PhoneInput
               onChange={onChange}
@@ -80,12 +81,10 @@ describe("PhoneInput", () => {
               showPlaceholderExampleNumber={false}
             />
           )
-        )
+        })
 
-        it("does not set any placeholder text on the input", () => {
-          expect(
-            screen.queryByPlaceholderText("491 570 006")
-          ).not.toBeInTheDocument()
+        it("does not set placeholder text", () => {
+          expect(screen.queryByPlaceholderText("491 570 006")).toBeNull()
         })
       })
     })
@@ -141,7 +140,7 @@ describe("PhoneInput", () => {
       })
 
       it("shows the calling code", () => {
-        expect(screen.getByText("+61")).toBeInTheDocument()
+        expect(screen.getByText("+61")).toBeDefined()
       })
 
       describe("user enters number", () => {
@@ -162,7 +161,7 @@ describe("PhoneInput", () => {
       })
 
       it("shows the calling code", () => {
-        expect(screen.getByText("+1")).toBeInTheDocument()
+        expect(screen.getByText("+1")).toBeDefined()
       })
 
       describe("user enters number", () => {

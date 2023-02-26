@@ -120,6 +120,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Node setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7.28.0
+          run_install: false
+
+      - name: Download deps
+        run: pnpm install
+
       - name: 🚚 Download Release
         uses: actions/download-artifact@v3
         with:

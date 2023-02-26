@@ -99,7 +99,7 @@ jobs:
       - name: Download deps
         run: pnpm install
 
-      - name: 📦 Generate Release
+      - name: 📦 Generate release
         run: pnpm build
 
       - name: 🚚 Store

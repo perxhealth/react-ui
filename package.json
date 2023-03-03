@@ -73,7 +73,10 @@
     "@types/react": "^18.0.23",
     "@types/react-dom": "^18.0.7",
     "@types/testing-library__jest-dom": "^5.14.5",
+    "@vitejs/plugin-react": "^3.0.0",
+    "@vitest/coverage-c8": "^0.26.3",
     "babel-loader": "^8.2.5",
+    "c8": "^7.12.0",
     "dts-cli": "^1.6.0",
     "framer-motion": "^7.6.1",
     "gh-pages": "^3.2.3",
@@ -84,6 +87,9 @@
     "semantic-release": "^19.0.5",
     "size-limit": "^7.0.8",
     "tslib": "^2.4.0",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "vite": "^4.0.3",
+    "vite-plugin-svgr": "^2.4.0",
+    "vitest": "^0.26.3"
   }
 }

@@ -41,8 +41,11 @@
     "@chakra-ui/react": ">=2.3",
     "framer-motion": "^7",
     "lucide-react": "^0.94.0",
-    "react": ">=18",
     "react-icons": "^4.6.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.2",
+    "react-dom": ">=18.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",

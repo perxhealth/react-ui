@@ -15,6 +15,15 @@ export default defineConfig({
       fileName: "react-ui",
       name: "ReactUI",
     },
+    rollupOptions: {
+      external: ["react", "react-dom"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+        },
+      },
+    },
   },
   test: {
     globals: true,

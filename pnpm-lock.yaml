@@ -33,9 +33,8 @@ specifiers:
   gh-pages: ^3.2.3
   lucide-react: ^0.94.0
   prettier: ^2.7.1
-  react: '>=18'
+  react: ^18.2.0
   react-dom: ^18.2.0
-  react-icons: ^4.6.0
   react-is: ^17.0.2
   semantic-release: ^19.0.5
   size-limit: ^7.0.8
@@ -50,8 +49,6 @@ dependencies:
   '@chakra-ui/react': 2.3.6_bv2yivcp234mn3jmmx4xtyyovm
   framer-motion: 7.6.1_biqbaboplfbrettd7655fr4n2y
   lucide-react: 0.94.0_react@18.2.0
-  react: 18.2.0
-  react-icons: 4.6.0_react@18.2.0
 
 devDependencies:
   '@babel/core': 7.19.6
@@ -83,6 +80,7 @@ devDependencies:
   c8: 7.12.0
   gh-pages: 3.2.3
   prettier: 2.7.1
+  react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-is: 17.0.2
   semantic-release: 19.0.5
@@ -14333,14 +14331,6 @@ packages:
       react-fast-compare: 3.2.0
       shallowequal: 1.1.0
     dev: true
-
-  /react-icons/4.6.0_react@18.2.0:
-    resolution: {integrity: sha512-rR/L9m9340yO8yv1QT1QurxWQvWpbNHqVX0fzMln2HEb9TEIrQRGsqiNFQfiv9/JEUbyHmHPlNTB2LWm2Ttz0g==}
-    peerDependencies:
-      react: '*'
-    dependencies:
-      react: 18.2.0
-    dev: false
 
   /react-inspector/5.1.1_react@18.2.0:
     resolution: {integrity: sha512-GURDaYzoLbW8pMGXwYPDBIv6nqei4kK7LPRZ9q9HCZF54wqXz/dnylBp/kfE9XmekBhHvLDdcYeyIwSrvtOiWg==}

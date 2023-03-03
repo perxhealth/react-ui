@@ -1,5 +1,5 @@
 import * as React from "react"
-import { HiOutlineCheckCircle } from "react-icons/hi"
+import { CheckCircle2 } from "lucide-react"
 
 import {
   Button,
@@ -71,7 +71,7 @@ export const ConfirmationModal = (props: ConfirmationModalProps) => {
               size="lg"
               isLoading={isLoading}
               onClick={onConfirm}
-              rightIcon={<Icon as={HiOutlineCheckCircle} w={6} h={6} />}>
+              rightIcon={<Icon as={CheckCircle2} w={6} h={6} />}>
               Confirm
             </Button>
           </Stack>

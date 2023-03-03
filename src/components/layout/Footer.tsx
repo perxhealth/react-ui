@@ -1,8 +1,6 @@
 import * as React from "react"
 import { Box, Flex, Stack, StackProps, Image, Icon } from "@chakra-ui/react"
-
-import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa"
-import { MdEmail } from "react-icons/md"
+import { Facebook, Twitter, Linkedin, Mail } from "lucide-react"
 
 export interface FooterProps extends StackProps {}
 
@@ -26,16 +24,16 @@ export const Footer = (props: FooterProps) => {
 
         <Stack align="center" direction="row" spacing="4">
           <a href="https://facebook.com/perxhealth">
-            <Icon as={FaFacebook} fontSize="20" color="gray.500" />
+            <Icon as={Facebook} fontSize="20" color="gray.500" />
           </a>
           <a href="https://twitter.com/perxhealth">
-            <Icon as={FaTwitter} fontSize="20" color="gray.500" />
+            <Icon as={Twitter} fontSize="20" color="gray.500" />
           </a>
           <a href="https://linkedin.com/company/perx-health">
-            <Icon as={FaLinkedin} fontSize="20" color="gray.500" />
+            <Icon as={Linkedin} fontSize="20" color="gray.500" />
           </a>
           <a href="mailto:contact@perxhealth.com?subject=Hello">
-            <Icon as={MdEmail} fontSize="20" color="gray.500" />
+            <Icon as={Mail} fontSize="20" color="gray.500" />
           </a>
         </Stack>
       </Flex>

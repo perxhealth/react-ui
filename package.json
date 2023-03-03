@@ -40,8 +40,7 @@
   "dependencies": {
     "@chakra-ui/react": ">=2.3",
     "framer-motion": "^7",
-    "lucide-react": "^0.94.0",
-    "react-icons": "^4.6.0"
+    "lucide-react": "^0.94.0"
   },
   "peerDependencies": {
     "react": ">=18.2",

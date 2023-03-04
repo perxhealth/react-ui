@@ -19,14 +19,17 @@ export default defineConfig({
       external: [
         "react",
         "react-dom",
-        "@chakra-ui/react",
         "framer-motion",
         "lucide-react",
+        "prop-types",
       ],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          "framer-motion": "FramerMotion",
+          "lucide-react": "LucideReact",
+          "prop-types": "PropTypes",
         },
       },
     },

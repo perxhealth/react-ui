@@ -16,7 +16,13 @@ export default defineConfig({
       name: "ReactUI",
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: [
+        "react",
+        "react-dom",
+        "@chakra-ui/react",
+        "framer-motion",
+        "lucide-react",
+      ],
       output: {
         globals: {
           react: "React",

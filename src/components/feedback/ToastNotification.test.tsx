@@ -1,68 +1,65 @@
 import * as React from "react"
-import { vi, describe, beforeEach, it, expect } from "vitest"
-import { render, screen } from "@testing-library/react"
+import { vi } from "vitest"
+
+import { render } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
-import { ToastNotification } from "./ToastNotification"
+import { ToastNotification, ToastNotificationProps } from "./ToastNotification"
 
 describe("ToastNotification", () => {
   const onCustomButtonClick = vi.fn()
   const onClose = vi.fn()
 
-  describe("primary content", () => {
-    beforeEach(() => {
-      render(<ToastNotification title="The title!" subtitle="the subtitle!" />)
-    })
+  // render a ToastNotification component with sane, overridable defaults
+  const setup = (props?: Partial<ToastNotificationProps>) => {
+    const defaultProps: ToastNotificationProps = {
+      title: "Look at me!",
+      onClose: onClose,
+    }
 
+    return {
+      user: userEvent.setup(),
+      ...render(<ToastNotification {...defaultProps} {...props} />),
+    }
+  }
+
+  describe("primary content", () => {
     it("renders the correct title", () => {
-      expect(screen.getByText("The title!")).toBeInTheDocument()
+      const { getByText } = setup({ title: "The title!" })
+      expect(getByText("The title!")).toBeInTheDocument()
     })
 
     it("renders the correct subtitle", () => {
-      expect(screen.getByText("the subtitle!")).toBeInTheDocument()
+      const { getByText } = setup({ subtitle: "the subtitle!" })
+      expect(getByText("the subtitle!")).toBeInTheDocument()
     })
   })
 
   describe("custom button", () => {
-    beforeEach(() => {
-      render(
-        <ToastNotification
-          title="Some title"
-          customButtonText="Do a thing!"
-          onCustomButtonClick={onCustomButtonClick}
-        />
-      )
-    })
-
     it("renders a button if customButtonText is supplied", () => {
-      expect(
-        screen.getByRole("button", { name: "Do a thing!" })
-      ).toBeInTheDocument()
+      const { getByRole } = setup({ customButtonText: "Do a thing!" })
+      expect(getByRole("button", { name: "Do a thing!" })).toBeInTheDocument()
     })
 
     it("triggers onCustomButtonClick when the custom button is clicked", async () => {
-      await userEvent.click(screen.getByText("Do a thing!"))
+      const { getByText } = setup({
+        customButtonText: "Do a thing!",
+        onCustomButtonClick: onCustomButtonClick,
+      })
+      await userEvent.click(getByText("Do a thing!"))
       expect(onCustomButtonClick).toHaveBeenCalledTimes(1)
     })
   })
 
   describe("close button", () => {
-    beforeEach(() => {
-      render(
-        <ToastNotification
-          title="Some title"
-          showCloseButton={true}
-          onClose={onClose}
-        />
-      )
-    })
-
     it("is shown when showCloseButton is true", () => {
-      expect(screen.getByRole("button", { name: "Close" })).toBeInTheDocument()
+      const { getByRole } = setup({ showCloseButton: true })
+      expect(getByRole("button", { name: "Close" })).toBeInTheDocument()
     })
 
     it("triggers onClose when clicked", async () => {
-      await userEvent.click(screen.getByText("Close"))
+      const { getByText } = setup({ showCloseButton: true })
+      await userEvent.click(getByText("Close"))
       expect(onClose).toHaveBeenCalledTimes(1)
     })
   })

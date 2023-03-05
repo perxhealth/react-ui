@@ -1,33 +1,36 @@
 import * as React from "react"
-import { vi, describe, beforeEach, it, expect } from "vitest"
-import { screen, render } from "@testing-library/react"
+import { vi, describe, it, expect } from "vitest"
+import { render } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
-import { Notice } from "./Notice"
+import { Notice, NoticeProps } from "./Notice"
 
 describe("Notice", () => {
   const onClose = vi.fn()
 
-  beforeEach(() => {
-    render(
-      <Notice onClose={onClose} title="Primary text" description="subtext" />
-    )
-  })
+  // render a Notice component with sane, overridable defaults
+  const setup = (props?: Partial<NoticeProps>) => {
+    const defaultProps: NoticeProps = { title: "Primary text" }
 
-  afterEach(() => {
-    vi.clearAllMocks()
-  })
+    return {
+      user: userEvent.setup(),
+      ...render(<Notice {...defaultProps} {...props} />),
+    }
+  }
 
   it("renders the primary text", () => {
-    expect(screen.getByText("Primary text")).toBeInTheDocument()
+    const { getByText } = setup()
+    expect(getByText("Primary text")).toBeInTheDocument()
   })
 
   it("renders the subtext", () => {
-    expect(screen.getByText("subtext")).toBeInTheDocument()
+    const { getByText } = setup({ description: "subtext" })
+    expect(getByText("subtext")).toBeInTheDocument()
   })
 
-  it("calls props.onCloseClick when the close button is clicked", async () => {
-    await userEvent.click(screen.getByRole("button"))
+  it("calls props.onCloseClick when close is clicked", async () => {
+    const { getByRole } = setup({ onClose: onClose })
+    await userEvent.click(getByRole("button"))
     expect(onClose).toHaveBeenCalledTimes(1)
   })
 })

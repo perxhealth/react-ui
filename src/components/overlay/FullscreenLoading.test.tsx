@@ -1,16 +1,20 @@
 import * as React from "react"
-import { screen, render } from "@testing-library/react"
+import { render } from "@testing-library/react"
+import userEvent from "@testing-library/user-event"
 
-import { FullscreenLoading } from "./FullscreenLoading"
+import { FullscreenLoading, FullscreenLoadingProps } from "./FullscreenLoading"
 
 describe("FullscreenLoading", () => {
-  beforeEach(() => {
-    render(<FullscreenLoading message="Retrieving account information" />)
-  })
+  // render a FullscreenLoading component with sane, overridable defaults
+  const setup = (props?: Partial<FullscreenLoadingProps>) => {
+    return {
+      user: userEvent.setup(),
+      ...render(<FullscreenLoading {...props} />),
+    }
+  }
 
   it("shows the expected message text", () => {
-    expect(
-      screen.getByText("Retrieving account information")
-    ).toBeInTheDocument()
+    const { getByText } = setup({ message: "Retrieving account..." })
+    expect(getByText("Retrieving account...")).toBeInTheDocument()
   })
 })

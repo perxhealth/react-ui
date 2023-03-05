@@ -1,48 +1,46 @@
 import * as React from "react"
-import { screen, render } from "@testing-library/react"
+
+import { render } from "@testing-library/react"
+import userEvent from "@testing-library/user-event"
 
 import { ReferralStatusTag } from "./ReferralStatusTag"
 import { ReferralStatus } from "../../../types"
 
 describe("ReferralStatusTag", () => {
+  // render a ReferralStatusTag component with sane, overridable defaults
+  const setup = (status: ReferralStatus = ReferralStatus.Converted) => {
+    return {
+      user: userEvent.setup(),
+      ...render(<ReferralStatusTag status={status} />),
+    }
+  }
+
   describe("status", () => {
     describe("invited", () => {
-      beforeEach(() =>
-        render(<ReferralStatusTag status={ReferralStatus.Invited} />)
-      )
-
       it("renders the correct label", () => {
-        expect(screen.getByText("Invited")).toBeInTheDocument()
+        const { getByText } = setup(ReferralStatus.Invited)
+        expect(getByText("Invited")).toBeInTheDocument()
       })
     })
 
     describe("converted", () => {
-      beforeEach(() =>
-        render(<ReferralStatusTag status={ReferralStatus.Converted} />)
-      )
-
       it("renders the correct label", () => {
-        expect(screen.getByText("Converted")).toBeInTheDocument()
+        const { getByText } = setup(ReferralStatus.Converted)
+        expect(getByText("Converted")).toBeInTheDocument()
       })
     })
 
     describe("offboarded", () => {
-      beforeEach(() =>
-        render(<ReferralStatusTag status={ReferralStatus.Offboarded} />)
-      )
-
       it("renders the correct label", () => {
-        expect(screen.getByText("Offboarded")).toBeInTheDocument()
+        const { getByText } = setup(ReferralStatus.Offboarded)
+        expect(getByText("Offboarded")).toBeInTheDocument()
       })
     })
 
     describe("cancelled", () => {
-      beforeEach(() =>
-        render(<ReferralStatusTag status={ReferralStatus.Cancelled} />)
-      )
-
       it("renders the correct label", () => {
-        expect(screen.getByText("Cancelled")).toBeInTheDocument()
+        const { getByText } = setup(ReferralStatus.Cancelled)
+        expect(getByText("Cancelled")).toBeInTheDocument()
       })
     })
   })

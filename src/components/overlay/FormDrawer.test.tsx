@@ -1,73 +1,64 @@
 import * as React from "react"
 import { vi } from "vitest"
-import { screen, render, RenderResult } from "@testing-library/react"
+import { render } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
-import { FormDrawer } from "./FormDrawer"
+import { FormDrawer, FormDrawerProps } from "./FormDrawer"
 
 describe("FormDrawer", () => {
-  let view: RenderResult
-
   const onClose = vi.fn()
 
-  beforeEach(() => {
-    view = render(
-      <FormDrawer
-        title="Schedule a dose"
-        formId="the-form-id"
-        onClose={onClose}
-        isOpen={true}
-        isSubmitting={false}
-        children={<p>Hello!</p>}
-      />
-    )
-  })
+  // render a FormDrawer component with sane, overridable defaults
+  const setup = (props?: Partial<FormDrawerProps>) => {
+    const defaultProps: FormDrawerProps = {
+      title: "Schedule a dose",
+      formId: "the-form-id",
+      isOpen: true,
+      isSubmitting: false,
+      onClose: onClose,
+      children: <p>Hello!</p>,
+    }
 
-  afterEach(() => {
-    vi.clearAllMocks()
-  })
+    return {
+      user: userEvent.setup(),
+      ...render(<FormDrawer {...defaultProps} {...props} />),
+    }
+  }
 
   it("renders the header", () => {
-    expect(screen.getByRole("banner").textContent).toBe("Schedule a dose")
+    const { getByRole } = setup()
+    expect(getByRole("banner").textContent).toBe("Schedule a dose")
   })
 
   it("renders the body", () => {
-    expect(screen.getByText("Hello!")).toBeInTheDocument()
+    const { getByText } = setup()
+    expect(getByText("Hello!")).toBeInTheDocument()
   })
 
   it("attaches the submit button to the form", () => {
-    const submitButton = screen.getByRole("button", { name: "Submit" })
+    const { getByRole } = setup()
+    const submitButton = getByRole("button", { name: "Submit" })
     expect(submitButton).toHaveAttribute("type", "submit")
     expect(submitButton).toHaveAttribute("form", "the-form-id")
   })
 
   it("closes when the Cancel button is clicked", async () => {
-    await userEvent.click(screen.getByText("Cancel"))
+    const { getByText } = setup()
+    await userEvent.click(getByText("Cancel"))
     expect(onClose).toHaveBeenCalledTimes(1)
   })
 
   describe("submitting state", () => {
-    beforeEach(() => {
-      view.rerender(
-        <FormDrawer
-          title="Schedule a dose"
-          formId="the-form-id"
-          onClose={onClose}
-          isOpen={true}
-          isSubmitting={true}
-          children={<p>Hello!</p>}
-        />
-      )
-    })
-
     it("disables the cancel button", () => {
-      expect(screen.getByText("Cancel")).toBeDisabled()
+      const { getByText } = setup({ isSubmitting: true })
+      expect(getByText("Cancel")).toBeDisabled()
     })
 
     it("disables the submit button", () => {
       // 'Submit' text is actually in an off screen label given `isLoading`
       // is also true. Because of this, we need to seek the underlying `button`
-      expect(screen.getByText("Submit").closest("button")).toBeDisabled()
+      const { getByText } = setup({ isSubmitting: true })
+      expect(getByText("Submit").closest("button")).toBeDisabled()
     })
   })
 })

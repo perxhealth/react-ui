@@ -144,7 +144,7 @@ describe("PhoneInput", () => {
         expect(getByText("+61")).toBeDefined()
       })
 
-      it.only("reports back the correct calling code", async () => {
+      it("reports back the correct calling code", async () => {
         const { getByRole, getByLabelText } = setup()
         await userEvent.selectOptions(getByLabelText("Select a country"), "US")
         await userEvent.type(getByRole("textbox"), "491570156")

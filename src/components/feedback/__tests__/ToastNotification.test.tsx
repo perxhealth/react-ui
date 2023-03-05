@@ -1,17 +1,18 @@
 import * as React from "react"
+import { vi, describe, beforeEach, it, expect } from "vitest"
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
 import { ToastNotification } from "../ToastNotification"
 
 describe("ToastNotification", () => {
-  const onCustomButtonClick = jest.fn()
-  const onClose = jest.fn()
+  const onCustomButtonClick = vi.fn()
+  const onClose = vi.fn()
 
   describe("primary content", () => {
-    beforeEach(() =>
+    beforeEach(() => {
       render(<ToastNotification title="The title!" subtitle="the subtitle!" />)
-    )
+    })
 
     it("renders the correct title", () => {
       expect(screen.getByText("The title!")).toBeInTheDocument()

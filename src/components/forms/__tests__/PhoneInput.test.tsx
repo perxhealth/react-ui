@@ -1,12 +1,12 @@
 import * as React from "react"
-import { jest, beforeEach, describe, it, expect } from "@jest/globals"
+import { vi, beforeEach, describe, it, expect } from "vitest"
 import { screen, render } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
 import { PhoneInput, CountryCode } from "../PhoneInput"
 
 describe("PhoneInput", () => {
-  const onChange = jest.fn()
+  const onChange = vi.fn()
 
   describe("props", () => {
     describe("initialCountryCode", () => {

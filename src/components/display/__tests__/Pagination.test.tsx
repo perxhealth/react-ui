@@ -1,16 +1,17 @@
 import * as React from "react"
+import { vi, describe, beforeEach, it, expect } from "vitest"
 import { screen, render } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
 import { Pagination } from "../Pagination"
 
 describe("Pagination", () => {
-  const onPreviousClick = jest.fn()
-  const onNextClick = jest.fn()
-  const onPageNumberClick = jest.fn()
+  const onPreviousClick = vi.fn()
+  const onNextClick = vi.fn()
+  const onPageNumberClick = vi.fn()
 
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   describe("page count", () => {

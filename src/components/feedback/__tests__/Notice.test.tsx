@@ -1,11 +1,12 @@
 import * as React from "react"
+import { vi, describe, beforeEach, it, expect } from "vitest"
 import { screen, render } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
 import { Notice } from "../Notice"
 
 describe("Notice", () => {
-  const onClose = jest.fn()
+  const onClose = vi.fn()
 
   beforeEach(() => {
     render(
@@ -14,7 +15,7 @@ describe("Notice", () => {
   })
 
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it("renders the primary text", () => {

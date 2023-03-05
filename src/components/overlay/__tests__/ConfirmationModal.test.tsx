@@ -1,15 +1,16 @@
 import * as React from "react"
+import { vi, describe, beforeEach, it, expect } from "vitest"
 import { screen, render, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
 import { ConfirmationModal, ConfirmationModalProps } from "../ConfirmationModal"
 
 describe("ConfirmationModal", () => {
-  const onConfirm = jest.fn()
-  const onCancel = jest.fn()
+  const onConfirm = vi.fn()
+  const onCancel = vi.fn()
 
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   // Helper to render a ConfirmationModal with sane default props and optional
@@ -66,7 +67,9 @@ describe("ConfirmationModal", () => {
 
     describe("isOpen", () => {
       describe("is true", () => {
-        beforeEach(() => renderComponent({ isOpen: true }))
+        beforeEach(() => {
+          renderComponent({ isOpen: true })
+        })
 
         it("displays content", async () => {
           await waitFor(() => {
@@ -85,7 +88,9 @@ describe("ConfirmationModal", () => {
       })
 
       describe("customised", () => {
-        beforeEach(() => renderComponent({ headerText: "Think again!" }))
+        beforeEach(() => {
+          renderComponent({ headerText: "Think again!" })
+        })
 
         it("is displayed in the modal", () => {
           expect(screen.getByText("Think again!")).toBeInTheDocument()
@@ -99,7 +104,9 @@ describe("ConfirmationModal", () => {
 
     describe("isLoading", () => {
       describe("is true", () => {
-        beforeEach(() => renderComponent({ isLoading: true }))
+        beforeEach(() => {
+          renderComponent({ isLoading: true })
+        })
 
         it("disables the Cancel button", () => {
           expect(screen.getByText("Cancel")).toBeDisabled()

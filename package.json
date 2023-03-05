@@ -52,7 +52,6 @@
     "@chakra-ui/storybook-addon": "^4.0.12",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
-    "@jest/globals": "^29.4.3",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@size-limit/preset-small-lib": "^7.0.8",

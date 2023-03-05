@@ -1,4 +1,5 @@
 import * as React from "react"
+import { vi, describe, beforeEach, it, expect } from "vitest"
 import { screen, render, RenderResult } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
@@ -7,7 +8,7 @@ import { FormDrawer } from "../FormDrawer"
 describe("FormDrawer", () => {
   let view: RenderResult
 
-  const onClose = jest.fn()
+  const onClose = vi.fn()
 
   beforeEach(() => {
     view = render(
@@ -23,7 +24,7 @@ describe("FormDrawer", () => {
   })
 
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it("renders the header", () => {

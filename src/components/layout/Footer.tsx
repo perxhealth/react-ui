@@ -2,9 +2,7 @@ import * as React from "react"
 import { Box, Flex, Stack, StackProps, Image, Icon } from "@chakra-ui/react"
 import { Facebook, Twitter, Linkedin, Mail } from "lucide-react"
 
-export interface FooterProps extends StackProps {}
-
-export const Footer = (props: FooterProps) => {
+export const Footer = (props: StackProps) => {
   return (
     <Stack
       align="center"

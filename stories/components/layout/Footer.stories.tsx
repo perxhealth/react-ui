@@ -17,7 +17,7 @@ export default meta
 
 const Template: Story<FooterProps> = (args) => (
   <Box px="2" py="6">
-    <Footer />
+    <Footer {...args} />
   </Box>
 )
 

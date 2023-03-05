@@ -11,7 +11,7 @@ export interface ReferralStatusTagProps extends TagProps {
 export type TagStyle = {
   colour: string
   label: string
-  icon: any
+  icon: typeof X
 }
 
 export const ReferralStatusTag = (props: ReferralStatusTagProps) => {

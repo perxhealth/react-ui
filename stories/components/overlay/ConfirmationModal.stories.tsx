@@ -3,10 +3,8 @@ import { Meta, Story } from "@storybook/react"
 
 import {
   Alert,
-  AlertProps,
   AlertIcon,
   AlertTitle,
-  AlertDescription,
   Table,
   Thead,
   Tbody,
@@ -58,7 +56,7 @@ Default.args = {
 
       <Text>
         Your referrals are locked, loaded and ready to go. Please perform one
-        final check of the data below, and click Confirm when you're ready.
+        final check of the data below, and click Confirm when you are ready.
       </Text>
 
       <Alert status="warning" variant="left-accent">

@@ -14,7 +14,7 @@ export const SkeletonTableRow = (props: SkeletonTableRowProps) => {
 
   // Build the amount of 'columns' we wish to display
   const columns = React.useMemo(() => {
-    let iterator: number = 0
+    let iterator = 0
     return Array.from(new Array(columnCount), () => (
       <Skeleton
         key={++iterator}

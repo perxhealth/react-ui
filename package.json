@@ -76,6 +76,7 @@
     "c8": "^7.12.0",
     "framer-motion": "^7.6.1",
     "gh-pages": "^3.2.3",
+    "jsdom": "^21.1.0",
     "lucide-react": "^0.121.0",
     "prettier": "^2.7.1",
     "react": "^18.2.0",

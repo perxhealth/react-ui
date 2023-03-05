@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    name: 🤡 Jest
+    name: ⚡️ Vitest
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,7 +26,7 @@ jobs:
       - name: Download deps
         run: pnpm install
 
-      - name: 🤡 Jest
+      - name: ⚡️ Vitest
         run: pnpm test
 
   lint:

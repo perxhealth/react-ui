@@ -3,7 +3,7 @@ import { vi, describe, beforeEach, it, expect } from "vitest"
 import { screen, render } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
-import { Pagination } from "../Pagination"
+import { Pagination } from "./Pagination"
 
 describe("Pagination", () => {
   const onPreviousClick = vi.fn()

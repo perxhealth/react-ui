@@ -3,7 +3,7 @@ import { vi, describe, beforeEach, it, expect } from "vitest"
 import { screen, render, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
-import { ConfirmationModal, ConfirmationModalProps } from "../ConfirmationModal"
+import { ConfirmationModal, ConfirmationModalProps } from "./ConfirmationModal"
 
 describe("ConfirmationModal", () => {
   const onConfirm = vi.fn()

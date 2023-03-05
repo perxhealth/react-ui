@@ -1,8 +1,8 @@
 import * as React from "react"
 import { screen, render } from "@testing-library/react"
 
-import { ReferralStatusTag } from "../ReferralStatusTag"
-import { ReferralStatus } from "../../../../types"
+import { ReferralStatusTag } from "./ReferralStatusTag"
+import { ReferralStatus } from "../../../types"
 
 describe("ReferralStatusTag", () => {
   describe("status", () => {

@@ -3,7 +3,7 @@ import { vi } from "vitest"
 import { screen, render, RenderResult } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
-import { FormDrawer } from "../FormDrawer"
+import { FormDrawer } from "./FormDrawer"
 
 describe("FormDrawer", () => {
   let view: RenderResult

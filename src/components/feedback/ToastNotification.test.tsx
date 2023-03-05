@@ -3,7 +3,7 @@ import { vi, describe, beforeEach, it, expect } from "vitest"
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
-import { ToastNotification } from "../ToastNotification"
+import { ToastNotification } from "./ToastNotification"
 
 describe("ToastNotification", () => {
   const onCustomButtonClick = vi.fn()

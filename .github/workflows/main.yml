@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    name: ⚡️ Vitest
+    name: ⚡️ test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,10 +30,10 @@ jobs:
         run: pnpm install
 
       - name: ⚡️ Vitest
-        run: pnpm test --run
+        run: pnpm test -- --run
 
   coverage:
-    name: ⚡️ Vitest Coverage
+    name: ⚡️ test coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -57,7 +57,7 @@ jobs:
         run: pnpm coverage
 
   lint:
-    name: ⬣ ESLint
+    name: ⬣ lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -81,7 +81,7 @@ jobs:
         run: pnpm lint
 
   typecheck:
-    name: ʦ TypeScript
+    name: ʦ type check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -105,7 +105,7 @@ jobs:
         run: pnpm tsc
 
   build:
-    name: 📦 Dry Build
+    name: 📦 dry build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo

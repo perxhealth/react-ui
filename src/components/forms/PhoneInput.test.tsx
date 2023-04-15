@@ -1,5 +1,5 @@
 import * as React from "react"
-import { vi, beforeEach, describe, it, expect } from "vitest"
+import { vi, describe, it, expect } from "vitest"
 import { render } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
@@ -55,16 +55,6 @@ describe("PhoneInput", () => {
 
     describe("showPlaceholderExampleNumber", () => {
       describe("is true", () => {
-        beforeEach(() => {
-          render(
-            <PhoneInput
-              onChange={onChange}
-              initialCountryCode={CountryCode.AU}
-              showPlaceholderExampleNumber={true}
-            />
-          )
-        })
-
         it("sets the input's placeholder text to the current country's example number", () => {
           const { getByPlaceholderText } = setup({
             showPlaceholderExampleNumber: true,
@@ -75,30 +65,26 @@ describe("PhoneInput", () => {
 
       describe("is false", () => {
         it("does not set placeholder text", () => {
-          const { getByPlaceholderText } = setup({
+          const { queryByPlaceholderText } = setup({
             showPlaceholderExampleNumber: false,
           })
-          expect(getByPlaceholderText("491 570 006")).not.toBeInTheDocument()
+          expect(queryByPlaceholderText("491 570 006")).not.toBeInTheDocument()
         })
       })
     })
   })
 
   describe("sanitisation", () => {
-    beforeEach(() => {
-      render(<PhoneInput onChange={onChange} />)
-    })
-
     describe("spaces", () => {
       it("disallows spaces", async () => {
-        const { getByRole } = setup()
-        await userEvent.type(getByRole("textbox"), "491 570 156")
+        const { getByRole, user } = setup()
+        await user.type(getByRole("textbox"), "491 570 156")
         expect(getByRole("textbox")).toHaveValue("491570156")
       })
 
       it("does not report spaces to onChange", async () => {
-        const { getByRole } = setup()
-        await userEvent.type(getByRole("textbox"), "491 570 156")
+        const { getByRole, user } = setup()
+        await user.type(getByRole("textbox"), "491 570 156")
         expect(onChange).lastCalledWith("+61491570156")
         expect(onChange).toHaveBeenCalledTimes(9)
       })
@@ -106,14 +92,14 @@ describe("PhoneInput", () => {
 
     describe("a-z", () => {
       it("does not persist a-z characters", async () => {
-        const { getByRole } = setup()
-        await userEvent.type(getByRole("textbox"), "491d570s156")
+        const { getByRole, user } = setup()
+        await user.type(getByRole("textbox"), "491d570s156")
         expect(getByRole("textbox")).toHaveValue("491570156")
       })
 
       it("does not report a-z characters to onChange", async () => {
-        const { getByRole } = setup()
-        await userEvent.type(getByRole("textbox"), "491d570s156")
+        const { getByRole, user } = setup()
+        await user.type(getByRole("textbox"), "491d570s156")
         expect(onChange).lastCalledWith("+61491570156")
         expect(onChange).toHaveBeenCalledTimes(9)
       })
@@ -123,15 +109,15 @@ describe("PhoneInput", () => {
   describe("country selection", () => {
     describe("AU", () => {
       it("shows the calling code", async () => {
-        const { getByText, getByLabelText } = setup()
-        await userEvent.selectOptions(getByLabelText("Select a country"), "AU")
+        const { getByText, getByLabelText, user } = setup()
+        await user.selectOptions(getByLabelText("Select a country"), "AU")
         expect(getByText("+61")).toBeDefined()
       })
 
       it("reports back the correct calling code", async () => {
-        const { getByRole, getByLabelText } = setup()
-        await userEvent.selectOptions(getByLabelText("Select a country"), "AU")
-        await userEvent.type(getByRole("textbox"), "491570156")
+        const { getByRole, getByLabelText, user } = setup()
+        await user.selectOptions(getByLabelText("Select a country"), "AU")
+        await user.type(getByRole("textbox"), "491570156")
         expect(onChange).toHaveBeenCalledWith("+614")
         expect(onChange).toHaveBeenCalledWith("+61491570156")
       })
@@ -139,15 +125,15 @@ describe("PhoneInput", () => {
 
     describe("US", () => {
       it("shows the calling code", async () => {
-        const { getByText, getByLabelText } = setup()
-        await userEvent.selectOptions(getByLabelText("Select a country"), "US")
-        expect(getByText("+61")).toBeDefined()
+        const { getByText, getByLabelText, user } = setup()
+        await user.selectOptions(getByLabelText("Select a country"), "US")
+        expect(getByText("+1")).toBeDefined()
       })
 
       it("reports back the correct calling code", async () => {
-        const { getByRole, getByLabelText } = setup()
-        await userEvent.selectOptions(getByLabelText("Select a country"), "US")
-        await userEvent.type(getByRole("textbox"), "491570156")
+        const { getByRole, getByLabelText, user } = setup()
+        await user.selectOptions(getByLabelText("Select a country"), "US")
+        await user.type(getByRole("textbox"), "491570156")
         expect(onChange).toHaveBeenCalledWith("+14")
         expect(onChange).toHaveBeenCalledWith("+1491570156")
       })

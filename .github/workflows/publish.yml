@@ -27,7 +27,7 @@ jobs:
         run: pnpm install
 
       - name: ⚡️ Vitest
-        run: pnpm test:ci
+        run: pnpm test --run
 
   coverage:
     name: ⚡️ Vitest Coverage

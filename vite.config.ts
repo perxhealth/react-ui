@@ -17,6 +17,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
+        "@chakra-ui/react",
         "react",
         "react-dom",
         "framer-motion",
@@ -25,6 +26,7 @@ export default defineConfig({
       ],
       output: {
         globals: {
+          "@chakra-ui/react": "ChakraUI",
           react: "React",
           "react-dom": "ReactDOM",
           "framer-motion": "FramerMotion",

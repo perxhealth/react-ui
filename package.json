@@ -38,10 +38,8 @@
     "build-storybook": "build-storybook",
     "semantic-release": "semantic-release"
   },
-  "dependencies": {
-    "@chakra-ui/react": ">=2.5"
-  },
   "peerDependencies": {
+    "@chakra-ui/react": ">=2.5",
     "framer-motion": "^7",
     "lucide-react": "^0.94.0",
     "react": ">=18.2",

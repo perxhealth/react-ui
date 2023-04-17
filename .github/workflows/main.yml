@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    name: 🤡 Jest
+    name: ⚡️ test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,11 +29,35 @@ jobs:
       - name: Download deps
         run: pnpm install
 
-      - name: 🤡 Jest
-        run: pnpm test
+      - name: ⚡️ Vitest
+        run: pnpm test -- --run
+
+  coverage:
+    name: ⚡️ test coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Node setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7.28.0
+          run_install: false
+
+      - name: Download deps
+        run: pnpm install
+
+      - name: ⚡️ Vitest Coverage
+        run: pnpm coverage
 
   lint:
-    name: ⬣ ESLint
+    name: ⬣ lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -57,7 +81,7 @@ jobs:
         run: pnpm lint
 
   typecheck:
-    name: ʦ TypeScript
+    name: ʦ type check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -81,7 +105,7 @@ jobs:
         run: pnpm tsc
 
   build:
-    name: 📦 Dry Build
+    name: 📦 dry build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo

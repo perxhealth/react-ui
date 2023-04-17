@@ -59,7 +59,7 @@ export interface PhoneInputProps extends InputProps {
 export const PhoneInput = (props: PhoneInputProps) => {
   // Destructure props to use directly
   const {
-    onChange = () => {},
+    onChange,
     initialCountryCode = CountryCode.AU,
     showPlaceholderExampleNumber = false,
     ...inputProps
@@ -98,7 +98,9 @@ export const PhoneInput = (props: PhoneInputProps) => {
         // Persist the internally controlled value
         setNumber(value)
         // Format the number as E164 and send it along
-        onChange(`${currentCountry.callingCode}${value}`)
+        if (onChange) {
+          onChange(`${currentCountry.callingCode}${value}`)
+        }
       } else {
         event.preventDefault()
       }

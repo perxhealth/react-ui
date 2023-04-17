@@ -1,14 +1,6 @@
 import * as React from "react"
 import { Tag, TagLeftIcon, TagProps } from "@chakra-ui/react"
-import type { IconType } from "react-icons"
-
-import {
-  HiCheckCircle,
-  HiX,
-  HiBell,
-  HiLockClosed,
-  HiQuestionMarkCircle,
-} from "react-icons/hi"
+import { CheckCircle2, X, Bell, Lock, HelpCircle } from "lucide-react"
 
 import { ReferralStatus } from "../../../types"
 
@@ -19,7 +11,7 @@ export interface ReferralStatusTagProps extends TagProps {
 export type TagStyle = {
   colour: string
   label: string
-  icon: IconType
+  icon: typeof X
 }
 
 export const ReferralStatusTag = (props: ReferralStatusTagProps) => {
@@ -30,18 +22,18 @@ export const ReferralStatusTag = (props: ReferralStatusTagProps) => {
   const style = React.useMemo<TagStyle>(() => {
     switch (status) {
       case ReferralStatus.Invited:
-        return { colour: "orange", label: "Invited", icon: HiBell }
+        return { colour: "orange", label: "Invited", icon: Bell }
       case ReferralStatus.Cancelled:
-        return { colour: "red", label: "Cancelled", icon: HiX }
+        return { colour: "red", label: "Cancelled", icon: X }
       case ReferralStatus.Converted:
-        return { colour: "green", label: "Converted", icon: HiCheckCircle }
+        return { colour: "green", label: "Converted", icon: CheckCircle2 }
       case ReferralStatus.Offboarded:
-        return { colour: "pink", label: "Offboarded", icon: HiLockClosed }
+        return { colour: "pink", label: "Offboarded", icon: Lock }
       default:
         return {
           colour: "blackAlpha",
           label: status,
-          icon: HiQuestionMarkCircle,
+          icon: HelpCircle,
         }
     }
   }, [status])

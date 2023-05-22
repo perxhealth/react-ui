@@ -13,6 +13,7 @@ specifiers:
   '@storybook/addon-info': ^5.3.21
   '@storybook/addon-links': ^7.0.12
   '@storybook/addons': ^7.0.12
+  '@storybook/builder-vite': ^7.0.12
   '@storybook/react': ^7.0.12
   '@storybook/react-webpack5': ^7.0.12
   '@tanstack/react-table': ^8.9.1
@@ -62,6 +63,7 @@ devDependencies:
   '@storybook/addon-info': 5.3.21_yyloj25vv7zmuk3uh3z5jonzqq
   '@storybook/addon-links': 7.0.12_biqbaboplfbrettd7655fr4n2y
   '@storybook/addons': 7.0.12_biqbaboplfbrettd7655fr4n2y
+  '@storybook/builder-vite': 7.0.12_biebqeemcnco2t3s343asw4ery
   '@storybook/react': 7.0.12_yalvw3r2waubxycyb7k7qsruca
   '@storybook/react-webpack5': 7.0.12_ewbnb74d3bmbaxbfvg2t2b3wum
   '@tanstack/react-table': 8.9.1_biqbaboplfbrettd7655fr4n2y
@@ -4757,6 +4759,47 @@ packages:
       - supports-color
     dev: true
 
+  /@storybook/builder-vite/7.0.12_biebqeemcnco2t3s343asw4ery:
+    resolution: {integrity: sha512-6FJNXis+dYs/KrhfRQgz8HcRw/Oq4FaEghCwsjngQDy4PcpQuxkDbvGJKlBaSr92vUL36FWSPq8u5+VGCHjh5Q==}
+    peerDependencies:
+      '@preact/preset-vite': '*'
+      typescript: '>= 4.3.x'
+      vite: ^3.0.0 || ^4.0.0
+      vite-plugin-glimmerx: '*'
+    peerDependenciesMeta:
+      '@preact/preset-vite':
+        optional: true
+      typescript:
+        optional: true
+      vite-plugin-glimmerx:
+        optional: true
+    dependencies:
+      '@storybook/channel-postmessage': 7.0.12
+      '@storybook/channel-websocket': 7.0.12
+      '@storybook/client-logger': 7.0.12
+      '@storybook/core-common': 7.0.12
+      '@storybook/csf-plugin': 7.0.12
+      '@storybook/mdx2-csf': 1.1.0
+      '@storybook/node-logger': 7.0.12
+      '@storybook/preview': 7.0.12
+      '@storybook/preview-api': 7.0.12
+      '@storybook/types': 7.0.12
+      browser-assert: 1.2.1
+      es-module-lexer: 0.9.3
+      express: 4.18.2
+      fs-extra: 11.1.1
+      glob: 8.1.0
+      glob-promise: 6.0.2_glob@8.1.0
+      magic-string: 0.27.0
+      remark-external-links: 8.0.0
+      remark-slug: 6.1.0
+      rollup: 3.18.0
+      typescript: 4.8.4
+      vite: 4.1.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@storybook/builder-webpack5/7.0.12_yalvw3r2waubxycyb7k7qsruca:
     resolution: {integrity: sha512-msrDWgNFu0kkQ8AOuOCqO+Z+b6iB2kNMhpTyreFbZfUwnEv35aXdULeSa/2mCD0/PFUUFZu+cVYflMyENZxe5w==}
     peerDependencies:
@@ -5743,7 +5786,7 @@ packages:
   /@types/babel__core/7.20.0:
     resolution: {integrity: sha512-+n8dL/9GWblDO0iU6eZAwEIJVr5DWigtle+Q6HLOrh/pdbXOhOtqzq8VPPE2zvNJzSKY4vH/z3iT3tn0A3ypiQ==}
     dependencies:
-      '@babel/parser': 7.21.2
+      '@babel/parser': 7.21.8
       '@babel/types': 7.21.5
       '@types/babel__generator': 7.6.4
       '@types/babel__template': 7.4.1
@@ -5759,7 +5802,7 @@ packages:
   /@types/babel__template/7.4.1:
     resolution: {integrity: sha512-azBFKemX6kMg5Io+/rdGT0dkGreboUVR0Cdm3fz9QJWpaQGJRQXl7C+6hOTCZcMll7KFyEQpgbYI2lHdsS4U7g==}
     dependencies:
-      '@babel/parser': 7.21.2
+      '@babel/parser': 7.21.8
       '@babel/types': 7.21.5
     dev: true
 

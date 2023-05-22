@@ -11,6 +11,9 @@ module.exports = {
   features: {
     emotionAlias: false,
   },
+  core: {
+    builder: "@storybook/builder-vite",
+  },
   framework: {
     name: "@storybook/react-webpack5",
     options: {},

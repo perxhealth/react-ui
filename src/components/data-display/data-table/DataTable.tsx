@@ -73,7 +73,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
               ))
             ) : (
               <Tr>
-                <Td colSpan={columns.length} className="h-24 text-center">
+                <Td colSpan={columns.length} w="24" textAlign="center">
                   No results.
                 </Td>
               </Tr>

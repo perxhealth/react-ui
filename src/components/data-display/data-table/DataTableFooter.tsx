@@ -1,8 +1,9 @@
 import * as React from "react"
-import { Select } from "@chakra-ui/react"
+import { Box, Flex, Text, Select } from "@chakra-ui/react"
 import { type Table } from "@tanstack/react-table"
 
-import { DataTablePagination, DataTablePageSummary } from "./"
+import { DataTablePagination } from "./DataTablePagination"
+import { DataTablePageSummary } from "./DataTablePageSummary"
 
 export interface DataTableFooterProps<TData> {
   table: Table<TData>
@@ -17,13 +18,15 @@ export function DataTableFooter<TData>(props: DataTableFooterProps<TData>) {
   }
 
   return (
-    <div className="flex items-center justify-between py-2 px-2 text-sm">
+    <Flex align="center" justify="between" padding="2" fontSize="sm">
       <DataTablePageSummary table={table} totalRows={totalRows} />
 
-      <div className="flex items-center space-x-12">
-        <div className="flex items-center space-x-2">
-          <span className="font-semibold mr-1">Rows per page</span>
-          <div className="rounded bg-white">
+      <Flex align="center" gap="12">
+        <Flex align="center" gap="2">
+          <Text as="span" fontWeight="semibold" mr="1">
+            Rows per page
+          </Text>
+          <Box bg="white" rounded="base">
             <Select onChange={onChangePageSize}>
               <option value="10">10</option>
               <option value="20">20</option>
@@ -31,13 +34,13 @@ export function DataTableFooter<TData>(props: DataTableFooterProps<TData>) {
               <option value="40">40</option>
               <option value="50">50</option>
             </Select>
-          </div>
-        </div>
+          </Box>
+        </Flex>
 
-        <div className="flex items-center justify-end space-x-2 py-4">
+        <Flex align="center" justify="end" gap="2" py="4">
           <DataTablePagination table={table} />
-        </div>
-      </div>
-    </div>
+        </Flex>
+      </Flex>
+    </Flex>
   )
 }

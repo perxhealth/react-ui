@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Select, Button } from "@chakra-ui/react"
+import { Flex, Text, Button, Icon, VisuallyHidden } from "@chakra-ui/react"
 import { Table } from "@tanstack/react-table"
 
 import {
@@ -29,47 +29,49 @@ export function DataTablePagination<T>(props: DataTablePaginationProps<T>) {
 
   return (
     <>
-      <div className="flex w-[100px] items-center justify-center text-sm font-medium">
-        Page {controls.currentPageNumber} of {controls.totalPageCount}
-      </div>
+      <Flex w="100px" align="center" justify="center" fontSize="sm">
+        <Text as="span" fontWeight="medium">
+          Page {controls.currentPageNumber} of {controls.totalPageCount}
+        </Text>
+      </Flex>
 
-      <div className="flex items-center space-x-2">
+      <Flex align="center" gap="2">
         <Button
+          size="sm"
           variant="outline"
-          className="hidden h-8 w-8 p-0 lg:flex bg-white"
           onClick={controls.goFirstPage}
-          disabled={!controls.canGoBack}>
-          <span className="sr-only">Go to first page</span>
-          <ChevronsLeft className="h-4 w-4" />
+          isDisabled={!controls.canGoBack}>
+          <VisuallyHidden>Go to first page</VisuallyHidden>
+          <Icon as={ChevronsLeft} w="4" h="4" />
         </Button>
 
         <Button
+          size="small"
           variant="outline"
-          className="h-8 w-8 p-0 bg-white"
           onClick={controls.goBack}
           disabled={!controls.canGoBack}>
-          <span className="sr-only">Go to previous page</span>
-          <ChevronLeft className="h-4 w-4" />
+          <VisuallyHidden>Go to previous page</VisuallyHidden>
+          <Icon as={ChevronLeft} w="4" h="4" />
         </Button>
 
         <Button
+          size="small"
           variant="outline"
-          className="h-8 w-8 p-0 bg-white"
           onClick={controls.goNext}
           disabled={!controls.canGoNext}>
-          <span className="sr-only">Go to next page</span>
-          <ChevronRight className="h-4 w-4" />
+          <VisuallyHidden>Go to next page</VisuallyHidden>
+          <Icon as={ChevronRight} w="4" h="4" />
         </Button>
 
         <Button
+          size="small"
           variant="outline"
-          className="hidden h-8 w-8 p-0 lg:flex bg-white"
           onClick={controls.goLastPage}
           disabled={!controls.canGoNext}>
-          <span className="sr-only">Go to last page</span>
-          <ChevronsRight className="h-4 w-4" />
+          <VisuallyHidden>Go to last page</VisuallyHidden>
+          <Icon as={ChevronsRight} w="4" h="4" />
         </Button>
-      </div>
+      </Flex>
     </>
   )
 }

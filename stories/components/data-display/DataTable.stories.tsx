@@ -46,7 +46,7 @@ const exampleColumns: Array<ColumnDef<ExampleData>> = [
   { accessorKey: "email", header: "Email address" },
 ]
 
-const Template: Story<DataTableProps<ExampleData, unknown>> = (args) => (
+const Template: Story<DataTableProps<ExampleData, unknown>> = () => (
   <Box px="2" py="6">
     <DataTable columns={exampleColumns} data={exampleData} />
   </Box>

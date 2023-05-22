@@ -58,6 +58,7 @@
     "@storybook/addon-essentials": "^7.0.12",
     "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-links": "^7.0.12",
+    "@storybook/addon-viewport": "^7.0.12",
     "@storybook/addons": "^7.0.12",
     "@storybook/builder-vite": "^7.0.12",
     "@storybook/react": "^7.0.12",

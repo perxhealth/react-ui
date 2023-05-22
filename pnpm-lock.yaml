@@ -12,6 +12,7 @@ specifiers:
   '@storybook/addon-essentials': ^7.0.12
   '@storybook/addon-info': ^5.3.21
   '@storybook/addon-links': ^7.0.12
+  '@storybook/addon-viewport': ^7.0.12
   '@storybook/addons': ^7.0.12
   '@storybook/builder-vite': ^7.0.12
   '@storybook/react': ^7.0.12
@@ -62,6 +63,7 @@ devDependencies:
   '@storybook/addon-essentials': 7.0.12_biqbaboplfbrettd7655fr4n2y
   '@storybook/addon-info': 5.3.21_yyloj25vv7zmuk3uh3z5jonzqq
   '@storybook/addon-links': 7.0.12_biqbaboplfbrettd7655fr4n2y
+  '@storybook/addon-viewport': 7.0.12_biqbaboplfbrettd7655fr4n2y
   '@storybook/addons': 7.0.12_biqbaboplfbrettd7655fr4n2y
   '@storybook/builder-vite': 7.0.12_biebqeemcnco2t3s343asw4ery
   '@storybook/react': 7.0.12_yalvw3r2waubxycyb7k7qsruca

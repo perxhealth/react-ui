@@ -40,6 +40,7 @@
   },
   "peerDependencies": {
     "@chakra-ui/react": ">=2.5",
+    "@tanstack/react-table": "^8.9.1",
     "framer-motion": "^7",
     "lucide-react": "^0.94.0",
     "react": ">=18.2",
@@ -61,6 +62,7 @@
     "@storybook/builder-webpack5": "^6.5.13",
     "@storybook/manager-webpack5": "^6.5.13",
     "@storybook/react": "^6.5.13",
+    "@tanstack/react-table": "^8.9.1",
     "@testing-library/dom": "^8.19.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

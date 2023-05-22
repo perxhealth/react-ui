@@ -1,18 +1,19 @@
 module.exports = {
   stories: ["../stories/**/*.stories.@(ts|tsx|js|jsx)"],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@chakra-ui/storybook-addon",
-  ],
+  addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@chakra-ui/storybook-addon"],
   // https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
   typescript: {
-    check: true, // type-check stories during Storybook build
+    check: true // type-check stories during Storybook build
   },
-  core: {
-    builder: "webpack5",
-  },
+
   features: {
-    emotionAlias: false,
+    emotionAlias: false
+  },
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {}
+  },
+  docs: {
+    autodocs: true
   }
-}
+};

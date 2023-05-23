@@ -1,12 +1,17 @@
 import * as React from "react"
-import { Box } from "@chakra-ui/react"
+import { ChakraProvider, Box } from "@chakra-ui/react"
 import { ColumnDef } from "@tanstack/react-table"
 import { Meta, Story } from "@storybook/react"
+import { faker } from "@faker-js/faker"
+
+import { extendedTheme } from "../../../src/theme"
 
 import {
   DataTable,
   DataTableProps,
 } from "../../../src/components/data-display/data-table/DataTable"
+
+import { DataTableColumn } from "../../../src/components/data-display/data-table/DataTableColumn"
 
 const meta: Meta = {
   title: "Components/DataDisplay/DataTable",
@@ -19,51 +24,43 @@ const meta: Meta = {
 
 export default meta
 
-export interface ExampleData {
+export interface FakeUser {
   firstName: string
   lastName: string
   age: number
   email: string
 }
 
-const exampleData: ExampleData[] = [
-  { firstName: "Billy", lastName: "Bob", age: 32, email: "billy@bob.com" },
-  { firstName: "Billy", lastName: "Bob", age: 32, email: "billy@bob.com" },
-  { firstName: "Billy", lastName: "Bob", age: 32, email: "billy@bob.com" },
-  { firstName: "Billy", lastName: "Bob", age: 32, email: "billy@bob.com" },
-  { firstName: "Billy", lastName: "Bob", age: 32, email: "billy@bob.com" },
-  { firstName: "Billy", lastName: "Bob", age: 32, email: "billy@bob.com" },
-  { firstName: "Billy", lastName: "Bob", age: 32, email: "billy@bob.com" },
-  { firstName: "Billy", lastName: "Bob", age: 32, email: "billy@bob.com" },
-  { firstName: "Billy", lastName: "Bob", age: 32, email: "billy@bob.com" },
-  { firstName: "Billy", lastName: "Bob", age: 32, email: "billy@bob.com" },
-]
+const exampleData: FakeUser[] = faker.helpers.multiple(
+  () => {
+    return {
+      firstName: faker.person.firstName(),
+      lastName: faker.person.lastName(),
+      age: faker.number.int({ min: 20, max: 95 }),
+      email: faker.internet.email(),
+    }
+  },
+  { count: 500 }
+)
 
-const exampleColumns: Array<ColumnDef<ExampleData>> = [
-  { accessorKey: "firstName", header: "First name" },
+const exampleColumns: Array<ColumnDef<FakeUser>> = [
+  {
+    accessorKey: "firstName",
+    header: ({ column }) => {
+      return <DataTableColumn column={column} label="First name" />
+    },
+  },
   { accessorKey: "lastName", header: "Last name" },
   { accessorKey: "age", header: "Age" },
   { accessorKey: "email", header: "Email address" },
 ]
 
-const Template: Story<DataTableProps<ExampleData, unknown>> = () => (
-  <Box px="2" py="6">
-    <DataTable columns={exampleColumns} data={exampleData} />
-  </Box>
+const Template: Story<DataTableProps<FakeUser, unknown>> = () => (
+  <ChakraProvider theme={extendedTheme}>
+    <Box px="2" py="6" rounded="lg" border="solid 1px" borderColor="gray.200">
+      <DataTable columns={exampleColumns} data={exampleData} />
+    </Box>
+  </ChakraProvider>
 )
 
 export const Default = Template.bind({})
-export const Mobile = Template.bind({})
-export const Tablet = Template.bind({})
-
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: "iphonex",
-  },
-}
-
-Tablet.parameters = {
-  viewport: {
-    defaultViewport: "ipad",
-  },
-}

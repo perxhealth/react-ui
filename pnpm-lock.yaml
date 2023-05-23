@@ -6,6 +6,7 @@ specifiers:
   '@chakra-ui/storybook-addon': ^4.0.16
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
+  '@faker-js/faker': ^8.0.1
   '@semantic-release/changelog': ^6.0.1
   '@semantic-release/git': ^10.0.1
   '@size-limit/preset-small-lib': ^7.0.8
@@ -36,7 +37,7 @@ specifiers:
   framer-motion: ^7.6.1
   gh-pages: ^3.2.3
   jsdom: ^21.1.0
-  lucide-react: ^0.121.0
+  lucide-react: ^0.220.0
   prettier: ^2.7.1
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -57,6 +58,7 @@ devDependencies:
   '@chakra-ui/storybook-addon': 4.0.16_utbt3v26wgzoqgtruuts22zqge
   '@emotion/react': 11.10.4_k5j6kbjebdyn2uzzhpiz6ga4fe
   '@emotion/styled': 11.10.4_qgnqdjtlxc25opjastkfyar724
+  '@faker-js/faker': 8.0.1
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.5
   '@semantic-release/git': 10.0.1_semantic-release@19.0.5
   '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
@@ -87,7 +89,7 @@ devDependencies:
   framer-motion: 7.6.1_biqbaboplfbrettd7655fr4n2y
   gh-pages: 3.2.3
   jsdom: 21.1.0
-  lucide-react: 0.121.0_react@18.2.0
+  lucide-react: 0.220.0_react@18.2.0
   prettier: 2.7.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -3665,6 +3667,11 @@ packages:
   /@eslint/js/8.35.0:
     resolution: {integrity: sha512-JXdzbRiWclLVoD8sNUjR443VVlYqiYmDVT6rGUEIEHU5YJW0gaVZwV2xgM7D4arkvASqD0IlLUVjHiFuxaftRw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
+  /@faker-js/faker/8.0.1:
+    resolution: {integrity: sha512-kbh5MenpTN9U0B4QcOI1NoTPlZHniSYQ3BHbhAnPjJGAmmFqxoxTE4sGdpy7ZOO9038DPGCuhXyMkjOr05uVwA==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
     dev: true
 
   /@fal-works/esbuild-plugin-global-externals/2.1.2:
@@ -10834,8 +10841,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-react/0.121.0_react@18.2.0:
-    resolution: {integrity: sha512-O4DgRR9YnlIO1vnzeiin9h2K70u17jM5HrCBWXp0kzVEH20vp0ONhe/rCnUWSj/GpGXsHDbSIxZWXdEvXVYHIw==}
+  /lucide-react/0.220.0_react@18.2.0:
+    resolution: {integrity: sha512-bYtGUsLAWBvZu+BzAU/ziP1gzE4LwMEXLnlgSr1yUKEPPalLG77JLd5GdYebOVkpm+GtqRqnp6tEKDX7Bm8ZlQ==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:

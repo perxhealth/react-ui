@@ -11,14 +11,18 @@ export interface DataTableFooterProps<TData> {
 }
 
 export function DataTableFooter<TData>(props: DataTableFooterProps<TData>) {
+  // Destructure props to use directly
   const { table, totalRows } = props
 
+  // Handle when a new option is selected by mutating the table's page size
   const onChangePageSize = (event: React.ChangeEvent<HTMLSelectElement>) => {
     table.setPageSize(Number(event.target.value))
   }
 
+  // Render the section which displays amount of records and allows the
+  // user to select how many rows per page they want to see
   return (
-    <Flex align="center" justify="between" padding="2" fontSize="sm">
+    <Flex align="center" justify="space-between" padding="2" fontSize="sm">
       <DataTablePageSummary table={table} totalRows={totalRows} />
 
       <Flex align="center" gap="12">
@@ -27,7 +31,7 @@ export function DataTableFooter<TData>(props: DataTableFooterProps<TData>) {
             Rows per page
           </Text>
           <Box bg="white" rounded="base">
-            <Select onChange={onChangePageSize}>
+            <Select size="sm" rounded="md" onChange={onChangePageSize}>
               <option value="10">10</option>
               <option value="20">20</option>
               <option value="30">30</option>

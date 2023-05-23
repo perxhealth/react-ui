@@ -1,6 +1,14 @@
 import * as React from "react"
-import { Flex, Text, Button, Icon, VisuallyHidden } from "@chakra-ui/react"
 import { Table } from "@tanstack/react-table"
+
+import {
+  Flex,
+  Text,
+  Button,
+  ButtonGroup,
+  Icon,
+  VisuallyHidden,
+} from "@chakra-ui/react"
 
 import {
   ChevronLeft,
@@ -14,8 +22,11 @@ export interface DataTablePaginationProps<T> {
 }
 
 export function DataTablePagination<T>(props: DataTablePaginationProps<T>) {
+  // Destructure props to use directly
   const { table } = props
 
+  // Massage the table's state in to an object whose keys are a bit more
+  // declarative and simplistic
   const controls = {
     goNext: table.nextPage,
     goBack: table.previousPage,
@@ -27,6 +38,7 @@ export function DataTablePagination<T>(props: DataTablePaginationProps<T>) {
     totalPageCount: table.getPageCount(),
   }
 
+  // Render pagination controls!
   return (
     <>
       <Flex w="100px" align="center" justify="center" fontSize="sm">
@@ -35,7 +47,7 @@ export function DataTablePagination<T>(props: DataTablePaginationProps<T>) {
         </Text>
       </Flex>
 
-      <Flex align="center" gap="2">
+      <ButtonGroup>
         <Button
           size="sm"
           variant="outline"
@@ -46,32 +58,32 @@ export function DataTablePagination<T>(props: DataTablePaginationProps<T>) {
         </Button>
 
         <Button
-          size="small"
+          size="sm"
           variant="outline"
           onClick={controls.goBack}
-          disabled={!controls.canGoBack}>
+          isDisabled={!controls.canGoBack}>
           <VisuallyHidden>Go to previous page</VisuallyHidden>
           <Icon as={ChevronLeft} w="4" h="4" />
         </Button>
 
         <Button
-          size="small"
+          size="sm"
           variant="outline"
           onClick={controls.goNext}
-          disabled={!controls.canGoNext}>
+          isDisabled={!controls.canGoNext}>
           <VisuallyHidden>Go to next page</VisuallyHidden>
           <Icon as={ChevronRight} w="4" h="4" />
         </Button>
 
         <Button
-          size="small"
+          size="sm"
           variant="outline"
           onClick={controls.goLastPage}
-          disabled={!controls.canGoNext}>
+          isDisabled={!controls.canGoNext}>
           <VisuallyHidden>Go to last page</VisuallyHidden>
           <Icon as={ChevronsRight} w="4" h="4" />
         </Button>
-      </Flex>
+      </ButtonGroup>
     </>
   )
 }

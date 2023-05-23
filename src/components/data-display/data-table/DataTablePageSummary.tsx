@@ -16,11 +16,11 @@ export function DataTablePageSummary<T>(props: DataTablePageSummaryProps<T>) {
   const endIndex = Math.min(startIndex - 1 + pageSize, totalRows)
 
   if (totalRows <= 0) {
-    return <Text color="blue.200">No records</Text>
+    return <Text color="gray.600">No records</Text>
   }
 
   return (
-    <Text color="blue.200">
+    <Text color="gray.600">
       Showing {startIndex}-{endIndex} of {totalRows} records
     </Text>
   )

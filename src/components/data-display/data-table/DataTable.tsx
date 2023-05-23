@@ -43,7 +43,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
               <Tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <Th key={header.id}>
+                    <Th key={header.id} pt="0">
                       {header.isPlaceholder
                         ? null
                         : flexRender(

@@ -2,12 +2,13 @@ import * as React from "react"
 import { Column } from "@tanstack/react-table"
 
 import {
-  Button,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
   MenuDivider,
+  Box,
+  Flex,
   Icon,
 } from "@chakra-ui/react"
 
@@ -39,11 +40,19 @@ export function DataTableColumn(props: DataTableColumnProps) {
 
   return (
     <Menu>
-      <MenuButton as={Button} size="md" variant="ghost">
-        {label}
-        {!isSorted && <Icon as={ChevronsUpDown} ml="2" h="4" w="4" />}
-        {isSorted === "asc" && <Icon as={ArrowUp} ml="2" h="3" w="4" />}
-        {isSorted === "desc" && <Icon as={ArrowDown} ml="2" h="3" w="3" />}
+      <MenuButton as={Box} cursor="pointer">
+        <Flex align="center">
+          {label}
+          {!isSorted && (
+            <Icon as={ChevronsUpDown} mt="-0.5" ml="2" h="3" w="4" />
+          )}
+          {isSorted === "asc" && (
+            <Icon as={ArrowUp} mt="-0.5" ml="2" h="3" w="4" />
+          )}
+          {isSorted === "desc" && (
+            <Icon as={ArrowDown} mt="-0.5" ml="2" h="3" w="3" />
+          )}
+        </Flex>
       </MenuButton>
 
       <MenuList>

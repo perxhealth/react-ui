@@ -14,7 +14,7 @@ import {
 import { DataTableColumn } from "../../../src/components/data-display/data-table/DataTableColumn"
 
 const meta: Meta = {
-  title: "Components/DataDisplay/DataTable",
+  title: "Components/Data/DataTable",
   component: DataTable,
   argTypes: {},
   parameters: {
@@ -50,9 +50,24 @@ const exampleColumns: Array<ColumnDef<FakeUser>> = [
       return <DataTableColumn column={column} label="First name" />
     },
   },
-  { accessorKey: "lastName", header: "Last name" },
-  { accessorKey: "age", header: "Age" },
-  { accessorKey: "email", header: "Email address" },
+  {
+    accessorKey: "lastName",
+    header: ({ column }) => {
+      return <DataTableColumn column={column} label="Last name" />
+    },
+  },
+  {
+    accessorKey: "age",
+    header: ({ column }) => {
+      return <DataTableColumn column={column} label="Age" />
+    },
+  },
+  {
+    accessorKey: "email",
+    header: ({ column }) => {
+      return <DataTableColumn column={column} label="Email address" />
+    },
+  },
 ]
 
 const Template: Story<DataTableProps<FakeUser, unknown>> = () => (

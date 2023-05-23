@@ -58,7 +58,7 @@ export const extendedTheme = extendTheme({
 
 export const PerxThemeProvider = (props: { children: JSX.Element }) => {
   return (
-    <ChakraProvider resetCSS={true} theme={extendTheme}>
+    <ChakraProvider resetCSS={true} theme={extendedTheme}>
       {props.children}
     </ChakraProvider>
   )

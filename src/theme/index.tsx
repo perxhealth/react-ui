@@ -20,11 +20,11 @@ export const extendedTheme = extendTheme({
       variants: {
         solid: {
           color: "white",
-          bg: "perx.blue",
+          bg: "black",
           _hover: {
-            bg: "perx.blue",
+            bg: "gray.800",
             _disabled: {
-              bg: "perx.blue",
+              bg: "black",
             },
           },
         },

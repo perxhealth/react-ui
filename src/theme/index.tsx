@@ -22,7 +22,7 @@ export const extendedTheme = extendTheme({
           color: "white",
           bg: "gray.800",
           _disabled: {
-            bg: "gray.700",
+            bg: "gray.400",
           },
           _focus: {
             bg: "gray.800",
@@ -30,7 +30,7 @@ export const extendedTheme = extendTheme({
           _hover: {
             bg: "gray.700",
             _disabled: {
-              bg: "gray.700",
+              bg: "gray.400",
             },
             _focus: {
               bg: "gray.700",

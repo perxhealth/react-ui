@@ -27,6 +27,9 @@ const Template: Story<PhoneInputProps> = (args) => (
 
 export const Default = Template.bind({})
 export const Placeholder = Template.bind({})
+export const HidePrefix = Template.bind({})
+export const HideSuffix = Template.bind({})
+export const HideAffixes = Template.bind({})
 
 Default.args = {
   initialCountryCode: CountryCode.AU,
@@ -35,4 +38,20 @@ Default.args = {
 Placeholder.args = {
   initialCountryCode: CountryCode.AU,
   showPlaceholderExampleNumber: true,
+}
+
+HidePrefix.args = {
+  initialCountryCode: CountryCode.AU,
+  showPrefix: false,
+}
+
+HideSuffix.args = {
+  initialCountryCode: CountryCode.AU,
+  showSuffix: false,
+}
+
+HideAffixes.args = {
+  initialCountryCode: CountryCode.AU,
+  showPrefix: false,
+  showSuffix: false,
 }

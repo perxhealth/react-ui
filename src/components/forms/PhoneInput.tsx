@@ -51,6 +51,8 @@ const countries: Countries = {
 type InputProps = Omit<ChakraInputProps, "onChange" | "maxLength" | "value">
 
 export interface PhoneInputProps extends InputProps {
+  hidePrefix?: boolean
+  hideSuffix?: boolean
   onChange?: (number: E164Number) => void
   initialCountryCode?: CountryCode
   showPlaceholderExampleNumber?: boolean
@@ -60,6 +62,8 @@ export const PhoneInput = (props: PhoneInputProps) => {
   // Destructure props to use directly
   const {
     onChange,
+    hidePrefix,
+    hideSuffix,
     initialCountryCode = CountryCode.AU,
     showPlaceholderExampleNumber = false,
     ...inputProps
@@ -110,9 +114,11 @@ export const PhoneInput = (props: PhoneInputProps) => {
 
   return (
     <InputGroup>
-      <InputLeftAddon fontFamily="monospace" minW="60px" textAlign="center">
-        {currentCountry.callingCode}
-      </InputLeftAddon>
+      {!hidePrefix && (
+        <InputLeftAddon fontFamily="monospace" minW="60px" textAlign="center">
+          {currentCountry.callingCode}
+        </InputLeftAddon>
+      )}
 
       <Input
         {...inputProps}
@@ -122,23 +128,25 @@ export const PhoneInput = (props: PhoneInputProps) => {
         value={number}
       />
 
-      <InputRightAddon padding="0">
-        <Select
-          border="none"
-          bg="transparent"
-          aria-label="Select a country"
-          defaultValue={currentCountry.countryCode}
-          onChange={onCountryChange}>
-          {Object.values(countries).map((country) => {
-            const { countryCode, name, emoji } = country
-            return (
-              <option aria-label={name} value={countryCode} key={countryCode}>
-                {countryCode} {emoji}
-              </option>
-            )
-          })}
-        </Select>
-      </InputRightAddon>
+      {!hideSuffix && (
+        <InputRightAddon padding="0">
+          <Select
+            border="none"
+            bg="transparent"
+            aria-label="Select a country"
+            defaultValue={currentCountry.countryCode}
+            onChange={onCountryChange}>
+            {Object.values(countries).map((country) => {
+              const { countryCode, name, emoji } = country
+              return (
+                <option aria-label={name} value={countryCode} key={countryCode}>
+                  {countryCode} {emoji}
+                </option>
+              )
+            })}
+          </Select>
+        </InputRightAddon>
+      )}
     </InputGroup>
   )
 }

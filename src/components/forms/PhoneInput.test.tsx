@@ -139,4 +139,17 @@ describe("PhoneInput", () => {
       })
     })
   })
+
+  describe("affixes", () => {
+    it("hides prefix", async () => {
+      const { getByText } = setup({ showPrefix: false })
+      expect(getByText("+1")).not.toBeDefined()
+      expect(getByText("+61")).not.toBeDefined()
+    })
+
+    it("hides suffix", async () => {
+      const { getByRole } = setup({ showSuffix: false })
+      expect(getByRole("options")).not.toBeDefined()
+    })
+  })
 })

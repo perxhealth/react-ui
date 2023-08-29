@@ -42,16 +42,16 @@ Placeholder.args = {
 
 HidePrefix.args = {
   initialCountryCode: CountryCode.AU,
-  showPrefix: false,
+  hidePrefix: true,
 }
 
 HideSuffix.args = {
   initialCountryCode: CountryCode.AU,
-  showSuffix: false,
+  hideSuffix: true,
 }
 
 HideAffixes.args = {
   initialCountryCode: CountryCode.AU,
-  showPrefix: false,
-  showSuffix: false,
+  hidePrefix: true,
+  hideSuffix: true,
 }

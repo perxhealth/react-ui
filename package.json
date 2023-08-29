@@ -8,20 +8,14 @@
   "main": "dist/react-ui.umd.cjs",
   "module": "dist/react-ui.js",
   "homepage": "https://github.com/perxhealth/react-ui",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": "./dist/react-ui.js",
       "require": "./dist/react-ui.umd.cjs"
     }
-  },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "engines": {
-    "node": ">=10"
   },
   "repository": {
     "type": "git",
@@ -91,5 +85,11 @@
     "vite-plugin-dts": "^2.0.2",
     "vite-plugin-svgr": "^2.4.0",
     "vitest": "^0.26.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=10"
   }
 }

@@ -142,14 +142,14 @@ describe("PhoneInput", () => {
 
   describe("affixes", () => {
     it("hides prefix", async () => {
-      const { findByText } = setup({ showPrefix: false })
-      expect(findByText("+1")).not.toBeDefined()
-      expect(findByText("+61")).not.toBeDefined()
+      const { queryByText } = setup({ showPrefix: false })
+      expect(queryByText("+1")).not.toBeInTheDocument()
+      expect(queryByText("+61")).not.toBeInTheDocument()
     })
 
     it("hides suffix", async () => {
-      const { findByRole } = setup({ showSuffix: false })
-      expect(findByRole("options")).not.toBeDefined()
+      const { queryByRole } = setup({ showSuffix: false })
+      expect(queryByRole("options")).not.toBeInTheDocument()
     })
   })
 })

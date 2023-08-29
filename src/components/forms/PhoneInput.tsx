@@ -51,8 +51,8 @@ const countries: Countries = {
 type InputProps = Omit<ChakraInputProps, "onChange" | "maxLength" | "value">
 
 export interface PhoneInputProps extends InputProps {
-  hidePrefix?: boolean
-  hideSuffix?: boolean
+  showPrefix?: boolean
+  showSuffix?: boolean
   onChange?: (number: E164Number) => void
   initialCountryCode?: CountryCode
   showPlaceholderExampleNumber?: boolean
@@ -62,8 +62,8 @@ export const PhoneInput = (props: PhoneInputProps) => {
   // Destructure props to use directly
   const {
     onChange,
-    hidePrefix,
-    hideSuffix,
+    showPrefix = true,
+    showSuffix = true,
     initialCountryCode = CountryCode.AU,
     showPlaceholderExampleNumber = false,
     ...inputProps
@@ -114,7 +114,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
 
   return (
     <InputGroup>
-      {!hidePrefix && (
+      {showPrefix && (
         <InputLeftAddon fontFamily="monospace" minW="60px" textAlign="center">
           {currentCountry.callingCode}
         </InputLeftAddon>
@@ -128,7 +128,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
         value={number}
       />
 
-      {!hideSuffix && (
+      {showSuffix && (
         <InputRightAddon padding="0">
           <Select
             border="none"

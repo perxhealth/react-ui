@@ -120,7 +120,9 @@ export const PhoneInput = (props: PhoneInputProps) => {
         }
 
         if (onValidatePhoneNumber) {
-          onValidatePhoneNumber(parsePhoneNumber(phoneNumber).isValid())
+          onValidatePhoneNumber(
+            parsePhoneNumber(phoneNumber, currentCountry.countryCode).isValid()
+          )
         }
       } else {
         event.preventDefault()

@@ -1,4 +1,5 @@
 import * as React from "react"
+import parsePhoneNumber from "libphonenumber-js"
 
 import {
   Input,
@@ -57,15 +58,17 @@ type InputProps = Omit<ChakraInputProps, "onChange" | "maxLength" | "value">
 
 export interface PhoneInputProps extends InputProps {
   format?: Format
-  onChange?: (number: E164Number) => void
   initialCountryCode?: CountryCode
   showPlaceholderExampleNumber?: boolean
+  onChange?: (number: E164Number) => void
+  onValidatePhoneNumber?: (isValid: boolean) => void
 }
 
 export const PhoneInput = (props: PhoneInputProps) => {
   // Destructure props to use directly
   const {
     onChange,
+    onValidatePhoneNumber,
     format = Format.INTERNATIONAL,
     initialCountryCode = CountryCode.AU,
     showPlaceholderExampleNumber = false,
@@ -106,9 +109,18 @@ export const PhoneInput = (props: PhoneInputProps) => {
       if (value === "" || /^[0-9\b]+$/.test(value)) {
         // Persist the internally controlled value
         setNumber(value)
+
         // Format the number as E164 and send it along
+        const phoneNumber = `${
+          isInternational && currentCountry.callingCode
+        }${value}`
+
         if (onChange) {
-          onChange(`${isInternational && currentCountry.callingCode}${value}`)
+          onChange(phoneNumber)
+        }
+
+        if (onValidatePhoneNumber) {
+          onValidatePhoneNumber(parsePhoneNumber(phoneNumber).isValid())
         }
       } else {
         event.preventDefault()

@@ -3,7 +3,7 @@ import { vi, describe, it, expect } from "vitest"
 import { render } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
-import { PhoneInput, PhoneInputProps, CountryCode } from "./PhoneInput"
+import { PhoneInput, PhoneInputProps, CountryCode, Format } from "./PhoneInput"
 
 describe("PhoneInput", () => {
   const onChange = vi.fn()
@@ -140,16 +140,18 @@ describe("PhoneInput", () => {
     })
   })
 
-  describe("affixes", () => {
-    it("hides prefix", async () => {
-      const { queryByText } = setup({ showPrefix: false })
-      expect(queryByText("+1")).not.toBeInTheDocument()
-      expect(queryByText("+61")).not.toBeInTheDocument()
-    })
+  describe("format selection", () => {
+    describe("is local", () => {
+      it("hides prefix", async () => {
+        const { queryByText } = setup({ format: Format.LOCAL })
+        expect(queryByText("+1")).not.toBeInTheDocument()
+        expect(queryByText("+61")).not.toBeInTheDocument()
+      })
 
-    it("hides suffix", async () => {
-      const { queryByRole } = setup({ showSuffix: false })
-      expect(queryByRole("options")).not.toBeInTheDocument()
+      it("hides suffix", async () => {
+        const { queryByRole } = setup({ format: Format.LOCAL })
+        expect(queryByRole("options")).not.toBeInTheDocument()
+      })
     })
   })
 })

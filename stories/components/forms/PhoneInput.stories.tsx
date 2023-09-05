@@ -6,6 +6,7 @@ import {
   PhoneInput,
   PhoneInputProps,
   CountryCode,
+  Format,
 } from "../../../src/components/forms/PhoneInput"
 
 const meta: Meta = {
@@ -27,9 +28,7 @@ const Template: Story<PhoneInputProps> = (args) => (
 
 export const Default = Template.bind({})
 export const Placeholder = Template.bind({})
-export const HidePrefix = Template.bind({})
-export const HideSuffix = Template.bind({})
-export const HideAffixes = Template.bind({})
+export const HideCountryCodeAffixes = Template.bind({})
 
 Default.args = {
   initialCountryCode: CountryCode.AU,
@@ -40,18 +39,8 @@ Placeholder.args = {
   showPlaceholderExampleNumber: true,
 }
 
-HidePrefix.args = {
-  initialCountryCode: CountryCode.AU,
-  showPrefix: false,
-}
-
-HideSuffix.args = {
-  initialCountryCode: CountryCode.AU,
-  showSuffix: false,
-}
-
-HideAffixes.args = {
-  initialCountryCode: CountryCode.AU,
+HideCountryCodeAffixes.args = {
+  format: Format.LOCAL,
   showPrefix: false,
   showSuffix: false,
 }

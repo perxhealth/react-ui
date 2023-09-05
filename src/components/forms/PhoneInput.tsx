@@ -16,6 +16,11 @@ export enum CountryCode {
   US = "US",
 }
 
+export enum Format {
+  LOCAL = "local",
+  INTERNATIONAL = "international",
+}
+
 export interface CountryData {
   name: string
   emoji: string
@@ -51,8 +56,7 @@ const countries: Countries = {
 type InputProps = Omit<ChakraInputProps, "onChange" | "maxLength" | "value">
 
 export interface PhoneInputProps extends InputProps {
-  showPrefix?: boolean
-  showSuffix?: boolean
+  format?: Format
   onChange?: (number: E164Number) => void
   initialCountryCode?: CountryCode
   showPlaceholderExampleNumber?: boolean
@@ -62,8 +66,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
   // Destructure props to use directly
   const {
     onChange,
-    showPrefix = true,
-    showSuffix = true,
+    format = Format.INTERNATIONAL,
     initialCountryCode = CountryCode.AU,
     showPlaceholderExampleNumber = false,
     ...inputProps
@@ -76,6 +79,8 @@ export const PhoneInput = (props: PhoneInputProps) => {
   const [currentCountry, setCurrentCountry] = React.useState<CountryData>(
     countries[initialCountryCode]
   )
+
+  const isInternational = format === Format.INTERNATIONAL
 
   // Determine the input's placeholder attribute value, if any
   const inputPlaceholder = React.useMemo(() => {
@@ -103,7 +108,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
         setNumber(value)
         // Format the number as E164 and send it along
         if (onChange) {
-          onChange(`${currentCountry.callingCode}${value}`)
+          onChange(`${isInternational && currentCountry.callingCode}${value}`)
         }
       } else {
         event.preventDefault()
@@ -114,7 +119,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
 
   return (
     <InputGroup>
-      {showPrefix && (
+      {isInternational && (
         <InputLeftAddon fontFamily="monospace" minW="60px" textAlign="center">
           {currentCountry.callingCode}
         </InputLeftAddon>
@@ -128,7 +133,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
         value={number}
       />
 
-      {showSuffix && (
+      {isInternational && (
         <InputRightAddon padding="0">
           <Select
             border="none"

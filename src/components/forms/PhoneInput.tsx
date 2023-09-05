@@ -1,5 +1,5 @@
 import * as React from "react"
-import parsePhoneNumber from "libphonenumber-js"
+import { parsePhoneNumber } from "libphonenumber-js"
 
 import {
   Input,

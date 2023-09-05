@@ -41,6 +41,4 @@ Placeholder.args = {
 
 HideCountryCodeAffixes.args = {
   format: Format.LOCAL,
-  showPrefix: false,
-  showSuffix: false,
 }

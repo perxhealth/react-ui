@@ -1,5 +1,8 @@
 import * as React from "react"
-import { parsePhoneNumber } from "libphonenumber-js"
+import {
+  parsePhoneNumber,
+  CountryCode as LibCountryCode,
+} from "libphonenumber-js"
 
 import {
   Input,
@@ -111,18 +114,17 @@ export const PhoneInput = (props: PhoneInputProps) => {
         setNumber(value)
 
         // Format the number as E164 and send it along
-        const phoneNumber = `${
-          isInternational && currentCountry.callingCode
-        }${value}`
+        const parsedPhoneNumber = parsePhoneNumber(
+          `${isInternational && currentCountry.callingCode}${value}`,
+          currentCountry.countryCode as LibCountryCode
+        )
 
         if (onChange) {
-          onChange(phoneNumber)
+          onChange(parsedPhoneNumber.number)
         }
 
         if (onValidatePhoneNumber) {
-          onValidatePhoneNumber(
-            parsePhoneNumber(phoneNumber, currentCountry.countryCode).isValid()
-          )
+          onValidatePhoneNumber(parsedPhoneNumber.isPossible())
         }
       } else {
         event.preventDefault()

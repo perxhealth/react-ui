@@ -1,0 +1,1 @@
+(self.webpackChunk_perxhealth_react_ui=self.webpackChunk_perxhealth_react_ui||[]).push([[1958],{"./node_modules/.pnpm/highlight.js@9.18.5/node_modules/highlight.js/lib/languages/julia-repl.js":module=>{module.exports=function(hljs){return{contains:[{className:"meta",begin:/^julia>/,relevance:10,starts:{end:/^(?![ ]{6})/,subLanguage:"julia"},aliases:["jldoctest"]}]}}}}]);

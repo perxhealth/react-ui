@@ -1,0 +1,1 @@
+(self.webpackChunk_perxhealth_react_ui=self.webpackChunk_perxhealth_react_ui||[]).push([[3610],{"./node_modules/.pnpm/highlight.js@9.18.5/node_modules/highlight.js/lib/languages/clojure-repl.js":module=>{module.exports=function(hljs){return{contains:[{className:"meta",begin:/^([\w.-]+|\s*#_)?=>/,starts:{end:/$/,subLanguage:"clojure"}}]}}}}]);

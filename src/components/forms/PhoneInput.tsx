@@ -115,12 +115,12 @@ export const PhoneInput = (props: PhoneInputProps) => {
 
         // Format the number as E164 and send it along
         const parsedPhoneNumber = parsePhoneNumber(
-          `${isInternational && currentCountry.callingCode}${value}`,
+          value,
           currentCountry.countryCode as LibCountryCode
         )
 
         if (onChange) {
-          onChange(parsedPhoneNumber.number)
+          onChange(isInternational ? parsedPhoneNumber.number : value)
         }
 
         if (onValidatePhoneNumber) {

@@ -1,4 +1,8 @@
 import * as React from "react"
+import {
+  parsePhoneNumber,
+  CountryCode as LibCountryCode,
+} from "libphonenumber-js"
 
 import {
   Input,
@@ -14,6 +18,11 @@ export type E164Number = string
 export enum CountryCode {
   AU = "AU",
   US = "US",
+}
+
+export enum Format {
+  LOCAL = "local",
+  INTERNATIONAL = "international",
 }
 
 export interface CountryData {
@@ -51,15 +60,19 @@ const countries: Countries = {
 type InputProps = Omit<ChakraInputProps, "onChange" | "maxLength" | "value">
 
 export interface PhoneInputProps extends InputProps {
-  onChange?: (number: E164Number) => void
+  format?: Format
   initialCountryCode?: CountryCode
   showPlaceholderExampleNumber?: boolean
+  onChange?: (number: E164Number) => void
+  onValidatePhoneNumber?: (isValid: boolean) => void
 }
 
 export const PhoneInput = (props: PhoneInputProps) => {
   // Destructure props to use directly
   const {
     onChange,
+    onValidatePhoneNumber,
+    format = Format.INTERNATIONAL,
     initialCountryCode = CountryCode.AU,
     showPlaceholderExampleNumber = false,
     ...inputProps
@@ -72,6 +85,8 @@ export const PhoneInput = (props: PhoneInputProps) => {
   const [currentCountry, setCurrentCountry] = React.useState<CountryData>(
     countries[initialCountryCode]
   )
+
+  const isInternational = format === Format.INTERNATIONAL
 
   // Determine the input's placeholder attribute value, if any
   const inputPlaceholder = React.useMemo(() => {
@@ -97,9 +112,19 @@ export const PhoneInput = (props: PhoneInputProps) => {
       if (value === "" || /^[0-9\b]+$/.test(value)) {
         // Persist the internally controlled value
         setNumber(value)
+
         // Format the number as E164 and send it along
+        const parsedPhoneNumber = parsePhoneNumber(
+          `${isInternational && currentCountry.callingCode}${value}`,
+          currentCountry.countryCode as LibCountryCode
+        )
+
         if (onChange) {
-          onChange(`${currentCountry.callingCode}${value}`)
+          onChange(parsedPhoneNumber.number)
+        }
+
+        if (onValidatePhoneNumber) {
+          onValidatePhoneNumber(parsedPhoneNumber.isPossible())
         }
       } else {
         event.preventDefault()
@@ -110,9 +135,11 @@ export const PhoneInput = (props: PhoneInputProps) => {
 
   return (
     <InputGroup>
-      <InputLeftAddon fontFamily="monospace" minW="60px" textAlign="center">
-        {currentCountry.callingCode}
-      </InputLeftAddon>
+      {isInternational && (
+        <InputLeftAddon fontFamily="monospace" minW="60px" textAlign="center">
+          {currentCountry.callingCode}
+        </InputLeftAddon>
+      )}
 
       <Input
         {...inputProps}
@@ -122,23 +149,25 @@ export const PhoneInput = (props: PhoneInputProps) => {
         value={number}
       />
 
-      <InputRightAddon padding="0">
-        <Select
-          border="none"
-          bg="transparent"
-          aria-label="Select a country"
-          defaultValue={currentCountry.countryCode}
-          onChange={onCountryChange}>
-          {Object.values(countries).map((country) => {
-            const { countryCode, name, emoji } = country
-            return (
-              <option aria-label={name} value={countryCode} key={countryCode}>
-                {countryCode} {emoji}
-              </option>
-            )
-          })}
-        </Select>
-      </InputRightAddon>
+      {isInternational && (
+        <InputRightAddon padding="0">
+          <Select
+            border="none"
+            bg="transparent"
+            aria-label="Select a country"
+            defaultValue={currentCountry.countryCode}
+            onChange={onCountryChange}>
+            {Object.values(countries).map((country) => {
+              const { countryCode, name, emoji } = country
+              return (
+                <option aria-label={name} value={countryCode} key={countryCode}>
+                  {countryCode} {emoji}
+                </option>
+              )
+            })}
+          </Select>
+        </InputRightAddon>
+      )}
     </InputGroup>
   )
 }

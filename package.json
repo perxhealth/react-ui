@@ -8,20 +8,14 @@
   "main": "dist/react-ui.umd.cjs",
   "module": "dist/react-ui.js",
   "homepage": "https://github.com/perxhealth/react-ui",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": "./dist/react-ui.js",
       "require": "./dist/react-ui.umd.cjs"
     }
-  },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "engines": {
-    "node": ">=10"
   },
   "repository": {
     "type": "git",
@@ -34,12 +28,12 @@
     "coverage": "vitest run --coverage",
     "lint": "eslint src stories test --ext .ts,.tsx",
     "format-check": "prettier -c '{*/**/*, */*}.{ts,tsx}'",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "@chakra-ui/react": ">=2.5",
+    "@chakra-ui/react": "^2.8.0",
     "framer-motion": "^7",
     "lucide-react": "^0.94.0",
     "react": ">=18.2",
@@ -47,20 +41,22 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.11",
-    "@chakra-ui/react": "^2.5.5",
+    "@babel/preset-env": "^7.22.14",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.11",
+    "@chakra-ui/react": "^2.8.0",
     "@chakra-ui/storybook-addon": "^5.0.1",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@size-limit/preset-small-lib": "^7.0.8",
-    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-essentials": "^7.4.0",
     "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-links": "^6.5.13",
-    "@storybook/addons": "^6.5.13",
-    "@storybook/builder-webpack5": "^6.5.13",
-    "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/addon-links": "^7.4.0",
+    "@storybook/addons": "^7.4.0",
     "@storybook/react": "^7.4.0",
+    "@storybook/react-webpack5": "^7.4.0",
     "@testing-library/dom": "^8.19.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -75,6 +71,7 @@
     "c8": "^7.12.0",
     "eslint": "^8.35.0",
     "eslint-config-perxhealth": "^1.0.5",
+    "eslint-plugin-storybook": "^0.6.13",
     "framer-motion": "^7.6.1",
     "gh-pages": "^3.2.3",
     "jsdom": "^21.1.0",
@@ -85,11 +82,21 @@
     "react-is": "^17.0.2",
     "semantic-release": "^19.0.5",
     "size-limit": "^7.0.8",
+    "storybook": "^7.4.0",
     "tslib": "^2.6.2",
     "typescript": "^4.8.4",
     "vite": "^4.0.3",
     "vite-plugin-dts": "^2.0.2",
     "vite-plugin-svgr": "^2.4.0",
     "vitest": "^0.26.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "libphonenumber-js": "^1.10.44"
   }
 }

@@ -2,7 +2,7 @@ import * as React from "react"
 import { Box } from "@chakra-ui/react"
 import { Meta, Story } from "@storybook/react"
 
-import { Footer, FooterProps } from "../../../src/components/layout/Footer"
+import { Footer } from "../../../src/components/layout/Footer"
 
 const meta: Meta = {
   title: "Components/Layout/Footer",
@@ -15,7 +15,7 @@ const meta: Meta = {
 
 export default meta
 
-const Template: Story<FooterProps> = (args) => (
+const Template: Story = (args) => (
   <Box px="2" py="6">
     <Footer {...args} />
   </Box>

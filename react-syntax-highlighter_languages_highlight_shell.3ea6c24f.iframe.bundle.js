@@ -1,1 +1,0 @@
-(self.webpackChunk_perxhealth_react_ui=self.webpackChunk_perxhealth_react_ui||[]).push([[4821],{"./node_modules/.pnpm/highlight.js@9.18.5/node_modules/highlight.js/lib/languages/shell.js":module=>{module.exports=function(hljs){return{aliases:["console"],contains:[{className:"meta",begin:"^\\s{0,3}[/\\w\\d\\[\\]()@-]*[>%$#]",starts:{end:"$",subLanguage:"bash"}}]}}}}]);

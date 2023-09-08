@@ -1,1 +1,0 @@
-(self.webpackChunk_perxhealth_react_ui=self.webpackChunk_perxhealth_react_ui||[]).push([[8884],{"./node_modules/.pnpm/highlight.js@9.18.5/node_modules/highlight.js/lib/languages/vbscript-html.js":module=>{module.exports=function(hljs){return{subLanguage:"xml",contains:[{begin:"<%",end:"%>",subLanguage:"vbscript"}]}}}}]);

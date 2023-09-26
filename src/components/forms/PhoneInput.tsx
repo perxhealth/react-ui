@@ -133,6 +133,15 @@ export const PhoneInput = (props: PhoneInputProps) => {
     [setNumber, currentCountry, onChange]
   )
 
+  const maxLength = React.useMemo(() => {
+    const { maxNumberLength, countryCode } = currentCountry
+    if (isInternational) {
+      return maxNumberLength
+    } else {
+      return maxNumberLength + (countryCode === CountryCode.AU ? 2 : 1)
+    }
+  }, [currentCountry, isInternational])
+
   return (
     <InputGroup>
       {isInternational && (
@@ -144,7 +153,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
       <Input
         {...inputProps}
         placeholder={inputPlaceholder}
-        maxLength={currentCountry.maxNumberLength}
+        maxLength={maxLength}
         onChange={onInputChange}
         value={number}
       />

@@ -119,8 +119,8 @@ devDependencies:
     specifier: ^22.1.0
     version: 22.1.0
   lucide-react:
-    specifier: ^0.274.0
-    version: 0.274.0(react@18.2.0)
+    specifier: ^0.287.0
+    version: 0.287.0(react@18.2.0)
   prettier:
     specifier: ^3.0.3
     version: 3.0.3
@@ -11409,8 +11409,8 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /lucide-react@0.274.0(react@18.2.0):
-    resolution: {integrity: sha512-qiWcojRXEwDiSimMX1+arnxha+ROJzZjJaVvCC0rsG6a9pUPjZePXSq7em4ZKMp0NDm1hyzPNkM7UaWC3LU2AA==}
+  /lucide-react@0.287.0(react@18.2.0):
+    resolution: {integrity: sha512-auxP2bTGiMoELzX+6ItTeNzLmhGd/O+PHBsrXV2YwPXYCxarIFJhiMOSzFT9a1GWeYPSZtnWdLr79IVXr/5JqQ==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:

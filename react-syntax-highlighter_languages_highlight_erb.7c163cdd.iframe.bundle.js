@@ -1,1 +1,0 @@
-(self.webpackChunk_perxhealth_react_ui=self.webpackChunk_perxhealth_react_ui||[]).push([[8048],{"./node_modules/.pnpm/highlight.js@9.18.5/node_modules/highlight.js/lib/languages/erb.js":module=>{module.exports=function(hljs){return{subLanguage:"xml",contains:[hljs.COMMENT("<%#","%>"),{begin:"<%[%=-]?",end:"[%-]?%>",subLanguage:"ruby",excludeBegin:!0,excludeEnd:!0}]}}}}]);

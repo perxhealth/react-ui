@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.34.6
     version: 0.34.6(vitest@0.34.6)
   libphonenumber-js:
-    specifier: ^1.10.44
-    version: 1.10.44
+    specifier: ^1.10.48
+    version: 1.10.48
 
 devDependencies:
   '@babel/core':
@@ -11174,8 +11174,8 @@ packages:
       type-check: 0.4.0
     dev: true
 
-  /libphonenumber-js@1.10.44:
-    resolution: {integrity: sha512-svlRdNBI5WgBjRC20GrCfbFiclbF0Cx+sCcQob/C1r57nsoq0xg8r65QbTyVyweQIlB33P+Uahyho6EMYgcOyQ==}
+  /libphonenumber-js@1.10.48:
+    resolution: {integrity: sha512-Vvcgt4+o8+puIBJZLdMshPYx9nRN3/kTT7HPtOyfYrSQuN9PGBF1KUv0g07fjNzt4E4GuA7FnsLb+WeAMzyRQg==}
     dev: false
 
   /lilconfig@2.0.6:

@@ -30,7 +30,8 @@ export interface CountryData {
   emoji: string
   countryCode: string
   callingCode: `+${string}`
-  maxNumberLength: number
+  intlMaxNumberLength: number
+  localMaxNumberLength: number
   exampleNumber: string
 }
 
@@ -44,7 +45,8 @@ const countries: Countries = {
     emoji: "🇦🇺",
     countryCode: "AU",
     callingCode: "+61",
-    maxNumberLength: 9,
+    intlMaxNumberLength: 9,
+    localMaxNumberLength: 11,
     exampleNumber: "491 570 006",
   },
   [CountryCode.US]: {
@@ -52,7 +54,8 @@ const countries: Countries = {
     emoji: "🇺🇸",
     countryCode: "US",
     callingCode: "+1",
-    maxNumberLength: 10,
+    intlMaxNumberLength: 10,
+    localMaxNumberLength: 11,
     exampleNumber: "555 123 4567",
   },
 }
@@ -133,6 +136,14 @@ export const PhoneInput = (props: PhoneInputProps) => {
     [setNumber, currentCountry, onChange]
   )
 
+  const maxLength = React.useMemo(() => {
+    if (isInternational) {
+      return currentCountry.intlMaxNumberLength
+    } else {
+      return currentCountry.localMaxNumberLength
+    }
+  }, [currentCountry, isInternational])
+
   return (
     <InputGroup>
       {isInternational && (
@@ -144,7 +155,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
       <Input
         {...inputProps}
         placeholder={inputPlaceholder}
-        maxLength={currentCountry.maxNumberLength}
+        maxLength={maxLength}
         onChange={onInputChange}
         value={number}
       />

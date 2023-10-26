@@ -23,6 +23,7 @@ export default defineConfig({
         "framer-motion",
         "lucide-react",
         "prop-types",
+        "libphonenumber-js",
       ],
       output: {
         globals: {
@@ -32,6 +33,7 @@ export default defineConfig({
           "framer-motion": "FramerMotion",
           "lucide-react": "LucideReact",
           "prop-types": "PropTypes",
+          "libphonenumber-js": "libphonenumber",
         },
       },
     },

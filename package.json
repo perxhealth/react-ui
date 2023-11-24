@@ -73,7 +73,7 @@
     "eslint-config-perxhealth": "^1.0.5",
     "eslint-plugin-storybook": "^0.6.13",
     "framer-motion": "^10.16.5",
-    "gh-pages": "^6.0.0",
+    "gh-pages": "^6.1.0",
     "jsdom": "^22.1.0",
     "lucide-react": "^0.287.0",
     "prettier": "^3.0.3",

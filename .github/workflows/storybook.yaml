@@ -30,7 +30,7 @@ jobs:
         run: pnpm run build-storybook
 
       - name: 🚚 Store
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: storybook-bundle
           path: storybook-static

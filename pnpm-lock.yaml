@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^5.3.21
     version: 5.3.21(@types/react@18.2.28)(react-dom@18.2.0)(react@18.2.0)(regenerator-runtime@0.13.11)
   '@storybook/addon-links':
-    specifier: ^7.6.4
-    version: 7.6.4(react@18.2.0)
+    specifier: ^7.6.5
+    version: 7.6.5(react@18.2.0)
   '@storybook/addons':
     specifier: ^7.6.3
     version: 7.6.3(react-dom@18.2.0)(react@18.2.0)
@@ -4653,8 +4653,8 @@ packages:
       - regenerator-runtime
     dev: true
 
-  /@storybook/addon-links@7.6.4(react@18.2.0):
-    resolution: {integrity: sha512-TEhxYdMhJO28gD84ej1FCwLv9oLuCPt77bRXip9ndaNPRTdHYdWv6IP94dhbuDi8eHux7Z4A/mllciFuDFrnCw==}
+  /@storybook/addon-links@7.6.5(react@18.2.0):
+    resolution: {integrity: sha512-Lx4Ng+iXt0YpIrKGr+nOZlpN9ypOoEDoP/7bZ6m7GXuVAkDm3JrRCBp7e2ZKSKcTxPdjPuO9HVKkIjtqjINlpw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     peerDependenciesMeta:

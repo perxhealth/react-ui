@@ -75,7 +75,7 @@
     "framer-motion": "^10.16.12",
     "gh-pages": "^6.1.0",
     "jsdom": "^22.1.0",
-    "lucide-react": "^0.287.0",
+    "lucide-react": "^0.303.0",
     "prettier": "^3.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

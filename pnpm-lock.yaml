@@ -107,8 +107,8 @@ devDependencies:
     specifier: ^1.0.5
     version: 1.0.5(eslint@8.56.0)(prettier@3.1.1)(typescript@4.9.5)
   eslint-plugin-storybook:
-    specifier: ^0.6.13
-    version: 0.6.13(eslint@8.56.0)(typescript@4.9.5)
+    specifier: ^0.6.15
+    version: 0.6.15(eslint@8.56.0)(typescript@4.9.5)
   framer-motion:
     specifier: ^10.16.12
     version: 10.16.12(react-dom@18.2.0)(react@18.2.0)
@@ -9500,8 +9500,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /eslint-plugin-storybook@0.6.13(eslint@8.56.0)(typescript@4.9.5):
-    resolution: {integrity: sha512-smd+CS0WH1jBqUEJ3znGS7DU4ayBE9z6lkQAK2yrSUv1+rq8BT/tiI5C/rKE7rmiqiAfojtNYZRhzo5HrulccQ==}
+  /eslint-plugin-storybook@0.6.15(eslint@8.56.0)(typescript@4.9.5):
+    resolution: {integrity: sha512-lAGqVAJGob47Griu29KXYowI4G7KwMoJDOkEip8ujikuDLxU+oWJ1l0WL6F2oDO4QiyUFXvtDkEkISMOPzo+7w==}
     engines: {node: 12.x || 14.x || >= 16}
     peerDependencies:
       eslint: '>=6'
@@ -13269,6 +13269,7 @@ packages:
       object-assign: 4.1.1
       prop-types: 15.8.1
     dev: true
+    bundledDependencies: false
 
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}

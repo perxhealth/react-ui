@@ -43,7 +43,7 @@
     "@babel/core": "^7.23.6",
     "@babel/preset-env": "^7.23.8",
     "@babel/preset-react": "^7.23.3",
-    "@babel/preset-typescript": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.3",
     "@chakra-ui/react": "^2.8.2",
     "@chakra-ui/storybook-addon": "^5.1.0",
     "@emotion/react": "^11.11.1",

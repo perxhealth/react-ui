@@ -30,7 +30,7 @@ devDependencies:
     version: 2.8.2(@emotion/react@11.11.4)(@emotion/styled@11.11.0)(@types/react@18.2.64)(framer-motion@11.0.8)(react-dom@18.2.0)(react@18.2.0)
   '@chakra-ui/storybook-addon':
     specifier: ^5.1.0
-    version: 5.1.0(@chakra-ui/react@2.8.2)(@storybook/components@7.6.14)(@storybook/manager-api@7.6.14)(@storybook/preview-api@7.6.17)(@storybook/types@7.6.17)(react-dom@18.2.0)(react@18.2.0)
+    version: 5.1.0(@chakra-ui/react@2.8.2)(@storybook/components@7.6.14)(@storybook/manager-api@7.6.17)(@storybook/preview-api@7.6.17)(@storybook/types@7.6.17)(react-dom@18.2.0)(react@18.2.0)
   '@emotion/react':
     specifier: ^11.11.4
     version: 11.11.4(@types/react@18.2.64)(react@18.2.0)
@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^5.3.21
     version: 5.3.21(@types/react@18.2.64)(react-dom@18.2.0)(react@18.2.0)(regenerator-runtime@0.13.11)
   '@storybook/addon-links':
-    specifier: ^7.6.17
-    version: 7.6.17(react@18.2.0)
+    specifier: ^8.0.1
+    version: 8.0.1(react@18.2.0)
   '@storybook/addons':
     specifier: ^7.6.17
     version: 7.6.17(react-dom@18.2.0)(react@18.2.0)
@@ -2484,7 +2484,7 @@ packages:
       react: 18.2.0
     dev: true
 
-  /@chakra-ui/storybook-addon@5.1.0(@chakra-ui/react@2.8.2)(@storybook/components@7.6.14)(@storybook/manager-api@7.6.14)(@storybook/preview-api@7.6.17)(@storybook/types@7.6.17)(react-dom@18.2.0)(react@18.2.0):
+  /@chakra-ui/storybook-addon@5.1.0(@chakra-ui/react@2.8.2)(@storybook/components@7.6.14)(@storybook/manager-api@7.6.17)(@storybook/preview-api@7.6.17)(@storybook/types@7.6.17)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-l9DIdTAw+FLbDrMVpoLCn9EdOygJDRV2SYobuoR0dDmuXlHq/u/RvE51Yq8XgUTn9Fkqv0g8ellMZEGytZEVYw==}
     peerDependencies:
       '@chakra-ui/react': '>=2.0.0'
@@ -2502,7 +2502,7 @@ packages:
     dependencies:
       '@chakra-ui/react': 2.8.2(@emotion/react@11.11.4)(@emotion/styled@11.11.0)(@types/react@18.2.64)(framer-motion@11.0.8)(react-dom@18.2.0)(react@18.2.0)
       '@storybook/components': 7.6.14(@types/react-dom@18.2.19)(@types/react@18.2.64)(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/manager-api': 7.6.14(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/manager-api': 7.6.17(react-dom@18.2.0)(react@18.2.0)
       '@storybook/preview-api': 7.6.17
       '@storybook/types': 7.6.17
       react: 18.2.0
@@ -4872,8 +4872,8 @@ packages:
       - regenerator-runtime
     dev: true
 
-  /@storybook/addon-links@7.6.17(react@18.2.0):
-    resolution: {integrity: sha512-iFUwKObRn0EKI0zMETsil2p9a/81rCuSMEWECsi+khkCAs1FUnD2cT6Ag5ydcNcBXsdtdfDJdtXQrkw+TSoStQ==}
+  /@storybook/addon-links@8.0.1(react@18.2.0):
+    resolution: {integrity: sha512-cYAPSr/mO++ZZWcNigfTEDPYshozT0hYpHJ7S5DIhUTZCpv92IDudN0HjYmEQnz4+OdsGaQ6GnITI2Fr8IOfQA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     peerDependenciesMeta:

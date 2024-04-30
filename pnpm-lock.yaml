@@ -152,8 +152,8 @@ devDependencies:
     specifier: ^5.2.8
     version: 5.2.8(@types/node@18.11.5)
   vite-plugin-dts:
-    specifier: ^3.8.3
-    version: 3.8.3(typescript@4.9.5)(vite@5.2.8)
+    specifier: ^3.9.0
+    version: 3.9.0(typescript@4.9.5)(vite@5.2.8)
   vite-plugin-svgr:
     specifier: ^4.2.0
     version: 4.2.0(typescript@4.9.5)(vite@5.2.8)
@@ -4276,7 +4276,7 @@ packages:
       fork-ts-checker-webpack-plugin: 8.0.0(typescript@4.9.5)(webpack@5.74.0)
       fs-extra: 11.1.1
       html-webpack-plugin: 5.5.0(webpack@5.74.0)
-      magic-string: 0.30.5
+      magic-string: 0.30.9
       path-browserify: 1.0.1
       process: 0.11.10
       semver: 7.5.4
@@ -4928,7 +4928,7 @@ packages:
       '@types/semver': 7.3.13
       find-up: 5.0.0
       fs-extra: 11.1.1
-      magic-string: 0.30.5
+      magic-string: 0.30.9
       react: 18.2.0
       react-docgen: 7.0.3
       react-dom: 18.2.0(react@18.2.0)
@@ -6060,7 +6060,7 @@ packages:
   /@vitest/snapshot@0.34.6:
     resolution: {integrity: sha512-B3OZqYn6k4VaN011D+ve+AA4whM4QkcwcrwaKwAbyyvS/NB1hCWjFIBQxAQQSQir9/RtyAAGuq+4RJmbn2dH4w==}
     dependencies:
-      magic-string: 0.30.5
+      magic-string: 0.30.9
       pathe: 1.1.1
       pretty-format: 29.7.0
 
@@ -10562,18 +10562,11 @@ packages:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /magic-string@0.30.5:
-    resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
-
   /magic-string@0.30.9:
     resolution: {integrity: sha512-S1+hd+dIrC8EZqKyT9DstTH/0Z+f76kmmvZnkfQVmOpDEF9iVgdYif3Q/pIWHmCoo59bQVGW0kVL3e2nl+9+Sw==}
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
 
   /make-dir@2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
@@ -13699,8 +13692,8 @@ packages:
       - supports-color
       - terser
 
-  /vite-plugin-dts@3.8.3(typescript@4.9.5)(vite@5.2.8):
-    resolution: {integrity: sha512-yRHiRosQw7MXdOhmcrVI+kRiB8YEShbSxnADNteK4eZGdEoyOkMHihvO5XOAVlOq8ng9sIqu8vVefDK1zcj3qw==}
+  /vite-plugin-dts@3.9.0(typescript@4.9.5)(vite@5.2.8):
+    resolution: {integrity: sha512-pwFIEYQ3LZvMafkEGvNnileb6af5JuyZsBfYQrTDYxdeGEy0OS4B4hCsLPo5YGnhK5k9EzyO6BXVO6y+Lt5T2A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'

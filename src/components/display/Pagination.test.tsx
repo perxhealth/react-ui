@@ -1,7 +1,7 @@
 import * as React from "react"
 import { vi } from "vitest"
 import { render } from "@testing-library/react"
-import userEvent from "@testing-library/user-event"
+import { userEvent } from "@testing-library/user-event"
 
 import { Pagination, PaginationProps } from "./Pagination"
 

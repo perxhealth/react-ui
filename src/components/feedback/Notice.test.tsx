@@ -1,7 +1,7 @@
 import * as React from "react"
 import { vi, describe, it, expect } from "vitest"
 import { render } from "@testing-library/react"
-import userEvent from "@testing-library/user-event"
+import { userEvent } from "@testing-library/user-event"
 
 import { Notice, NoticeProps } from "./Notice"
 

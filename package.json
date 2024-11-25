@@ -46,7 +46,7 @@
     "@babel/preset-typescript": "^7.24.7",
     "@chakra-ui/react": "^2.8.2",
     "@chakra-ui/storybook-addon": "^5.1.0",
-    "@emotion/react": "^11.11.4",
+    "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.11.5",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",

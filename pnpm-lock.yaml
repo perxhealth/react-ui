@@ -73,8 +73,8 @@ importers:
         specifier: ^6.4.8
         version: 6.4.8
       '@testing-library/react':
-        specifier: ^16.0.0
-        version: 16.0.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^16.1.0
+        version: 16.1.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: ^8.0.1
         version: 8.0.1(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2777,15 +2777,15 @@ packages:
       react-test-renderer:
         optional: true
 
-  '@testing-library/react@16.0.0':
-    resolution: {integrity: sha512-guuxUKRWQ+FgNX0h0NS0FIq3Q3uLtWVpBzcLOggmfMoUpgBnzBzvLLd4fbm6yS8ydJd94cIfY4yP9qUQjM2KwQ==}
+  '@testing-library/react@16.1.0':
+    resolution: {integrity: sha512-Q2ToPvg0KsVL0ohND9A3zLJWcOXXcO8IDu3fj11KhNt0UlCWyFyvnCIBkd12tidB2lkiVRG8VFqdhcqhqnAQtg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@testing-library/dom': ^10.0.0
-      '@types/react': ^18.0.0
-      '@types/react-dom': ^18.0.0
-      react: ^18.0.0
-      react-dom: ^18.0.0
+      '@types/react': ^18.0.0 || ^19.0.0
+      '@types/react-dom': ^18.0.0 || ^19.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
       '@types/react':
         optional: true
@@ -3178,6 +3178,7 @@ packages:
 
   acorn-import-assertions@1.8.0:
     resolution: {integrity: sha512-m7VZ3jwz4eK6A4Vtt8Ew1/mNbP24u0FhdyfA7fSvnJR6LMdfOYnmuIrrJAgrYfYJ10F/otaHTtrtrtmHdMNzEw==}
+    deprecated: package has been renamed to acorn-import-attributes
     peerDependencies:
       acorn: ^8
 
@@ -4322,6 +4323,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -9215,10 +9217,10 @@ snapshots:
 
   '@emotion/sheet@1.2.2': {}
 
-  '@emotion/styled-base@10.3.0(@emotion/core@10.3.1(react@16.14.0))(react@16.14.0)':
+  '@emotion/styled-base@10.3.0(@emotion/core@10.3.1(react@18.3.1))(react@16.14.0)':
     dependencies:
       '@babel/runtime': 7.21.0
-      '@emotion/core': 10.3.1(react@16.14.0)
+      '@emotion/core': 10.3.1(react@18.3.1)
       '@emotion/is-prop-valid': 0.8.8
       '@emotion/serialize': 0.11.16
       '@emotion/utils': 0.11.3
@@ -9233,10 +9235,10 @@ snapshots:
       '@emotion/utils': 0.11.3
       react: 18.3.1
 
-  '@emotion/styled@10.3.0(@emotion/core@10.3.1(react@16.14.0))(react@16.14.0)':
+  '@emotion/styled@10.3.0(@emotion/core@10.3.1(react@18.3.1))(react@16.14.0)':
     dependencies:
-      '@emotion/core': 10.3.1(react@16.14.0)
-      '@emotion/styled-base': 10.3.0(@emotion/core@10.3.1(react@16.14.0))(react@16.14.0)
+      '@emotion/core': 10.3.1(react@18.3.1)
+      '@emotion/styled-base': 10.3.0(@emotion/core@10.3.1(react@18.3.1))(react@16.14.0)
       babel-plugin-emotion: 10.2.2
       react: 16.14.0
     transitivePeerDependencies:
@@ -10831,11 +10833,11 @@ snapshots:
   '@storybook/theming@5.3.21(react-dom@18.3.1(react@18.3.1))(react@16.14.0)':
     dependencies:
       '@emotion/core': 10.3.1(react@16.14.0)
-      '@emotion/styled': 10.3.0(@emotion/core@10.3.1(react@16.14.0))(react@16.14.0)
+      '@emotion/styled': 10.3.0(@emotion/core@10.3.1(react@18.3.1))(react@16.14.0)
       '@storybook/client-logger': 5.3.21
       core-js: 3.26.0
       deep-object-diff: 1.1.7
-      emotion-theming: 10.3.0(@emotion/core@10.3.1(react@16.14.0))(react@16.14.0)
+      emotion-theming: 10.3.0(@emotion/core@10.3.1(react@18.3.1))(react@16.14.0)
       global: 4.4.0
       memoizerific: 1.11.3
       polished: 3.7.2
@@ -11005,7 +11007,7 @@ snapshots:
       '@types/react': 18.3.3
       react-dom: 18.3.1(react@18.3.1)
 
-  '@testing-library/react@16.0.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@testing-library/react@16.1.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.21.0
       '@testing-library/dom': 10.4.0
@@ -12393,10 +12395,10 @@ snapshots:
 
   emojilib@2.4.0: {}
 
-  emotion-theming@10.3.0(@emotion/core@10.3.1(react@16.14.0))(react@16.14.0):
+  emotion-theming@10.3.0(@emotion/core@10.3.1(react@18.3.1))(react@16.14.0):
     dependencies:
       '@babel/runtime': 7.21.0
-      '@emotion/core': 10.3.1(react@16.14.0)
+      '@emotion/core': 10.3.1(react@18.3.1)
       '@emotion/weak-memoize': 0.2.5
       hoist-non-react-statics: 3.3.2
       react: 16.14.0

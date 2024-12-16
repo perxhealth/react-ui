@@ -33,7 +33,7 @@
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "@chakra-ui/react": "^2.8.2",
+    "@chakra-ui/react": "^3.2.3",
     "framer-motion": "^7",
     "lucide-react": "^0.94.0",
     "react": ">=18.2",
@@ -44,7 +44,7 @@
     "@babel/preset-env": "^7.25.0",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
-    "@chakra-ui/react": "^2.8.2",
+    "@chakra-ui/react": "^3.2.3",
     "@chakra-ui/storybook-addon": "^5.1.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
